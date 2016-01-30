@@ -21,9 +21,9 @@
 ####Scripts in C\#.
 
 ##Developers
-	- **Project Lead** [Ben C](https://github.com/BenCuan)
-	- **Artist** [Dohyun K](https://github.com/DohyunK)
-	- **Concept Designer** [Aryan S](https://github.com/CrispyCookieHD)
-	- **Beta Tester** [Akhil G](https://github.com/AkhilanGanesh)
+ - **Project Lead** [Ben C](https://github.com/BenCuan)
+ - **Artist** [Dohyun K](https://github.com/DohyunK)
+ - **Concept Designer** [Aryan S](https://github.com/CrispyCookieHD)
+ - **Beta Tester** [Akhil G](https://github.com/AkhilanGanesh)
 
 ##This project attempts to adhere to [Semantic Versioning](semver.org).
