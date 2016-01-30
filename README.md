@@ -6,7 +6,7 @@
 ###This project is open-source under the [GNU General Public License v3.0](http://www.gnu.org/licenses/gpl-3.0.en.html).
 
 ###[Click here](https://github.com/BenCuan/unity-game/wiki) to check out the Wiki
-###[Click here](https://github.com/BenCuan/unity-game/blob/feature/mainMenu/CHANGELOG.md) to view the changelog
+###[Click here](https://github.com/BenCuan/unity-game/blob/master/CHANGELOG.md) to view the changelog
 ##Planned Features
   - First and Third person perspectives
   - Online Multiplayer
@@ -21,9 +21,9 @@
 ####Scripts in C\#.
 
 ##Developers
-	* **Project Lead** [Ben C](https://github.com/BenCuan)
-	* **Artist** [Dohyun K](https://github.com/DohyunK)
-	* **Concept Designer** [Aryan S](https://github.com/CrispyCookieHD)
-	* **Beta Tester** [Akhil G](https://github.com/AkhilanGanesh)
+	- **Project Lead** [Ben C](https://github.com/BenCuan)
+	- **Artist** [Dohyun K](https://github.com/DohyunK)
+	- **Concept Designer** [Aryan S](https://github.com/CrispyCookieHD)
+	- **Beta Tester** [Akhil G](https://github.com/AkhilanGanesh)
 
-##This project attempts to adhere to [Semantic Versioning](https://semver.org).
+##This project attempts to adhere to [Semantic Versioning](semver.org).
