@@ -8,50 +8,27 @@ public class MainMenu : MonoBehaviour {
 	public Button exit;
 	public Button credits;
 
-	public Button closeOptions;
-	public Text optionHeader;
 	public Canvas options;
-
-	public Button closeLevelSelect;
-	public Text levelSelectText;
-	public Canvas LevelSelect;
-	public SpriteRenderer LevelSelectLeft;
-	public SpriteRenderer LevelSelectRight;
-	public Image LevelOne;
+	public Canvas levelSelect;
+	public Canvas creditsMenu;
 
 	// Use this for initialization
 	void Start () {
-		closeOptions = closeOptions.GetComponent<Button> ();
-		optionHeader = optionHeader.GetComponent<Text> ();
-		options = options.GetComponent<Canvas> ();
 
 		credits = credits.GetComponent<Button> ();
 		play = play.GetComponent<Button> ();
 		option = option.GetComponent<Button> ();
 		exit = exit.GetComponent<Button> ();
 
-		closeLevelSelect = closeLevelSelect.GetComponent<Button> ();
-		levelSelectText = levelSelectText.GetComponent<Text> ();
-		LevelSelect = LevelSelect.GetComponent<Canvas> ();
-		LevelSelectLeft = LevelSelectLeft.GetComponent<SpriteRenderer> ();
-		LevelSelectRight = LevelSelectRight.GetComponent<SpriteRenderer> ();
-		LevelOne = LevelOne.GetComponent<Image> ();
+		levelSelect = levelSelect.GetComponent<Canvas> ();
+		options = options.GetComponent<Canvas> ();
+		creditsMenu = creditsMenu.GetComponent<Canvas> ();
 
-		play.enabled = true;
-		option.enabled = true;
-		exit.enabled = true;
-		credits.enabled = true;
+		EnableMainButtons (true);
 
 		options.enabled = false;
-		optionHeader.enabled = false;
-		closeOptions.enabled = false;
-
-		LevelSelect.enabled = false;
-		levelSelectText.enabled = false;
-		closeLevelSelect.enabled = false;
-		LevelSelectLeft.enabled = false;
-		LevelSelectRight.enabled = false;
-		LevelOne.enabled = false;
+		levelSelect.enabled = false;
+		creditsMenu.enabled = false;
 
 	}
 	
@@ -60,52 +37,45 @@ public class MainMenu : MonoBehaviour {
 	
 	}
 
-	public void DisableMainButtons() {
-		play.enabled = false;
-		option.enabled = false;
-		exit.enabled = false;
-		credits.enabled = false;
+	private void EnableChildren(Component[] Parent, bool enabled) {
+		Parent = GetComponentsInChildren<Image> ();
+		foreach (Image child in Parent) {
+			child.enabled = true;
+		}
 	}
-		
 
-	public void OpenOptions() {
-		options.enabled = true;
-		optionHeader.enabled = true;
-		closeOptions.enabled = true;
-		DisableMainButtons ();
-		
+	private void EnableMainButtons(bool trueOrFalse) {
+		play.enabled = trueOrFalse;
+		option.enabled = trueOrFalse;
+		exit.enabled = trueOrFalse;
+		credits.enabled = trueOrFalse;
 	}
 
 	public void OpenLevelSelect() {
 
-		DisableMainButtons ();
+		EnableMainButtons (false);
+		levelSelect.enabled = true;
+	}
 
-		LevelSelect.enabled = true;
-		levelSelectText.enabled = true;
-		closeLevelSelect.enabled = true;
-		LevelSelectLeft.enabled = true;
-		LevelSelectRight.enabled = true;
-		LevelOne.enabled = true;
+	public void OpenOptions() {
+		
+		EnableMainButtons(false);
+		options.enabled = true;
+	}
+
+	public void OpenCredits() {
+
+		EnableMainButtons (false);
+		creditsMenu.enabled = true;
 	}
 
 	public void CloseSubmenu() {
 		
-		play.enabled = true;
-		option.enabled = true;
-		exit.enabled = true;
-		credits.enabled = true;
+		EnableMainButtons (true);
 
 		options.enabled = false;
-		optionHeader.enabled = false;
-		closeOptions.enabled = false;
-
-		LevelSelect.enabled = false;
-		levelSelectText.enabled = false;
-		closeLevelSelect.enabled = false;
-		LevelSelectLeft.enabled = false;
-		LevelSelectRight.enabled = false;
-		LevelOne.enabled = false;
-
+		levelSelect.enabled = false;
+		creditsMenu.enabled = false;
 	}
 		
 	public void Quit() {
