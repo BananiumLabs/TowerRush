@@ -6,6 +6,7 @@ public class MainMenu : MonoBehaviour {
 	public Button play;
 	public Button option;
 	public Button exit;
+	public Button credits;
 
 	public Button closeOptions;
 	public Text optionHeader;
@@ -15,10 +16,8 @@ public class MainMenu : MonoBehaviour {
 	public Text levelSelectText;
 	public Canvas LevelSelect;
 	public SpriteRenderer LevelSelectLeft;
-	public Button LevelSelectLeftButton;
 	public SpriteRenderer LevelSelectRight;
-	public Button LevelSelectRightButton;
-	public SpriteRenderer LevelOne;
+	public Image LevelOne;
 
 	// Use this for initialization
 	void Start () {
@@ -26,6 +25,7 @@ public class MainMenu : MonoBehaviour {
 		optionHeader = optionHeader.GetComponent<Text> ();
 		options = options.GetComponent<Canvas> ();
 
+		credits = credits.GetComponent<Button> ();
 		play = play.GetComponent<Button> ();
 		option = option.GetComponent<Button> ();
 		exit = exit.GetComponent<Button> ();
@@ -35,14 +35,12 @@ public class MainMenu : MonoBehaviour {
 		LevelSelect = LevelSelect.GetComponent<Canvas> ();
 		LevelSelectLeft = LevelSelectLeft.GetComponent<SpriteRenderer> ();
 		LevelSelectRight = LevelSelectRight.GetComponent<SpriteRenderer> ();
-		LevelSelectLeftButton = LevelSelectLeftButton.GetComponent<Button> ();
-		LevelSelectRightButton = LevelSelectRightButton.GetComponent<Button> ();
-
-		LevelOne = LevelOne.GetComponent<SpriteRenderer> ();
+		LevelOne = LevelOne.GetComponent<Image> ();
 
 		play.enabled = true;
 		option.enabled = true;
 		exit.enabled = true;
+		credits.enabled = true;
 
 		options.enabled = false;
 		optionHeader.enabled = false;
@@ -62,20 +60,25 @@ public class MainMenu : MonoBehaviour {
 	
 	}
 
+	public void DisableMainButtons() {
+		play.enabled = false;
+		option.enabled = false;
+		exit.enabled = false;
+		credits.enabled = false;
+	}
+		
+
 	public void OpenOptions() {
 		options.enabled = true;
 		optionHeader.enabled = true;
 		closeOptions.enabled = true;
-		play.enabled = false;
-		option.enabled = false;
-		exit.enabled = false;
+		DisableMainButtons ();
+		
 	}
 
 	public void OpenLevelSelect() {
 
-		play.enabled = false;
-		option.enabled = false;
-		exit.enabled = false;
+		DisableMainButtons ();
 
 		LevelSelect.enabled = true;
 		levelSelectText.enabled = true;
@@ -90,6 +93,7 @@ public class MainMenu : MonoBehaviour {
 		play.enabled = true;
 		option.enabled = true;
 		exit.enabled = true;
+		credits.enabled = true;
 
 		options.enabled = false;
 		optionHeader.enabled = false;
