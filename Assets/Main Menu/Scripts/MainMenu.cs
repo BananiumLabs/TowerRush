@@ -12,6 +12,10 @@ public class MainMenu : MonoBehaviour {
 	public Canvas levelSelect;
 	public Canvas creditsMenu;
 
+	public Dropdown optionDropdown;
+	public Canvas general;
+	public Canvas controls;
+
 	// Use this for initialization
 	void Start () {
 
@@ -23,6 +27,10 @@ public class MainMenu : MonoBehaviour {
 		levelSelect = levelSelect.GetComponent<Canvas> ();
 		options = options.GetComponent<Canvas> ();
 		creditsMenu = creditsMenu.GetComponent<Canvas> ();
+
+		optionDropdown = optionDropdown.GetComponent<Dropdown> ();
+		general = general.GetComponent<Canvas> ();
+		controls = controls.GetComponent<Canvas> ();
 
 		EnableMainButtons (true);
 
@@ -61,12 +69,16 @@ public class MainMenu : MonoBehaviour {
 		
 		EnableMainButtons(false);
 		options.enabled = true;
+		optionDropdown.value = 0;
+		general.transform.rotation = new Quaternion (0.0f, 0.0f, 0.0f, 0.0f);
+
 	}
 
 	public void OpenCredits() {
 
 		EnableMainButtons (false);
 		creditsMenu.enabled = true;
+
 	}
 
 	public void CloseSubmenu() {
@@ -76,6 +88,7 @@ public class MainMenu : MonoBehaviour {
 		options.enabled = false;
 		levelSelect.enabled = false;
 		creditsMenu.enabled = false;
+
 	}
 		
 	public void Quit() {
