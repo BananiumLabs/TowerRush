@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class MainMenu : MonoBehaviour {
@@ -89,6 +90,10 @@ public class MainMenu : MonoBehaviour {
 		levelSelect.enabled = false;
 		creditsMenu.enabled = false;
 
+	}
+
+	public void LoadLevelOne() {
+		SceneManager.LoadScene (1);
 	}
 		
 	public void Quit() {
