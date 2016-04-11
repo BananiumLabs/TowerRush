@@ -17,6 +17,8 @@ public class MainMenu : MonoBehaviour {
 	public Canvas general;
 	public Canvas controls;
 
+	private int levelNumber;
+
 	// Use this for initialization
 	void Start () {
 
@@ -92,8 +94,13 @@ public class MainMenu : MonoBehaviour {
 
 	}
 
-	public void LoadLevelOne() {
-		SceneManager.LoadScene (1);
+	public void SelectLevel(int level) {
+		levelNumber = level;
+	}
+
+	public void LoadLevel() {
+		if (levelNumber != null)
+			SceneManager.LoadScene (levelNumber);
 	}
 		
 	public void Quit() {
