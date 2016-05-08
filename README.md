@@ -1,13 +1,13 @@
 #BUMRUSH
-## **CURRENT STAGE: BASIC DEVELOPMENT**
-## **CURRENT FOCUS: [MAIN MENU](https://github.com/BenCuan/unity-game/tree/feature/mainMenu)**
+### **CURRENT STAGE: BASIC DEVELOPMENT**
+### **CURRENT FOCUS: [BASIC MECHANICS](https://github.com/BenCuan/unity-game/tree/feature/mainMenu)**
 
-###The tower defense game where you are the attacker.
-###This project is open-source under the [GNU General Public License v3.0](http://www.gnu.org/licenses/gpl-3.0.en.html).
+#####The tower defense game where you are the attacker.
+#####This project is open-source under the [GNU General Public License v3.0](http://www.gnu.org/licenses/gpl-3.0.en.html).
 
-###[Click here](https://github.com/BenCuan/unity-game/wiki) to check out the Wiki
-###[Click here](https://github.com/BenCuan/unity-game/wiki/getting-started) if you need help getting started
-###[Click here](https://github.com/BenCuan/unity-game/blob/master/CHANGELOG.md) to view the changelog
+####[Click here](https://github.com/BenCuan/unity-game/wiki) to check out the Wiki
+####[Click here](https://github.com/BenCuan/unity-game/wiki/getting-started) if you need help getting started
+####[Click here](https://github.com/BenCuan/unity-game/blob/master/CHANGELOG.md) to view the changelog
 
 ##Planned Features
   - First and Third person perspectives
