@@ -38,7 +38,7 @@ public class MouseLook : MonoBehaviour {
 		{
 			rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
 			rotationY = ClampAngle (rotationY, minimumY, maximumY);
-			Quaternion yQuaternion = Quaternion.AngleAxis (-rotationY, Vector3.right);
+			Quaternion yQuaternion = Quaternion.AngleAxis (rotationY, Vector3.right);
 			transform.localRotation = originalRotation * yQuaternion;
 		}
 	}

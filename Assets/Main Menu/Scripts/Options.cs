@@ -10,6 +10,9 @@ public class Options : MonoBehaviour {
 	public Canvas generalPanel;
 	public Canvas controlsPanel;
 	public Dropdown graphics;
+	public Dropdown uiSize;
+
+	public Canvas mainMenu;
 
 	void Start () {
 		
@@ -19,6 +22,9 @@ public class Options : MonoBehaviour {
 		generalPanel = generalPanel.GetComponent<Canvas> ();
 		controlsPanel = controlsPanel.GetComponent<Canvas> ();
 		graphics = graphics.GetComponent<Dropdown> ();
+		uiSize = uiSize.GetComponent<Dropdown> ();
+
+		mainMenu = mainMenu.GetComponent<Canvas> ();
 
 		volume.maxValue = 100;
 		volume.minValue = 0;
@@ -64,11 +70,25 @@ public class Options : MonoBehaviour {
 			break;
 
 		}
+
+		switch (uiSize.value) {
+		case 0:
+			mainMenu.scaleFactor = 0.5f;
+			break;
+		case 1:
+			mainMenu.scaleFactor = 1f;
+			break;
+		case 2:
+			mainMenu.scaleFactor = 1.5f;
+			break;
+		}
+			
 			
 	}
 
 	public void resetOptions() {
 		graphics.value = 4;
 		volume.value = 50;
+		uiSize.value = 1;
 	}
 }
