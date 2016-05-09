@@ -49,6 +49,7 @@
      <Compile Include="Assets\Main Menu\Scripts\Options.cs" />
      <Compile Include="Assets\Player\MouseLook.cs" />
      <Compile Include="Assets\Player\PlayerController.cs" />
+     <Compile Include="Assets\Player\PlayerGUI.cs" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
