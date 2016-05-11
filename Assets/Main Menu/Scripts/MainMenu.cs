@@ -19,8 +19,8 @@ public class MainMenu : MonoBehaviour {
 
 	private int levelNumber;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 
 		credits = credits.GetComponent<Button> ();
 		play = play.GetComponent<Button> ();
@@ -48,7 +48,7 @@ public class MainMenu : MonoBehaviour {
 	
 	}
 
-	private void EnableChildren(Component[] Parent, bool enabled) {
+    private void EnableChildren(Component[] Parent, bool enabled) {
 		Parent = GetComponentsInChildren<Image> ();
 		foreach (Image child in Parent) {
 			child.enabled = true;
