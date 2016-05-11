@@ -58,9 +58,9 @@ public class PlayerController : MonoBehaviour {
 		if (currJump < allowedJump)
 		{
 			float temp = 0.0f;
-			temp = Mathf.Sin(Time.deltaTime) * jumpSpeed;
+			temp = Mathf.Sin(Time.smoothDeltaTime) * jumpSpeed;
 			currJump += temp;
-				rb.velocity = (Vector3.up * temp * jumpSpeed);
+			rb.velocity = (Vector3.up * temp * jumpSpeed);
 		}
 		else
 		{
