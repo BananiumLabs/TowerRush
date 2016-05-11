@@ -1,5 +1,5 @@
 
-public class myThirdPersonController : ThirdPersonController
+public class myThirdPersonController : Photon.MonoBehaviour
 {
     // The actual controller is in ThirdPersonController. 
     // For the PUN package, we just inherit that.

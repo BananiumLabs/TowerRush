@@ -30,7 +30,7 @@ public class RandomMatchmaker : Photon.PunBehaviour
     public override void OnJoinedRoom()
     {
         GameObject monster = PhotonNetwork.Instantiate("monsterprefab", Vector3.zero, Quaternion.identity, 0);
-        monster.GetComponent<myThirdPersonController>().isControllable = true;
+       // monster.GetComponent<myThirdPersonController>().isControllable = true;
         myPhotonView = monster.GetComponent<PhotonView>();
     }
 
