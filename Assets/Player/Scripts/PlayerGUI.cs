@@ -2,13 +2,13 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 
+//SUMMARY: Code for in-game menus and displays. Attached to the Main Camera on player.
 public class PlayerGUI : MonoBehaviour {
 
 	private bool isPause = false;
 	public SpriteRenderer crosshair;
 	public CanvasGroup pauseMenu;
 
-	// Use this for initialization
 	void Start () {
 		crosshair = crosshair.GetComponent<SpriteRenderer> ();
 		pauseMenu = pauseMenu.GetComponent<CanvasGroup> ();
@@ -16,9 +16,10 @@ public class PlayerGUI : MonoBehaviour {
 		crosshair.enabled = true;
 		pauseMenu.alpha = 0f;
 	}
-	
-	// Update is called once per frame
+
+
 	void Update () {
+		//Escape Menu
 		if(Input.GetKeyDown(KeyCode.Escape)) {
 			isPause = !isPause;
 			if (isPause) {
@@ -39,6 +40,7 @@ public class PlayerGUI : MonoBehaviour {
 	}
 
 	public void Quit () {
+		//When "Quit to Main Menu" is pressed
 		Cursor.visible = true;
 		SceneManager.LoadScene (0);
 	}

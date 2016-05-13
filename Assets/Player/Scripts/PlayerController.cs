@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//SUMMARY: Allows player to move around
 public class PlayerController : MonoBehaviour {
 
 	public float speed;
@@ -13,22 +14,23 @@ public class PlayerController : MonoBehaviour {
 	float distToGround;
 	private bool isGrounded;
 
-	// Use this for initialization
 	void Start () {
 		
 		distToGround = GetComponent<Collider>().bounds.extents.y;
 
 		rb = GetComponent<Rigidbody> ();
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 
+		//Checks if player is touching ground
 		isGrounded = Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.1f);
 
+		//Resets current jump counter
 		if (isGrounded)
 			currJump = 0;
-		
+
+		//When space key pressed
 		if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
 		{
 			isJumping = true;
@@ -36,6 +38,7 @@ public class PlayerController : MonoBehaviour {
 			Jump();
 		}
 
+		//Continue jumping if not complete
 		if (isJumping && !isGrounded)
 		{
 			Jump();
@@ -44,6 +47,7 @@ public class PlayerController : MonoBehaviour {
 
 	// Called before every physics calculation
 	void FixedUpdate() {
+		//Forward/backward/left/right
 		float moveHorizontal = Input.GetAxis ("Horizontal");
 		float moveVertical = Input.GetAxis ("Vertical");
 
@@ -52,6 +56,7 @@ public class PlayerController : MonoBehaviour {
 
 	}
 
+	//Allows player to jump
 	public void Jump()
 	{
 

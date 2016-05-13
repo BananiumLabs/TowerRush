@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
+//Code for the entire main menu (EXCEPT Options)
 public class MainMenu : MonoBehaviour {
 	public Button play;
 	public Button option;
@@ -19,7 +20,6 @@ public class MainMenu : MonoBehaviour {
 
 	private int levelNumber;
 
-	// Use this for initialization
 	void Start () {
 
 		Cursor.lockState = CursorLockMode.None;
@@ -45,12 +45,12 @@ public class MainMenu : MonoBehaviour {
 		creditsMenu.enabled = false;
 
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 		
 	}
 
+	//Unused, might be useful later
 	private void EnableChildren(Component[] Parent, bool enabled) {
 		Parent = GetComponentsInChildren<Image> ();
 		foreach (Image child in Parent) {
@@ -58,13 +58,14 @@ public class MainMenu : MonoBehaviour {
 		}
 	}
 
+	//Used for toggling submenus
 	private void EnableMainButtons(bool trueOrFalse) {
 		play.enabled = trueOrFalse;
 		option.enabled = trueOrFalse;
 		exit.enabled = trueOrFalse;
 		credits.enabled = trueOrFalse;
 	}
-
+		
 	public void OpenLevelSelect() {
 
 		EnableMainButtons (false);
@@ -87,6 +88,7 @@ public class MainMenu : MonoBehaviour {
 
 	}
 
+	//Code for closing every submenu
 	public void CloseSubmenu() {
 		
 		EnableMainButtons (true);
@@ -97,15 +99,18 @@ public class MainMenu : MonoBehaviour {
 
 	}
 
+	//When the level buttons are pressed
 	public void SelectLevel(int level) {
 		levelNumber = level;
 	}
 
+	//When the "Join" button is pressed
 	public void LoadLevel() {
 		if (levelNumber != null)
 			SceneManager.LoadScene (levelNumber);
 	}
-		
+
+	//Quits the entire game
 	public void Quit() {
 		Application.Quit ();
 	}

@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 
+//SUMMARY: Code for the Options submenu in the Main Menu.
 public class Options : MonoBehaviour {
 
 	public Slider volume;
@@ -33,14 +34,14 @@ public class Options : MonoBehaviour {
 		generalPanel.transform.Rotate (20.0f, 0.0f, 0.0f);
 	
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 
 		AudioListener.volume = volume.value / 100;
 
 		volumeValue.text = volume.value.ToString ();
 
+		//Which panel is active
 		if(dropdown.value == 0) {
 			generalPanel.enabled = true;
 			controlsPanel.enabled = false;
@@ -49,6 +50,7 @@ public class Options : MonoBehaviour {
 			controlsPanel.enabled = true;
 		}
 
+		//Graphics setting
 		switch (graphics.value) {
 		case 0:
 			QualitySettings.SetQualityLevel (1, true);
@@ -71,6 +73,7 @@ public class Options : MonoBehaviour {
 
 		}
 
+		//UI Size setting
 		switch (uiSize.value) {
 		case 0:
 			mainMenu.scaleFactor = 0.5f;
@@ -86,6 +89,7 @@ public class Options : MonoBehaviour {
 			
 	}
 
+	//when "reset to default" is pressed
 	public void resetOptions() {
 		graphics.value = 4;
 		volume.value = 50;
