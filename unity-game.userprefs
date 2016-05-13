@@ -1,16 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Player\MouseLock.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Player\Scripts\MouseLock.cs">
     <Files>
-      <File FileName="Assets\Test Map\MapEvents.cs" Line="24" Column="38" />
-      <File FileName="Assets\Player\PlayerController.cs" Line="63" Column="48" />
+      <File FileName="Assets\Test Map\MapEvents.cs" Line="28" Column="52" />
       <File FileName="Assets\Main Menu\Scripts\MainMenu.cs" Line="1" Column="1" />
       <File FileName="Assets\Main Menu\Scripts\Options.cs" Line="1" Column="1" />
-      <File FileName="Assets\Player\MouseLook.cs" Line="1" Column="1" />
-      <File FileName="Assets\Player\PlayerGUI.cs" Line="1" Column="1" />
-      <File FileName="Assets\Photon Unity Networking\Demos\MarcoPolo-Tutorial\NetworkCharacter.cs" Line="34" Column="14" />
-      <File FileName="Assets\Photon Unity Networking\Demos\MarcoPolo-Tutorial\RandomMatchmaker.cs" Line="33" Column="10" />
-      <File FileName="Assets\Player\MouseLock.cs" Line="1" Column="9" />
+      <File FileName="Assets\Player\Scripts\PlayerGUI.cs" Line="22" Column="27" />
+      <File FileName="Assets\Player\Scripts\MouseLock.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

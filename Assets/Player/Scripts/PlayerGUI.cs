@@ -39,6 +39,7 @@ public class PlayerGUI : MonoBehaviour {
 	}
 
 	public void Quit () {
+		Cursor.visible = true;
 		SceneManager.LoadScene (0);
 	}
 }

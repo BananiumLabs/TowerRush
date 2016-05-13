@@ -22,6 +22,9 @@ public class MainMenu : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
+		Cursor.lockState = CursorLockMode.None;
+		Cursor.visible = true;
+
 		credits = credits.GetComponent<Button> ();
 		play = play.GetComponent<Button> ();
 		option = option.GetComponent<Button> ();
@@ -45,7 +48,7 @@ public class MainMenu : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		
 	}
 
 	private void EnableChildren(Component[] Parent, bool enabled) {

@@ -9,6 +9,7 @@ public class MapEvents : MonoBehaviour {
 	public Transform rightDoor;
 	public Transform fallDetector;
 	public Vector3 spawn;
+	public bool playerdebug;
 	// Use this for initialization
 	void Start () {
 		player = player.GetComponent<Transform> ();
@@ -23,6 +24,8 @@ public class MapEvents : MonoBehaviour {
 		if (PlayerDetected (fallDetector, 20f)) {
 			player.transform.position = spawn;
 		}
+
+		playerdebug = PlayerDetected (fallDetector, 20f);
 	}	
 
 	bool PlayerDetected (Transform transform, float distance) {
