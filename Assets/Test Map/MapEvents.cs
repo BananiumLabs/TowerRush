@@ -21,14 +21,10 @@ public class MapEvents : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (PlayerDetected (fallDetector, 20f)) {
+		//fall detection
+		if (!Physics.Raycast (player.transform.position, Vector3.down, 2000f)) {
 			player.transform.position = spawn;
 		}
-
-		playerdebug = PlayerDetected (fallDetector, 20f);
-	}	
-
-	bool PlayerDetected (Transform transform, float distance) {
-		return Vector3.Distance (transform.position, player.position) < distance;
 	}
+		
 }
