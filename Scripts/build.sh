@@ -5,6 +5,7 @@ projectWin="Windows"
 projectMac="OS X"
 projectLinux="Linux"
 echo "Attempting to build $project for Windows"
+echo $(pwd)
 /Applications/Unity/Unity.app/Contents/MacOS/Unity \
   -batchmode \
   -nographics \
