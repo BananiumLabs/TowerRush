@@ -10,16 +10,14 @@ sysinfo.txt
  
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
+# Optimized To Allow Travis CI To Build #
 # ===================================== #
 [Ee]xported[Oo]bj/
 .vs/
 /*.userprefs
-/*.csproj
 /*.pidb
 /*.suo
-/*.sln*
 /*.user
-/*.unityproj
 /*.booproj
  
 # ============ #
