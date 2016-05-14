@@ -5,6 +5,7 @@ rvm:
 - 2.1.2
 before_install:
 - chmod 777 ./Scripts/install.sh
+- chmod 777 ./Scripts/build.sh
 install:
 - ./Scripts/install.sh
 script:
