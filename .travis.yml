@@ -10,6 +10,10 @@ install:
 - "./Scripts/install.sh"
 script:
 - "./Scripts/build.sh"
+branches:
+  only:
+    - master
+    - develop
 deploy:
   provider: releases
   api_key:
