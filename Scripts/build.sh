@@ -1,15 +1,18 @@
 #! /bin/sh
 
 project="BumRush"
-
+projectWin="Windows"
+projectMac="OS X"
+projectLinux="Linux"
 echo "Attempting to build $project for Windows"
+echo $(pwd)
 /Applications/Unity/Unity.app/Contents/MacOS/Unity \
   -batchmode \
   -nographics \
   -silent-crashes \
   -logFile $(pwd)/unity.log \
   -projectPath $(pwd) \
-  -buildWindowsPlayer "$(pwd)/Build/windows/$project.exe" \
+  -buildWindowsPlayer "$(pwd)/Build/windows/$projectWin.exe" \
   -quit
 
 echo "Attempting to build $project for OS X"
@@ -19,7 +22,7 @@ echo "Attempting to build $project for OS X"
   -silent-crashes \
   -logFile $(pwd)/unity.log \
   -projectPath $(pwd) \
-  -buildOSXUniversalPlayer "$(pwd)/Build/osx/$project.app" \
+  -buildOSXUniversalPlayer "$(pwd)/Build/osx/$projectMac.app" \
   -quit
 
 echo "Attempting to build $project for Linux"
@@ -29,7 +32,7 @@ echo "Attempting to build $project for Linux"
   -silent-crashes \
   -logFile $(pwd)/unity.log \
   -projectPath $(pwd) \
-  -buildLinuxUniversalPlayer "$(pwd)/Build/linux/$project.exe" \
+  -buildLinuxUniversalPlayer "$(pwd)/Build/linux/$projectLinux.exe" \
   -quit
 
 echo 'Logs from build'
