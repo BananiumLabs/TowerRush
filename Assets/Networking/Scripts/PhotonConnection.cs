@@ -30,21 +30,18 @@ public class PhotonConnection : MonoBehaviour {
         connectionText.text = PhotonNetwork.connectionState.ToString();
     }
 
-
-
-
-
     public void createRoom()
     {
         Debug.Log("Creating Room");
         PhotonNetwork.CreateRoom("Room 1");
-        //PhotonNetwork.JoinRoom("Room 1");
+        PhotonNetwork.JoinRoom("Room 1");
         
     }
 
     public void OnJoinedRoom()
     {
         Debug.Log(PhotonNetwork.playerName);
+		Application.LoadLevel ("TestNetLVL");
     }
 
     public void playerFieldname()
