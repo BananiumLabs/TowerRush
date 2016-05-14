@@ -1,5 +1,6 @@
 language: csharp
 solution: unity-game.sln
+sudo: true
 install:
 - "./Scripts/install.sh"
 script:
