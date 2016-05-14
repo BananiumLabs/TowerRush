@@ -1,4 +1,8 @@
 #BUMRUSH
+
+####Current Status
+[![Build Status](https://travis-ci.org/FewdpewGames/unity-game.svg?branch=develop)](https://travis-ci.org/FewdpewGames/unity-game)
+
 ## **CURRENT STAGE: BASIC DEVELOPMENT**
 ## **CURRENT FOCUS: [MAIN MENU](https://github.com/BenCuan/unity-game/tree/feature/mainMenu)**
 
