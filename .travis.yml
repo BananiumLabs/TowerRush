@@ -1,5 +1,6 @@
 language: csharp
 solution: unity-game.sln
+osx_image: xcode7.3
 sudo: true
 install:
 - "./Scripts/install.sh"
