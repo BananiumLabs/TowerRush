@@ -6,7 +6,7 @@ ___
 ##**Download** The Game From Official Project Website:
 [https://fewdpew.me/download](https://fewdpew.me/download)
 ___
-### **CURRENT STAGE: BASIC DEVELOPMENT**
+### **CURRENT STAGE: BASIC MECHANICS**
 ### **CURRENT FOCUS: [MAIN MENU](https://github.com/BenCuan/unity-game/tree/feature/mainMenu)**
 
 ###The tower defense game where you are the attacker.
