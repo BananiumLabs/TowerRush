@@ -28,7 +28,7 @@ public class MouseLock : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-            isLocked = CursorLockMode.Locked;
+       // if (Input.GetMouseButtonDown(0))
+           // isLocked = CursorLockMode.Locked;
     }
-}
+} 
