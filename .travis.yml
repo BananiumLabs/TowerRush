@@ -1,11 +1,11 @@
-language: csharp
-solution: unity-game.sln
-osx_image: xcode7.3
-sudo: true
+language: objective-c
+osx_image: xcode61
+rvm:
+- 2.1.2
 install:
-- "./Scripts/install.sh"
+- ./Scripts/install.sh
 script:
-- "./Scripts/build.sh"
+- ./Scripts/build.sh
 deploy:
   provider: releases
   user: "Eric1084"
