@@ -18,6 +18,7 @@ sysinfo.txt
 /*.pidb
 /*.suo
 /*.user
+/*.csproj
 /*.booproj
  
 # ============ #
