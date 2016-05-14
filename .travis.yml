@@ -1,0 +1,15 @@
+language: csharp
+solution: unity-game.sln
+install:
+- "./Scripts/install.sh"
+script:
+- "./Scripts/build.sh"
+deploy:
+  provider: releases
+  user: "Eric1084"
+  password:
+    secure: xpGuA/jgRbd8jh8lLsuJ112c6QvkjPCWWdXpHJmHiZ+E29FJnrD/ffCNyFEubvLlDJPaiAuUWoamBW6z9Jx0CNafLVF9acQ6cke02KgbwoAL/oGyB3o/xpyAKmv6S69HD/pQjNoBDRdyfdXvifS1BamKCkSYnlxeXax8SeWzNE1LlX6Qff3KhJzZLpeCYrUgC4vjE96Ng0+/3K8Wk4+1CnNg6cEwGSfzmFr68z5DOFyAJ2F7f7JYALb/Q1aZGzRg015/3gdPU9A4xyg8U+6dERuanReHVDFz8uM864qvpxqNpH1ioEtcL6BMUencx24u6tt4b7HbdrP75xly0EiovP1rofDfusxXPR8bYH79oTrAeZE8QdrhT1uCMQ1QYiGYtmdTiSGyAum8cDqBJlH4CEJDAsEyxRZ4MBIKw1qR7tX2PQHW2JQzCF6M4pfPlDxSTD0HZ9fTdTFXBpAnOQch9J+6NoDdE9+PbSK20gHQ37g+m8mFqw6OpX2anPgUV0R0yG7LV6rd/5nYyJm9D6GQ/gP/POk52BcUdaJz9hktxqY+eEHGp1kidyWr2jWewFZ9bsKFbXAMeR53Uy9p5QWYVxe0iy8sST/sWeJSsz1AlQ6DJDVHtJXK3gxub9/CR2/NDWlmVTc43CgVt+OgIJcZf2x5IFeGElLOMbQ/ObHeEk0=
+  local-dir: Build
+  skip_cleanup: true
+  on:
+    tags: true
