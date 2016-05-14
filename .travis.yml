@@ -4,6 +4,8 @@ sudo: true
 rvm:
 - 2.1.2
 before_install:
+- ls -R
+install:
 - ./Scripts/install.sh
 script:
 - ./Scripts/build.sh
