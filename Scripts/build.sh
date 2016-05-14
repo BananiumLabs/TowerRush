@@ -1,6 +1,6 @@
 #! /bin/sh
 
-project="ci-build"
+project="BumRush"
 
 echo "Attempting to build $project for Windows"
 /Applications/Unity/Unity.app/Contents/MacOS/Unity \
