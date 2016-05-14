@@ -1,10 +1,13 @@
 #BUMRUSH
-
+___
 ####Current Status
 [![Build Status](https://travis-ci.org/FewdpewGames/unity-game.svg?branch=develop)](https://travis-ci.org/FewdpewGames/unity-game)
-
-## **CURRENT STAGE: BASIC DEVELOPMENT**
-## **CURRENT FOCUS: [MAIN MENU](https://github.com/BenCuan/unity-game/tree/feature/mainMenu)**
+___
+##**Download** The Game From Official Project Website:
+[https://fewdpew.me/download](https://fewdpew.me/download)
+___
+### **CURRENT STAGE: BASIC DEVELOPMENT**
+### **CURRENT FOCUS: [MAIN MENU](https://github.com/BenCuan/unity-game/tree/feature/mainMenu)**
 
 ###The tower defense game where you are the attacker.
 ###This project is open-source under the [GNU General Public License v3.0](http://www.gnu.org/licenses/gpl-3.0.en.html).
