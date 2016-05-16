@@ -22,6 +22,7 @@ public class PhotonConnection : MonoBehaviour {
     private string connectionState = "";
 	// Use this for initialization
 	void Start () {
+        //Screen.fullScreen = false;
         PhotonNetwork.ConnectUsingSettings(versionNumber);
  
     }
