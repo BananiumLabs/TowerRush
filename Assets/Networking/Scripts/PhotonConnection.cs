@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PhotonConnection : MonoBehaviour {
     [Header("Photon")]
@@ -34,14 +35,27 @@ public class PhotonConnection : MonoBehaviour {
     {
         Debug.Log("Creating Room");
         PhotonNetwork.CreateRoom("Room 1");
-        PhotonNetwork.JoinRoom("Room 1");
+        //PhotonNetwork.JoinRoom("Room 1");
+        //OnCreatedRoom();
         
+    }
+    public void joinRoom()
+    {
+        PhotonNetwork.JoinRandomRoom();
+
     }
 
     public void OnJoinedRoom()
     {
+        SceneManager.LoadScene("TestNetLVL");
+    }
+
+    public void OnCreatedRoom()
+    {
+        //PhotonNetwork.JoinRoom("Room 1");
         Debug.Log(PhotonNetwork.playerName);
-		Application.LoadLevel ("TestNetLVL");
+        SceneManager.LoadScene("TestNetLVL");
+        
     }
 
     public void playerFieldname()

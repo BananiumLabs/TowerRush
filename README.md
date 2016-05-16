@@ -37,6 +37,7 @@ ___
 ##Developers
  - **Project Lead** [Ben C](https://github.com/BenCuan)
  - **Programmer** [Eric W](https://github.com/erwang01)
+ - **Programmer** [Vikram P](https://github.com/DarkFlamex1)
  - **Project Manager** [Eric Q](https://github.com/eric1084)
  - **Artist** [Dohyun K](https://github.com/DohyunK)
  - **Concept Designer** [Aryan S](https://github.com/CrispyCookieHD)

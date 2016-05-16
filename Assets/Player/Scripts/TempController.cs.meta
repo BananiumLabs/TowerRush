@@ -1,8 +1,6 @@
 fileFormatVersion: 2
-guid: d3dacb29c1988964e8d3f6a7f38297ce
-labels:
-- Networking
-timeCreated: 1463104769
+guid: 00160dc4c523a0b45ad6cae6abacf46e
+timeCreated: 1463360201
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
