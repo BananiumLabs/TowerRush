@@ -3,17 +3,22 @@ using System.Collections;
 
 public class RoomLogic : MonoBehaviour {
 
-	public GameObject netprefab;
 	// Use this for initialization
 	void Start () {
-		GameObject monster = PhotonNetwork.Instantiate("netPlayer", Vector3.zero, Quaternion.identity, 0);
-
-	}
+        PhotonView photonView = PhotonView.Get(this);
+        photonView.RPC("SpawnPlayer", PhotonTargets.AllBuffered);
+    }
 	
 	// Update is called once per frame
 	void Update () {
-	
+	    
 	}
 
+    [PunRPC]
+    public void SpawnPlayer() {
+        Debug.Log("Player Connected");
+        GameObject player = PhotonNetwork.Instantiate("testPlayer", Vector3.zero, Quaternion.identity, 0);
+        //GameObject player = PhotonNetwork.Instantiate("testPlayer", Vector3.zero, Quaternion.identity, 0);
+    }
 
 }

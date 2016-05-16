@@ -8,7 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 415838}
-  - 114: {fileID: 11478654}
+  - 114: {fileID: 11452446}
   m_Layer: 0
   m_Name: netPlayer
   m_TagString: Untagged
@@ -49,6 +49,7 @@ GameObject:
   - 114: {fileID: 11497538}
   - 114: {fileID: 11410408}
   - 65: {fileID: 6583300}
+  - 114: {fileID: 11429242}
   m_Layer: 0
   m_Name: Cube.001
   m_TagString: Untagged
@@ -82,7 +83,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 111654}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000016292068}
-  m_LocalPosition: {x: 3.7538977, y: 0.000009298325, z: -1.6871967}
+  m_LocalPosition: {x: 340.86877, y: 159.48764, z: -16.027697}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 464884}
@@ -285,7 +286,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 151996}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e19dab820ebb43f3b68a3af1ad76ad6, type: 3}
   m_Name: 
@@ -315,7 +316,21 @@ MonoBehaviour:
   maximumX: 360
   minimumY: -40
   maximumY: 60
---- !u!114 &11478654
+--- !u!114 &11429242
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 151996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aadc7dc08185b04199b44463696d747, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mousex: {fileID: 11410408}
+  mousey: {fileID: 11424978}
+  controllerScript: {fileID: 11497538}
+--- !u!114 &11452446
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -335,7 +350,7 @@ MonoBehaviour:
   onSerializeRigidBodyOption: 2
   ownershipTransfer: 0
   ObservedComponents:
-  - {fileID: 415838}
+  - {fileID: 0}
   ObservedComponentsFoldoutOpen: 1
   viewIdField: 0
   instantiationId: -1
@@ -346,7 +361,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 151996}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1406fd11cad6b4ccfbe35d94b5daafbc, type: 3}
   m_Name: 
