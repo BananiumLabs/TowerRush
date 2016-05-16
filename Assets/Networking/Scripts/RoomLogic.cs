@@ -5,7 +5,7 @@ public class RoomLogic : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        PhotonView photonView = GetComponent<PhotonView>();
+        PhotonView photonView = PhotonView.Get(this);
         photonView.RPC("SpawnPlayer", PhotonTargets.AllBuffered);
     }
 	
