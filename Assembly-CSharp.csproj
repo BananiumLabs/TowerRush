@@ -118,12 +118,14 @@
      <Compile Include="Assets\Networking\PhotonChatApi\ChatState.cs" />
      <Compile Include="Assets\Networking\PhotonChatApi\ChatUserStatus.cs" />
      <Compile Include="Assets\Networking\PhotonChatApi\IChatClientListener.cs" />
+     <Compile Include="Assets\Networking\Scripts\NetworkController.cs" />
      <Compile Include="Assets\Networking\Scripts\PhotonConnection.cs" />
      <Compile Include="Assets\Networking\Scripts\RoomLogic.cs" />
      <Compile Include="Assets\Player\Scripts\MouseLock.cs" />
      <Compile Include="Assets\Player\Scripts\MouseLook.cs" />
      <Compile Include="Assets\Player\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Player\Scripts\PlayerGUI.cs" />
+     <Compile Include="Assets\Player\Scripts\TempController.cs" />
      <Compile Include="Assets\Player\Scripts\playerHelper.cs" />
      <Compile Include="Assets\Test Map\MapEvents.cs" />
      <None Include="Assets\Plugins\Photon3Unity3D.xml" />

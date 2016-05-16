@@ -48,14 +48,14 @@ public class PhotonConnection : MonoBehaviour {
 
     public void OnJoinedRoom()
     {
-        SceneManager.LoadScene("TestNetLVL");
+        SceneManager.LoadScene("The map");
     }
 
     public void OnCreatedRoom()
     {
         //PhotonNetwork.JoinRoom("Room 1");
         Debug.Log(PhotonNetwork.playerName);
-        SceneManager.LoadScene("TestNetLVL");
+        SceneManager.LoadScene("The map");
         
     }
 

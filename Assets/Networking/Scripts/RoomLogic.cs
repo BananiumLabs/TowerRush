@@ -17,7 +17,7 @@ public class RoomLogic : MonoBehaviour {
     [PunRPC]
     public void SpawnPlayer() {
         Debug.Log("Player Connected");
-        GameObject player = PhotonNetwork.Instantiate("testPlayer", Vector3.zero, Quaternion.identity, 0);
+		GameObject player = PhotonNetwork.Instantiate("test2", Vars.testMapBlue, Quaternion.identity, 0);
         //GameObject player = PhotonNetwork.Instantiate("testPlayer", Vector3.zero, Quaternion.identity, 0);
     }
 

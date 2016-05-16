@@ -16,9 +16,10 @@ public class PlayerGUI : MonoBehaviour {
 		pauseMenu = pauseMenu.GetComponent<CanvasGroup> ();
 		teamSelect = teamSelect.GetComponent<CanvasGroup> ();
 
-		crosshair.enabled = true;
+		crosshair.enabled = false;
 		pauseMenu.alpha = 0f;
-		//TeamSelect (false);
+		TeamSelect (true);
+		Time.timeScale = 0;
 	}
 
 
@@ -27,6 +28,7 @@ public class PlayerGUI : MonoBehaviour {
 
 		//Escape Menu
 		if(Input.GetKeyDown(KeyCode.Escape)) {
+			if(teamSelect.alpha == 0f)
 			isPause = !isPause;
 
 			if (isPause) {
@@ -37,7 +39,7 @@ public class PlayerGUI : MonoBehaviour {
 				pauseMenu.alpha = 1f;
 				Debug.Log ("Paused");
 
-			} else if (!isPause /*&& teamSelect.alpha == 0f*/) {
+			} else if ((!isPause && teamSelect.alpha == 0f) || (teamSelect.alpha == 1f)) {
 				Time.timeScale = 1;
 				crosshair.enabled = true;
 				pauseMenu.alpha = 0f;
@@ -45,7 +47,7 @@ public class PlayerGUI : MonoBehaviour {
 				Cursor.visible = false;
 				Cursor.lockState = CursorLockMode.Locked;
 				Debug.Log ("Back to Game");
-			} else {
+			} else if (!isPause && teamSelect.alpha == 1f) {
 				pauseMenu.alpha = 0f;
 				Debug.Log ("Team Select");
 			}
@@ -56,6 +58,7 @@ public class PlayerGUI : MonoBehaviour {
 		if (OpenOrClosed) {
 			teamSelect.alpha = 1f;
 			isPause = false;
+			pauseMenu.alpha = 0f;
 		} else {
 			teamSelect.alpha = 0f;
 		}
