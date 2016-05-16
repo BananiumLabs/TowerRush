@@ -6,16 +6,16 @@ public class NetworkController : Photon.MonoBehaviour {
     public MouseLook mousex;
     public MouseLook mousey;
     public Camera camplayer;
-    public PlayerController controllerScript;
+    public TempController controllerScript;
 
     void Awake()
     {
         mousex = GetComponent<MouseLook>();
-        mousey = GetComponentInChildren<MouseLook>();
+        //mousey = GetComponentInChildren<MouseLook>();
         camplayer = GetComponentInChildren<Camera>();
-        controllerScript = GetComponent<PlayerController>();
+        controllerScript = GetComponent<TempController>();
 
-        if (GetComponentInParent<PhotonView>().isMine)
+        if (photonView.isMine)
         {
             //MINE: local player, simply enable the local scripts
             mousex.enabled = true;
@@ -48,6 +48,8 @@ public class NetworkController : Photon.MonoBehaviour {
             //Network player, receive data
             correctPlayerPos = (Vector3)stream.ReceiveNext();
             correctPlayerRot = (Quaternion)stream.ReceiveNext();
+            Debug.Log(correctPlayerPos);
+            Debug.Log(correctPlayerRot);
         }
     }
 
@@ -56,10 +58,11 @@ public class NetworkController : Photon.MonoBehaviour {
 
     void Update()
     {
-        if (!GetComponentInParent<PhotonView>().isMine)
+        if (!photonView.isMine)
         {
             //Update remote player (smooth this, this looks good, at the cost of some accuracy)
             transform.position = Vector3.Lerp(transform.position, correctPlayerPos, Time.deltaTime * 5);
+            Debug.Log("Lerping");
             transform.rotation = Quaternion.Lerp(transform.rotation, correctPlayerRot, Time.deltaTime * 5);
         }
     }
