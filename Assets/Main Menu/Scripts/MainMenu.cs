@@ -3,12 +3,10 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
+//Code for the entire main menu (EXCEPT Options)
 public class MainMenu : MonoBehaviour {
-	public Button play;
-	public Button option;
-	public Button exit;
-	public Button credits;
-
+	
+	public Canvas homeScreen;
 	public Canvas options;
 	public Canvas levelSelect;
 	public Canvas creditsMenu;
@@ -19,13 +17,10 @@ public class MainMenu : MonoBehaviour {
 
 	private int levelNumber;
 
-	// Use this for initialization
 	void Start () {
 
-		credits = credits.GetComponent<Button> ();
-		play = play.GetComponent<Button> ();
-		option = option.GetComponent<Button> ();
-		exit = exit.GetComponent<Button> ();
+		Cursor.lockState = CursorLockMode.None;
+		Cursor.visible = true;
 
 		levelSelect = levelSelect.GetComponent<Canvas> ();
 		options = options.GetComponent<Canvas> ();
@@ -35,19 +30,18 @@ public class MainMenu : MonoBehaviour {
 		general = general.GetComponent<Canvas> ();
 		controls = controls.GetComponent<Canvas> ();
 
-		EnableMainButtons (true);
-
+		homeScreen.enabled = true;
 		options.enabled = false;
 		levelSelect.enabled = false;
 		creditsMenu.enabled = false;
 
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
-	
+		
 	}
 
+	//Unused, might be useful later
 	private void EnableChildren(Component[] Parent, bool enabled) {
 		Parent = GetComponentsInChildren<Image> ();
 		foreach (Image child in Parent) {
@@ -55,22 +49,17 @@ public class MainMenu : MonoBehaviour {
 		}
 	}
 
-	private void EnableMainButtons(bool trueOrFalse) {
-		play.enabled = trueOrFalse;
-		option.enabled = trueOrFalse;
-		exit.enabled = trueOrFalse;
-		credits.enabled = trueOrFalse;
-	}
-
+	//Used for toggling submenus
+		
 	public void OpenLevelSelect() {
 
-		EnableMainButtons (false);
+		homeScreen.enabled = false;
 		levelSelect.enabled = true;
 	}
 
 	public void OpenOptions() {
 		
-		EnableMainButtons(false);
+		homeScreen.enabled = false;
 		options.enabled = true;
 		optionDropdown.value = 0;
 		general.transform.rotation = new Quaternion (0.0f, 0.0f, 0.0f, 0.0f);
@@ -79,14 +68,15 @@ public class MainMenu : MonoBehaviour {
 
 	public void OpenCredits() {
 
-		EnableMainButtons (false);
+		homeScreen.enabled = false;
 		creditsMenu.enabled = true;
 
 	}
 
+	//Code for closing every submenu
 	public void CloseSubmenu() {
 		
-		EnableMainButtons (true);
+		homeScreen.enabled = true;
 
 		options.enabled = false;
 		levelSelect.enabled = false;
@@ -94,15 +84,22 @@ public class MainMenu : MonoBehaviour {
 
 	}
 
+	//When the level buttons are pressed
 	public void SelectLevel(int level) {
-		levelNumber = level;
+			levelNumber = level;
 	}
 
+	//When the "Join" button is pressed
 	public void LoadLevel() {
-		if (levelNumber != null)
+        Debug.Log("Initializing Level " + levelNumber);
+        if (levelNumber != 0)
 			SceneManager.LoadScene (levelNumber);
+        //If No Level Was Selected(0), it defaults to 1.
+        else
+            SceneManager.LoadScene(1);
 	}
-		
+
+	//Quits the entire game
 	public void Quit() {
 		Application.Quit ();
 	}
