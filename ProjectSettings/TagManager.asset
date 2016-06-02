@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - fallDetector
+  - BlueSpawn
+  - RedSpawn
   layers:
   - Default
   - TransparentFX

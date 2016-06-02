@@ -62,6 +62,9 @@ public class PhotonConnection : MonoBehaviour {
     public void playerFieldname()
     {
         PhotonNetwork.playerName = playerfield.text;
+        if (PhotonNetwork.playerName.Equals(""))
+            PhotonNetwork.playerName = "Player";
+        Debug.Log("Player Name: " + PhotonNetwork.playerName);
         playerPanel.SetActive(false);
         roomPanel.SetActive(true);
 

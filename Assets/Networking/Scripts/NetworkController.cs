@@ -1,19 +1,18 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class NetworkController : Photon.MonoBehaviour {
 
     public MouseLook mousex;
     public MouseLook mousey;
     public Camera camplayer;
-    public TempController controllerScript;
+    public CharacterController controllerScript;
 
     void Awake()
     {
         mousex = GetComponent<MouseLook>();
         //mousey = GetComponentInChildren<MouseLook>();
         camplayer = GetComponentInChildren<Camera>();
-        controllerScript = GetComponent<TempController>();
+        controllerScript = GetComponent<CharacterController>();
 
         if (photonView.isMine)
         {

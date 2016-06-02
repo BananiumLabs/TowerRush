@@ -3,10 +3,14 @@ using System.Collections;
 
 public class RoomLogic : MonoBehaviour {
 
-	// Use this for initialization
+    public GameObject[] rspawn;
+    public GameObject[] bspawn;
+	private string playerTeam;
+
+
 	void Start () {
         PhotonView photonView = PhotonView.Get(this);
-        photonView.RPC("SpawnPlayer", PhotonTargets.AllBuffered);
+        photonView.RPC("SpawnPlayer", PhotonTargets.AllBuffered, playerTeam);
     }
 	
 	// Update is called once per frame
@@ -15,10 +19,11 @@ public class RoomLogic : MonoBehaviour {
 	}
 
     [PunRPC]
-    public void SpawnPlayer() {
+    public void SpawnPlayer(string team) {
         Debug.Log("Player Connected");
-		GameObject player = PhotonNetwork.Instantiate("test2", Vars.testMapBlue, Quaternion.identity, 0);
-        //GameObject player = PhotonNetwork.Instantiate("testPlayer", Vector3.zero, Quaternion.identity, 0);
+		//GameObject player = PhotonNetwork.Instantiate("test2", Vars.testMapBlue, Quaternion.identity, 0);
+		//For testing purposes
+		GameObject player = PhotonNetwork.Instantiate("testPlayer", Vars.testMapBlue, Quaternion.identity, 0);
     }
 
 }

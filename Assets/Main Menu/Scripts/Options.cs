@@ -32,6 +32,10 @@ public class Options : MonoBehaviour {
 		volume.wholeNumbers = true;
 
 		generalPanel.transform.Rotate (20.0f, 0.0f, 0.0f);
+		
+		if(Screen.width > 1300) uiSize.value = 2;
+		else if(Screen.width < 800) uiSize.value = 0;
+		else uiSize.value = 1;
 	
 	}
 

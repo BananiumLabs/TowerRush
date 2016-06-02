@@ -151,7 +151,7 @@ internal class PhotonHandler : Photon.MonoBehaviour
     }
 
     /// <summary>Called by Unity after a new level was loaded.</summary>
-    protected void OnLevelWasLoaded(int level)
+    protected void OnSceneLoaded(int level)
     {
         PhotonNetwork.networkingPeer.NewSceneLoaded();
         PhotonNetwork.networkingPeer.SetLevelInPropsIfSynced(SceneManagerHelper.ActiveSceneName);
