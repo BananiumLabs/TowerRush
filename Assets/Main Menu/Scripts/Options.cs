@@ -10,6 +10,7 @@ public class Options : MonoBehaviour {
 	public Text volumeValue;
 	public Canvas generalPanel;
 	public Canvas controlsPanel;
+	public Canvas optionsMenu;
 	public Dropdown graphics;
 	public Dropdown uiSize;
 
@@ -24,7 +25,7 @@ public class Options : MonoBehaviour {
 		controlsPanel = controlsPanel.GetComponent<Canvas> ();
 		graphics = graphics.GetComponent<Dropdown> ();
 		uiSize = uiSize.GetComponent<Dropdown> ();
-
+		optionsMenu = optionsMenu.GetComponent<Canvas> ();
 		mainMenu = mainMenu.GetComponent<Canvas> ();
 
 		volume.maxValue = 100;
@@ -46,7 +47,7 @@ public class Options : MonoBehaviour {
 		volumeValue.text = volume.value.ToString ();
 
 		//Which panel is active
-		if(dropdown.value == 0) {
+		if(dropdown.value == 0 && optionsMenu.enabled) {
 			generalPanel.enabled = true;
 			controlsPanel.enabled = false;
 		}  else if(dropdown.value == 1) {
