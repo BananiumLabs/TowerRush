@@ -2685,7 +2685,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &874090186
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3270,7 +3270,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1943425733}
   m_Direction: 0
   m_Value: 0.9999998
-  m_Size: 0.4932615
+  m_Size: 0.49326155
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4528,7 +4528,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -5436,7 +5436,7 @@ MonoBehaviour:
   volumeValue: {fileID: 91110740}
   generalPanel: {fileID: 1699652586}
   controlsPanel: {fileID: 1133541942}
-  optionsMenu: {fileID: 0}
+  optionsMenu: {fileID: 1512194495}
   graphics: {fileID: 937428229}
   uiSize: {fileID: 2093409698}
   mainMenu: {fileID: 1338993471}
@@ -5507,9 +5507,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Project Leads: Ben C. & Eric Q.\nNetworking & Programming: Vikram P.\nArtist:
-    Dohyun K.\nConcept & Level Design: Aryan S.\n\n\nCopyright \xA9 2016 Fewdpew Games.\nAll
-    rights reserved."
+  m_Text: "Project Leads: Ben C.\nGame Design: Aryan S.\nNetworking & Programming:
+    Vikram P.\nExternal Relations & Project Manager: Eric Q.\nMusic Director: Aki
+    T.\n\n\nCopyright \xA9 2017 Fewdpew Games.\nAll rights reserved."
 --- !u!222 &1523153131
 CanvasRenderer:
   m_ObjectHideFlags: 0
