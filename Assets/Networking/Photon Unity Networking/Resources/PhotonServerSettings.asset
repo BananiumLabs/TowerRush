@@ -37,4 +37,6 @@ MonoBehaviour:
   - RequestForPickupTimes
   - TaggedPlayer
   - SpawnPlayer
+  - SpawnPlayerB
+  - SpawnPlayerG
   DisableAutoOpenWizard: 1

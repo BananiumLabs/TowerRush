@@ -11,10 +11,10 @@ public class PhotonConnection : MonoBehaviour {
     [Header("Connection State")]
     public Text connectionText;
 
-    [Header("Player Info")]
-    public Text playerfield;
+    /* [Header("Player Info")]
+    public Text playerfield;p
     public GameObject playerPanel;
-    private string plname;
+    private string plname; */
 
     [Header("Menu UI")]
     public GameObject roomPanel;
@@ -24,7 +24,8 @@ public class PhotonConnection : MonoBehaviour {
 	void Start () {
         //Screen.fullScreen = false;
         PhotonNetwork.ConnectUsingSettings(versionNumber);
- 
+        PhotonNetwork.playerName = "Player" + Random.Range(0.0f, 1000.0f);
+        Debug.Log(PhotonNetwork.playerName);
     }
 	
 	// Update is called once per frame
@@ -35,7 +36,7 @@ public class PhotonConnection : MonoBehaviour {
     public void createRoom()
     {
         Debug.Log("Creating Room");
-        PhotonNetwork.CreateRoom("Room 1");
+        PhotonNetwork.CreateRoom("Room 2");
         //PhotonNetwork.JoinRoom("Room 1");
         //OnCreatedRoom();
         
@@ -54,12 +55,12 @@ public class PhotonConnection : MonoBehaviour {
     public void OnCreatedRoom()
     {
         //PhotonNetwork.JoinRoom("Room 1");
-        Debug.Log(PhotonNetwork.playerName);
+        //Debug.Log(PhotonNetwork.playerName);
         SceneManager.LoadScene("The map");
         
     }
 
-    public void playerFieldname()
+    /*public void playerFieldname()
     {
         PhotonNetwork.playerName = playerfield.text;
         if (PhotonNetwork.playerName.Equals(""))
@@ -68,5 +69,5 @@ public class PhotonConnection : MonoBehaviour {
         playerPanel.SetActive(false);
         roomPanel.SetActive(true);
 
-    }
+    }*/
 }

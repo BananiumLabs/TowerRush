@@ -8,13 +8,13 @@ public class TeamManager : MonoBehaviour {
 	
 	private Button gold;
 	private Button blue;
-	private Transform playerTransform;
+	//private Transform playerTransform;
 	private ButtonActions buttons;
 	public Vars.Team team;
 	void Start () {
 		gold = GameObject.Find("Gold").GetComponent<Button> ();
 		blue = GameObject.Find("Blue").GetComponent<Button> ();
-		playerTransform = GetComponentInParent<Transform> ();
+		//playerTransform = GetComponentInParent<Transform> ();
 		buttons = GameObject.Find("RoomGui").GetComponent<ButtonActions> ();
 	}
 	
@@ -24,13 +24,13 @@ public class TeamManager : MonoBehaviour {
 	}
 	
 	public void joinBlue () {
-		playerTransform.position = Vars.testMapBlue;
+		//playerTransform.position = Vars.testMapBlue;
 		team = Vars.Team.blue;
 		buttons.CloseTeamSelect();
 	}
 	
 	public void joinGold () {
-		playerTransform.position = Vars.testMapGold;
+		//playerTransform.position = Vars.testMapGold;
 		team = Vars.Team.gold;
 		buttons.CloseTeamSelect();
 	}

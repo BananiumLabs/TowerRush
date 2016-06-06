@@ -80,6 +80,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011059922482}
   - 114: {fileID: 114000012382906304}
+  - 114: {fileID: 114000010672874608}
   m_Layer: 0
   m_Name: testPlayer
   m_TagString: Untagged
@@ -122,7 +123,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012330740106}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6867521, y: 0.000009298325, z: 133.9749}
+  m_LocalPosition: {x: 26.405811, y: 16.608307, z: -258.87802}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4000010380979804}
@@ -266,18 +267,18 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011823219494}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 14dd99f49554acc47962ffbb526004fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   team: 0
---- !u!114 &114000010986243410
+--- !u!114 &114000010672874608
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011823219494}
+  m_GameObject: {fileID: 1000012330740106}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2aadc7dc08185b04199b44463696d747, type: 3}
@@ -286,7 +287,22 @@ MonoBehaviour:
   mousex: {fileID: 114000013579762316}
   mousey: {fileID: 114000011738147118}
   camplayer: {fileID: 20000013885403862}
-  controllerScript: {fileID: 143000013623929718}
+  controllerScript: {fileID: 114000012503146094}
+--- !u!114 &114000010986243410
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011823219494}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aadc7dc08185b04199b44463696d747, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mousex: {fileID: 114000013579762316}
+  mousey: {fileID: 114000011738147118}
+  camplayer: {fileID: 20000013885403862}
+  controllerScript: {fileID: 114000012503146094}
 --- !u!114 &114000011738147118
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -320,12 +336,13 @@ MonoBehaviour:
   group: 0
   prefixBackup: -1
   observed: {fileID: 0}
-  synchronization: 0
+  synchronization: 1
   onSerializeTransformOption: 3
   onSerializeRigidBodyOption: 2
   ownershipTransfer: 0
   ObservedComponents:
-  - {fileID: 0}
+  - {fileID: 4000010380979804}
+  - {fileID: 4000010194644652}
   ObservedComponentsFoldoutOpen: 1
   viewIdField: 0
   instantiationId: -1

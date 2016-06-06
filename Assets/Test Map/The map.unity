@@ -3252,6 +3252,7 @@ MonoBehaviour:
   - {fileID: 1098521450}
   - {fileID: 1098521449}
   - {fileID: 1098521448}
+  team: 0
 --- !u!114 &1165134441
 MonoBehaviour:
   m_ObjectHideFlags: 0

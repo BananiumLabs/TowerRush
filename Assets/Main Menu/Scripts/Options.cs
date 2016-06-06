@@ -15,7 +15,11 @@ public class Options : MonoBehaviour {
 	public Dropdown uiSize;
 
 	public Canvas mainMenu;
+	public Button fullscreen;
+	public Text fullscreenLabel;
 
+	private bool fullscreenEnabled = true;
+	
 	void Start () {
 		
 		volume = volume.GetComponent<Slider> ();
@@ -27,6 +31,8 @@ public class Options : MonoBehaviour {
 		uiSize = uiSize.GetComponent<Dropdown> ();
 		optionsMenu = optionsMenu.GetComponent<Canvas> ();
 		mainMenu = mainMenu.GetComponent<Canvas> ();
+		fullscreen = fullscreen.GetComponent<Button> ();
+		fullscreenLabel = fullscreenLabel.GetComponent<Text> ();
 
 		volume.maxValue = 100;
 		volume.minValue = 0;
@@ -34,14 +40,12 @@ public class Options : MonoBehaviour {
 
 		generalPanel.transform.Rotate (20.0f, 0.0f, 0.0f);
 		
-		if(Screen.width > 1300) uiSize.value = 2;
-		else if(Screen.width < 800) uiSize.value = 0;
-		else uiSize.value = 1;
+		uiSize.value = 3;
 	
 	}
 
 	void Update () {
-
+		
 		AudioListener.volume = volume.value / 100;
 
 		volumeValue.text = volume.value.ToString ();
@@ -89,8 +93,16 @@ public class Options : MonoBehaviour {
 		case 2:
 			mainMenu.scaleFactor = 1.5f;
 			break;
+		case 3:
+			if(Screen.width > 1300) uiSize.value = 2;
+			else if(Screen.width < 800) uiSize.value = 0;
+			else uiSize.value = 1;
+			break;
 		}
-			
+		
+		//Fullscreen toggle
+		fullscreen.onClick.AddListener(delegate { fullscreenToggle();} );
+		
 			
 	}
 
@@ -99,5 +111,17 @@ public class Options : MonoBehaviour {
 		graphics.value = 4;
 		volume.value = 50;
 		uiSize.value = 1;
+	}
+	
+	private void fullscreenToggle() {
+		if(fullscreenEnabled) {
+			fullscreenEnabled = false;
+			Screen.fullScreen = true;
+			fullscreenLabel.text = "Enabled";
+		} else {
+			fullscreenEnabled = true;
+			Screen.fullScreen = false;
+			fullscreenLabel.text = "Disabled";
+		}
 	}
 }

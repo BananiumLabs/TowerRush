@@ -5,14 +5,16 @@ public class NetworkController : Photon.MonoBehaviour {
     public MouseLook mousex;
     public MouseLook mousey;
     public Camera camplayer;
-    public CharacterController controllerScript;
+    public PlayerController controllerScript;
+    //public PhotonView photonView;
 
     void Awake()
     {
-        mousex = GetComponent<MouseLook>();
+        mousex = GetComponentInChildren<MouseLook>();
         //mousey = GetComponentInChildren<MouseLook>();
         camplayer = GetComponentInChildren<Camera>();
-        controllerScript = GetComponent<CharacterController>();
+        controllerScript = GetComponentInChildren<PlayerController>();
+        //PhotonView photonView = PhotonView.Get(this);
 
         if (photonView.isMine)
         {
