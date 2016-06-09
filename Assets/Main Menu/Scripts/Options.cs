@@ -17,6 +17,8 @@ public class Options : MonoBehaviour {
 	public Canvas mainMenu;
 	public Button fullscreen;
 	public Text fullscreenLabel;
+	
+	Controls controls;
 
 	private bool fullscreenEnabled = true;
 	
@@ -33,6 +35,7 @@ public class Options : MonoBehaviour {
 		mainMenu = mainMenu.GetComponent<Canvas> ();
 		fullscreen = fullscreen.GetComponent<Button> ();
 		fullscreenLabel = fullscreenLabel.GetComponent<Text> ();
+		controls = GetComponent<Controls> ();
 
 		volume.maxValue = 100;
 		volume.minValue = 0;
@@ -104,9 +107,14 @@ public class Options : MonoBehaviour {
 
 	//when "reset to default" is pressed
 	public void resetOptions() {
-		graphics.value = 4;
+		if(generalPanel.enabled) {
+			graphics.value = 4;
 		volume.value = 50;
 		uiSize.value = 1;
+		} else if(controlsPanel.enabled) {
+			controls.WriteDefaultControls();
+		}
+		
 	}
 	
 	public void fullscreenToggle() {

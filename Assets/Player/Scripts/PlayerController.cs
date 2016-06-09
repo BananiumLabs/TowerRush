@@ -4,7 +4,6 @@ using System.Collections;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
-    public KeyCode run = KeyCode.LeftShift;
     
     public float walkSpeed = 6.0f;
 
@@ -53,6 +52,11 @@ public class PlayerController : MonoBehaviour
     private Vector3 contactPoint;
     private bool playerControl = false;
     private int jumpTimer;
+    
+    private float inputX;
+    private float inputY;
+    
+    private PlayerControls controlscript;
 
     void Start()
     {
@@ -62,12 +66,13 @@ public class PlayerController : MonoBehaviour
         rayDistance = controller.height * .5f + controller.radius;
         slideLimit = controller.slopeLimit - .1f;
         jumpTimer = antiBunnyHopFactor;
+        controlscript = GetComponent<PlayerControls> ();
+        
     }
 
     void FixedUpdate()
     {
-        float inputX = Input.GetAxis("Horizontal");
-        float inputY = Input.GetAxis("Vertical");
+       
         // If both horizontal and vertical are used simultaneously, limit speed (if allowed), so the total doesn't exceed normal move speed
         float inputModifyFactor = (inputX != 0.0f && inputY != 0.0f && limitDiagonalSpeed) ? .7071f : 1.0f;
 
@@ -105,7 +110,7 @@ public class PlayerController : MonoBehaviour
 
             // If running isn't on a toggle, then use the appropriate speed depending on whether the run button is down
             if (!toggleRun)
-                speed = Input.GetKey(run) ? runSpeed : walkSpeed;
+                speed = Input.GetKey(controlscript.Run) ? runSpeed : walkSpeed;
 
             // If sliding (and it's allowed), or if we're on an object tagged "Slide", get a vector pointing down the slope we're on
             if ((sliding && slideWhenOverSlopeLimit) || (slideOnTaggedObjects && hit.collider.tag == "Slide"))
@@ -125,7 +130,7 @@ public class PlayerController : MonoBehaviour
             }
 
             // Jump! But only if the jump button has been released and player has been grounded for a given number of frames
-            if (!Input.GetButton("Jump"))
+            if (!Input.GetKey(controlscript.Jump))
                 jumpTimer++;
             else if (jumpTimer >= antiBunnyHopFactor)
             {
@@ -160,9 +165,17 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        
+        if(Input.GetKey(controlscript.Forward)) inputX = 1f;
+        else if(Input.GetKey(controlscript.Back)) inputX = -1f;
+        else inputX = 0f;
+        if(Input.GetKey(controlscript.Left)) inputY = 1f;
+        else if(Input.GetKey(controlscript.Right)) inputY = -1f;
+        else inputY = 0f;
         // If the run button is set to toggle, then switch between walk/run speed. (We use Update for this...
         // FixedUpdate is a poor place to use GetButtonDown, since it doesn't necessarily run every frame and can miss the event)
-        if (toggleRun && grounded && Input.GetButtonDown("Run"))
+        if (toggleRun && grounded && Input.GetKeyDown(controlscript.Run))
+        
             speed = (speed == walkSpeed ? runSpeed : walkSpeed);
     }
 
@@ -176,6 +189,6 @@ public class PlayerController : MonoBehaviour
     // have hitpoints and remove some of them based on the distance fallen, add sound effects, etc.
     void FallingDamageAlert(float fallDistance)
     {
-        print("Ouch! Fell " + fallDistance + " units!");
+        Debug.Log("Ouch! Fell " + fallDistance + " units!");
     }
 }

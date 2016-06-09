@@ -62,6 +62,8 @@ GameObject:
   - 114: {fileID: 114000014250088698}
   - 143: {fileID: 143000013399664330}
   - 114: {fileID: 114000010260051982}
+  - 114: {fileID: 114000012924520444}
+  - 114: {fileID: 114000010749730296}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -270,9 +272,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00160dc4c523a0b45ad6cae6abacf46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  run: 304
-  walkSpeed: 6
-  runSpeed: 11
+  walkSpeed: 10
+  runSpeed: 15
   limitDiagonalSpeed: 1
   toggleRun: 0
   jumpSpeed: 8
@@ -281,7 +282,7 @@ MonoBehaviour:
   slideWhenOverSlopeLimit: 0
   slideOnTaggedObjects: 0
   slideSpeed: 12
-  airControl: 0
+  airControl: 1
   antiBumpFactor: 0.75
   antiBunnyHopFactor: 1
 --- !u!114 &114000010672874608
@@ -299,6 +300,23 @@ MonoBehaviour:
   mousey: {fileID: 114000011738147118}
   camplayer: {fileID: 20000013885403862}
   controllerScript: {fileID: 114000010260051982}
+--- !u!114 &114000010749730296
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011823219494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09982f710702c564a94d0bda0a8f5bc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Forward: 0
+  Back: 0
+  Left: 0
+  Right: 0
+  Jump: 0
+  Run: 0
 --- !u!114 &114000011738147118
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -342,6 +360,17 @@ MonoBehaviour:
   viewIdField: 0
   instantiationId: -1
   isRuntimeInstantiated: 0
+--- !u!114 &114000012924520444
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011823219494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8659b22f3b6bd9142a5c437cc3fa0647, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000013579762316
 MonoBehaviour:
   m_ObjectHideFlags: 1

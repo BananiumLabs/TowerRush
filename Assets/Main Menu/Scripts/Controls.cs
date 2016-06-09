@@ -3,7 +3,6 @@ using System;
 using System.IO;
 using UnityEngine.UI;
 using System.Collections;
-
 public class Controls : MonoBehaviour {
 
 //List of editable controls
@@ -33,6 +32,7 @@ Event currentEvent;
 		GameObject.Find("Jump").GetComponent<Text> (),
 		GameObject.Find("Run").GetComponent<Text> ()
 		};
+		
 		infoText = infoText.GetComponent<Text> ();
 		infoText.enabled = false;
 		
@@ -55,7 +55,6 @@ Event currentEvent;
 	
 	void OnGUI () {
 	currentEvent = Event.current;
-        
 	}
 	
 	public KeyCode GetKey (int id) {
@@ -90,7 +89,13 @@ Event currentEvent;
 				 } else if(currentEvent.keyCode != KeyCode.Backspace && currentEvent.keyCode != KeyCode.None) {
 					 buttonText.text = currentEvent.keyCode.ToString();
 					 Debug.Log("Key Selection successful");
-					   yield break;
+					 string[] arrLine = File.ReadAllLines(configPath);
+     				arrLine[id - 1] = buttonText.text;
+     				File.WriteAllLines(configPath, arrLine);
+		 			Debug.Log("Set key " + id + " to " + buttonText.text);
+					infoText.enabled = false;
+					ReloadControls();
+					yield break;
 				 } else yield return null;
 			} else yield return null;
 			
