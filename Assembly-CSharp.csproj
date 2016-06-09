@@ -51,8 +51,8 @@
      <Compile Include="Assets\GUI\ButtonActions.cs" />
      <Compile Include="Assets\GUI\PlayerGUI.cs" />
      <Compile Include="Assets\GUI\PlayerHUD.cs" />
-     <Compile Include="Assets\Global\Controls.cs" />
      <Compile Include="Assets\Global\Vars.cs" />
+     <Compile Include="Assets\Main Menu\Scripts\Controls.cs" />
      <Compile Include="Assets\Main Menu\Scripts\MainMenu.cs" />
      <Compile Include="Assets\Main Menu\Scripts\Options.cs" />
      <Compile Include="Assets\Networking\Photon Unity Networking\Plugins\PhotonNetwork\CustomTypes.cs" />

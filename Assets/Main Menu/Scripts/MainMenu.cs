@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using System.Collections;
+using System;
 
 //Code for the entire main menu (EXCEPT Options)
 public class MainMenu : MonoBehaviour {

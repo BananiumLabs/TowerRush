@@ -36,7 +36,7 @@ public class PhotonConnection : MonoBehaviour {
     public void createRoom()
     {
         Debug.Log("Creating Room");
-        PhotonNetwork.CreateRoom("Room 2");
+        PhotonNetwork.CreateRoom("Room 1");
         //PhotonNetwork.JoinRoom("Room 1");
         //OnCreatedRoom();
         

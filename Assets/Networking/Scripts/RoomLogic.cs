@@ -18,8 +18,6 @@ public class RoomLogic : MonoBehaviour {
         blue = GameObject.Find("Blue").GetComponent<Button>();
         //playerTransform = GetComponentInParent<Transform> ();
         buttons = GameObject.Find("RoomGui").GetComponent<ButtonActions>();
-        blue.onClick.AddListener(() => joinBlue());
-        gold.onClick.AddListener(() => joinGold());
     }
 	
 	// Update is called once per frame
@@ -34,20 +32,18 @@ public class RoomLogic : MonoBehaviour {
         team = Vars.Team.blue;
         buttons.CloseTeamSelect();
         photonView.RPC("SpawnPlayerB", PhotonTargets.AllBuffered);
-        blue.onClick.RemoveListener(() => joinBlue());
-        gold.onClick.RemoveListener(() => joinGold());
+       
     }
 
     public void joinGold()
     {
-        Debug.Log("JOINING G");
+        Debug.Log("JOINING GOLD");
         PhotonView photonView = PhotonView.Get(this);
         //playerTransform.position = Vars.testMapGold;
         team = Vars.Team.gold;
         buttons.CloseTeamSelect();
         photonView.RPC("SpawnPlayerG", PhotonTargets.AllBuffered);
-        blue.onClick.RemoveListener(() => joinBlue());
-        gold.onClick.RemoveListener(() => joinGold());
+        
     }
 
     [PunRPC]

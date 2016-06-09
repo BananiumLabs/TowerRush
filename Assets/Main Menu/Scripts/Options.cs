@@ -99,10 +99,6 @@ public class Options : MonoBehaviour {
 			else uiSize.value = 1;
 			break;
 		}
-		
-		//Fullscreen toggle
-		fullscreen.onClick.AddListener(delegate { fullscreenToggle();} );
-		
 			
 	}
 
@@ -113,7 +109,7 @@ public class Options : MonoBehaviour {
 		uiSize.value = 1;
 	}
 	
-	private void fullscreenToggle() {
+	public void fullscreenToggle() {
 		if(fullscreenEnabled) {
 			fullscreenEnabled = false;
 			Screen.fullScreen = true;

@@ -58,12 +58,10 @@ GameObject:
   - 4: {fileID: 4000010380979804}
   - 33: {fileID: 33000012294032828}
   - 23: {fileID: 23000011419568434}
-  - 143: {fileID: 143000013623929718}
   - 114: {fileID: 114000013579762316}
-  - 114: {fileID: 114000010986243410}
-  - 114: {fileID: 114000012503146094}
   - 114: {fileID: 114000014250088698}
-  - 114: {fileID: 114000010051417456}
+  - 143: {fileID: 143000013399664330}
+  - 114: {fileID: 114000010260051982}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -123,7 +121,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012330740106}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 26.405811, y: 16.608307, z: -258.87802}
+  m_LocalPosition: {x: 4.031647, y: 0.38, z: 137.45018}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4000010380979804}
@@ -261,18 +259,31 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011645382560}
   m_Enabled: 1
---- !u!114 &114000010051417456
+--- !u!114 &114000010260051982
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011823219494}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14dd99f49554acc47962ffbb526004fa, type: 3}
+  m_Script: {fileID: 11500000, guid: 00160dc4c523a0b45ad6cae6abacf46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  team: 0
+  run: 304
+  walkSpeed: 6
+  runSpeed: 11
+  limitDiagonalSpeed: 1
+  toggleRun: 0
+  jumpSpeed: 8
+  gravity: 20
+  fallingDamageThreshold: 10
+  slideWhenOverSlopeLimit: 0
+  slideOnTaggedObjects: 0
+  slideSpeed: 12
+  airControl: 0
+  antiBumpFactor: 0.75
+  antiBunnyHopFactor: 1
 --- !u!114 &114000010672874608
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -287,22 +298,7 @@ MonoBehaviour:
   mousex: {fileID: 114000013579762316}
   mousey: {fileID: 114000011738147118}
   camplayer: {fileID: 20000013885403862}
-  controllerScript: {fileID: 114000012503146094}
---- !u!114 &114000010986243410
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011823219494}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2aadc7dc08185b04199b44463696d747, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mousex: {fileID: 114000013579762316}
-  mousey: {fileID: 114000011738147118}
-  camplayer: {fileID: 20000013885403862}
-  controllerScript: {fileID: 114000012503146094}
+  controllerScript: {fileID: 114000010260051982}
 --- !u!114 &114000011738147118
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -336,42 +332,16 @@ MonoBehaviour:
   group: 0
   prefixBackup: -1
   observed: {fileID: 0}
-  synchronization: 1
+  synchronization: 3
   onSerializeTransformOption: 3
   onSerializeRigidBodyOption: 2
   ownershipTransfer: 0
   ObservedComponents:
-  - {fileID: 4000010380979804}
-  - {fileID: 4000010194644652}
+  - {fileID: 114000010672874608}
   ObservedComponentsFoldoutOpen: 1
   viewIdField: 0
   instantiationId: -1
   isRuntimeInstantiated: 0
---- !u!114 &114000012503146094
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011823219494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00160dc4c523a0b45ad6cae6abacf46e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  run: 304
-  walkSpeed: 10
-  runSpeed: 15
-  limitDiagonalSpeed: 1
-  toggleRun: 0
-  jumpSpeed: 8
-  gravity: 20
-  fallingDamageThreshold: 10
-  slideWhenOverSlopeLimit: 0
-  slideOnTaggedObjects: 0
-  slideSpeed: 12
-  airControl: 1
-  antiBumpFactor: 0.75
-  antiBunnyHopFactor: 1
 --- !u!114 &114000013579762316
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -408,7 +378,7 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011645382560}
   m_Enabled: 1
---- !u!143 &143000013623929718
+--- !u!143 &143000013399664330
 CharacterController:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
