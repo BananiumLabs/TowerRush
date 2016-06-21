@@ -22,14 +22,14 @@ Event currentEvent;
 		controlList = new KeyCode[] {Forward, Back, Left, Right, Jump, Run};
 		
 			if(File.Exists(configPath) && ControlsValid())  {
-			Debug.Log("Successfully loaded controls file");
+				ReloadControls();
 			} else {
 			Debug.Log("Controls file is nonexistent or corrupted. Generating new one...");
 			using (var writer = new StreamWriter(File.Create(configPath))) {}
 			WriteDefaultControls();
-		
+			ReloadControls();
 		}	
-		ReloadControls();
+		
 	}
 	
 	// Update is called once per frame

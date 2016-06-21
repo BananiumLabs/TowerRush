@@ -23,9 +23,13 @@ public class PhotonConnection : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         //Screen.fullScreen = false;
-        PhotonNetwork.ConnectUsingSettings(versionNumber);
-        PhotonNetwork.playerName = "Player" + Random.Range(0.0f, 1000.0f);
-        Debug.Log(PhotonNetwork.playerName);
+        if(PhotonNetwork.playerName == "") {
+            PhotonNetwork.ConnectUsingSettings(versionNumber);
+         PhotonNetwork.playerName = "Player " + Random.Range(0.0f, 1000.0f);
+         Debug.Log(PhotonNetwork.playerName);
+        }
+        
+
     }
 	
 	// Update is called once per frame
@@ -49,7 +53,10 @@ public class PhotonConnection : MonoBehaviour {
 
     public void OnJoinedRoom()
     {
+        PhotonNetwork.isMessageQueueRunning = false;
         SceneManager.LoadScene("The map");
+        SceneManager.UnloadScene("MainMenu");
+        Debug.Log("Joined Room");
     }
 
     public void OnCreatedRoom()

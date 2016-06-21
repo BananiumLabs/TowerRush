@@ -69,21 +69,15 @@ Event currentEvent;
 			Debug.Log("Selecting Key " + id);
 			infoText.enabled = true;
 			StartCoroutine(WaitForKey(id));
-			
-			string[] arrLine = File.ReadAllLines(configPath);
-     	arrLine[id - 1] = buttonText.text;
-     	File.WriteAllLines(configPath, arrLine);
-		 Debug.Log("Set key " + id + " to " + buttonText.text);
-		 infoText.enabled = false;
-		 ReloadControls();
 	}
 	 IEnumerator WaitForKey (int id) {
 	
 			Text buttonText = textList[id-1];
 			while(true) {
-				if(currentEvent != null && currentEvent.isKey || currentEvent.isMouse) {
+				if(currentEvent != null && (currentEvent.isKey || currentEvent.isMouse)) {
 				if (currentEvent.keyCode == KeyCode.Backspace) {
 					   buttonText.text = GetKey(id).ToString();
+					   infoText.enabled = false;
 					   Debug.Log("Key Selection cancelled");
 					  yield break;
 				 } else if(currentEvent.keyCode != KeyCode.Backspace && currentEvent.keyCode != KeyCode.None) {

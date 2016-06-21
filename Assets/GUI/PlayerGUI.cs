@@ -22,17 +22,17 @@ public class PlayerGUI : MonoBehaviour {
 			if(!TeamSelection.enabled && !PauseMenu.enabled) {
 				HUD.enabled = false;
 				PauseMenu.enabled = true;
-				Time.timeScale = 0;
+				//Time.timeScale = 0;
 			} else if(TeamSelection.enabled && !PauseMenu.enabled) {
 				PauseMenu.enabled = true;
-				Time.timeScale = 0;
+				//Time.timeScale = 0;
 			} else if(TeamSelection.enabled && PauseMenu.enabled) {
 				PauseMenu.enabled = false;
-				Time.timeScale = 0;
+				//Time.timeScale = 0;
 			} else if(!TeamSelection.enabled && PauseMenu.enabled) {
 				PauseMenu.enabled = false;
 				HUD.enabled = true;
-				Time.timeScale = 1;
+				//Time.timeScale = 1;
 			} else Debug.LogError("Illegal GUI State");
 		}
 	}

@@ -6,7 +6,7 @@ TagManager:
   tags:
   - fallDetector
   - BlueSpawn
-  - RedSpawn
+  - GoldSpawn
   layers:
   - Default
   - TransparentFX

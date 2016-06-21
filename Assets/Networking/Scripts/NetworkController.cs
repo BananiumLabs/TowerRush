@@ -32,8 +32,8 @@ public class NetworkController : Photon.MonoBehaviour {
             camplayer.enabled = false;
             controllerScript.enabled = false;
         }
-
         
+
     }
 
     void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)

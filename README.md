@@ -1,13 +1,13 @@
 #BUMRUSH
 ___
 ####Current Status
-[![Build Status](https://travis-ci.org/FewdpewGames/unity-game.svg?branch=master)](https://travis-ci.org/FewdpewGames/unity-game)
+[![Build Status](https://travis-ci.org/FewdpewGames/unity-game.svg?branch=develop)](https://travis-ci.org/FewdpewGames/unity-game)
 ___
 ##**Download** The Game From Official Project Website:
 [https://fewdpew.me/download](https://fewdpew.me/download)
 ___
 ### **CURRENT STAGE: BASIC MECHANICS**
-### **CURRENT FOCUS: [HUD & Weapons](https://github.com/FewdpewGames/unity-game/tree/develop)**
+### **CURRENT FOCUS: [MAIN MENU](https://github.com/BenCuan/unity-game/tree/feature/mainMenu)**
 
 ###The tower defense game where you are the attacker.
 ###This project is open-source under the [GNU General Public License v3.0](http://www.gnu.org/licenses/gpl-3.0.en.html).
@@ -32,16 +32,14 @@ ___
 
 ####Textures drawn using [Paint.NET](http://www.getpaint.net/index.html)
 
-####Coded in C\#.
+####Scripts in C\#.
 
 ##Developers
-
- - **Project Manager** [Ben C](https://github.com/BenCuan)
+ - **Project Lead** [Ben C](https://github.com/BenCuan)
+ - **Programmer** [Eric W](https://github.com/erwang01)
+ - **Programmer** [Vikram P](https://github.com/DarkFlamex1)
  - **Project Manager** [Eric Q](https://github.com/eric1084)
- - **Lead Programmer** [Vikram P](https://github.com/DarkFlamex1)
- - **Concept Designer** [Aryan S](https://github.com/CrispyCookieHD)
  - **Artist** [Dohyun K](https://github.com/DohyunK)
- 
-Contact us by sending an email to [contact@fewdpew.me](mailto:contact@fewdpew.me).
+ - **Concept Designer** [Aryan S](https://github.com/CrispyCookieHD)
 
 ##This project adheres to [Semantic Versioning](semver.org).
