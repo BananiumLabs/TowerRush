@@ -5,20 +5,18 @@ public class Turret : MonoBehaviour {
 
 	public float rotateSpeed = 1f;
 	public Transform top;
-    public bool shooting;
+    public bool shooting = true;
 	Transform[] playerTransforms;
+    GameObject[] players;
 	void Start () {
 		top = top.GetComponent<Transform> ();
 	}
 	
 	void Update () {
-		GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
 		
+		StartCoroutine(GetPlayers());
         StartCoroutine(Shoot(3));
         
-		for (int i=0; i<players.Length; i++) {
-			playerTransforms[i] = players[i].transform;
-		}
 		Transform closestPlayer = GetClosestPlayer(playerTransforms);
 		Vector3.RotateTowards(top.forward, closestPlayer.position, rotateSpeed * Time.deltaTime, 0f);
 
@@ -51,5 +49,13 @@ public class Turret : MonoBehaviour {
         }
         yield return true;
          
+    }
+
+    IEnumerator GetPlayers() {
+        players = GameObject.FindGameObjectsWithTag("Player");
+        for(int i=0; i<players.Length; i++) {
+            playerTransforms[i] = players[i].transform;
+        }
+        yield return true;
     }
 }
