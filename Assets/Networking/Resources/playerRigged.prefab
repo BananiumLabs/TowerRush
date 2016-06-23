@@ -572,6 +572,7 @@ GameObject:
   - 114: {fileID: 114000010115057820}
   - 114: {fileID: 114000013291114304}
   - 114: {fileID: 114000012223853412}
+  - 114: {fileID: 114000012017900096}
   m_Layer: 0
   m_Name: playerRigged
   m_TagString: Untagged
@@ -1228,7 +1229,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000014214962336}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e19dab820ebb43f3b68a3af1ad76ad6, type: 3}
   m_Name: 
@@ -1246,13 +1247,13 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000014214962336}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 00160dc4c523a0b45ad6cae6abacf46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 6
-  runSpeed: 11
+  walkSpeed: 10
+  runSpeed: 15
   limitDiagonalSpeed: 1
   toggleRun: 0
   jumpSpeed: 8
@@ -1282,6 +1283,23 @@ MonoBehaviour:
   maximumX: 360
   minimumY: -60
   maximumY: 60
+--- !u!114 &114000012017900096
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014214962336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09982f710702c564a94d0bda0a8f5bc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Forward: 119
+  Back: 0
+  Left: 0
+  Right: 0
+  Jump: 0
+  Run: 0
 --- !u!114 &114000012223853412
 MonoBehaviour:
   m_ObjectHideFlags: 1
