@@ -7,6 +7,8 @@ TagManager:
   - fallDetector
   - BlueSpawn
   - GoldSpawn
+  - BluePlayer
+  - GoldPlayer
   layers:
   - Default
   - TransparentFX

@@ -53,6 +53,7 @@ public class PlayerController : MonoBehaviour
     private bool playerControl = false;
     private int jumpTimer;
     private PlayerControls controls;
+    private RoomLogic room;
     private float inputX;
     private float inputY;
 
@@ -65,12 +66,16 @@ public class PlayerController : MonoBehaviour
         slideLimit = controller.slopeLimit - .1f;
         jumpTimer = antiBunnyHopFactor;
         controls = GetComponent<PlayerControls> ();
+        room = FindObjectOfType<RoomLogic>() .GetComponent<RoomLogic>();
     }
 
     void FixedUpdate()
     {
 
-        
+        // Fall detection
+        if (!Physics.Raycast(transform.position, Vector3.down, 1000f)) {
+            room.Respawn(this.GetComponentInParent<Transform> ());
+        }
 
         // If both horizontal and vertical are used simultaneously, limit speed (if allowed), so the total doesn't exceed normal move speed
         float inputModifyFactor = (inputX != 0.0f && inputY != 0.0f && limitDiagonalSpeed) ? .7071f : 1.0f;

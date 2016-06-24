@@ -135,9 +135,9 @@
      <Compile Include="Assets\Player\Scripts\OLD\PlayerControllerOLD.cs" />
      <Compile Include="Assets\Player\Scripts\OLD\PlayerGuiOLD.cs" />
      <Compile Include="Assets\Player\Scripts\OLD\PlayerUI.cs" />
+     <Compile Include="Assets\Player\Scripts\OLD\TeamManager.cs" />
      <Compile Include="Assets\Player\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Player\Scripts\PlayerControls.cs" />
-     <Compile Include="Assets\Player\Scripts\TeamManager.cs" />
      <Compile Include="Assets\Player\Scripts\playerHelper.cs" />
      <Compile Include="Assets\Test Map\MapEvents.cs" />
      <Compile Include="Assets\Turrets\Projectile.cs" />

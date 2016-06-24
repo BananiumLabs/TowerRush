@@ -44,7 +44,8 @@ public class RoomLogic : MonoBehaviour {
         //playerTransform.position = Vars.testMapBlue;
         team = Vars.Team.blue;
         buttons.CloseTeamSelect();
-        PhotonNetwork.Instantiate(this.playerPrefab.name, bspawn[Random.Range(0, 4)].transform.position, Quaternion.identity, 0);
+        GameObject player = PhotonNetwork.Instantiate(this.playerPrefab.name, bspawn[Random.Range(0, 4)].transform.position, Quaternion.identity, 0);
+        player.tag = "BluePlayer";
         //photonView.RPC("SpawnPlayerB", PhotonTargets.AllBuffered);
         }
         
@@ -60,10 +61,20 @@ public class RoomLogic : MonoBehaviour {
         team = Vars.Team.gold;
         buttons.CloseTeamSelect();
         Debug.Log("test");
-        PhotonNetwork.Instantiate(this.playerPrefab.name, gspawn[Random.Range(0,4)].transform.position, Quaternion.identity, 0);
+        GameObject player = PhotonNetwork.Instantiate(this.playerPrefab.name, gspawn[Random.Range(0,4)].transform.position, Quaternion.identity, 0);
+        player.tag = "GoldPlayer";
         //photonView.RPC("SpawnPlayerG", PhotonTargets.AllBuffered);
         }
         
+    }
+
+    public void Respawn(Transform player) {
+        if(player.tag == "BluePlayer") {
+            player.position = bspawn[Random.Range(0,4)].transform.position;
+        }
+        else if(player.tag == "GoldPlayer") {
+            player.position = gspawn[Random.Range(0,4)].transform.position;
+        }
     }
 
 }

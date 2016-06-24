@@ -573,6 +573,7 @@ GameObject:
   - 114: {fileID: 114000013291114304}
   - 114: {fileID: 114000012223853412}
   - 114: {fileID: 114000012017900096}
+  - 114: {fileID: 114000013108196172}
   m_Layer: 0
   m_Name: playerRigged
   m_TagString: Untagged
@@ -1294,7 +1295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09982f710702c564a94d0bda0a8f5bc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Forward: 119
+  Forward: 0
   Back: 0
   Left: 0
   Right: 0
@@ -1315,6 +1316,17 @@ MonoBehaviour:
   mousey: {fileID: 114000011669280562}
   camplayer: {fileID: 20000014208509788}
   controllerScript: {fileID: 114000010616530400}
+--- !u!114 &114000013108196172
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014214962336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8659b22f3b6bd9142a5c437cc3fa0647, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000013291114304
 MonoBehaviour:
   m_ObjectHideFlags: 1
