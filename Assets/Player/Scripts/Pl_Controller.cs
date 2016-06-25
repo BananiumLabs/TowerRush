@@ -41,11 +41,11 @@ public class Pl_Controller : MonoBehaviour {
 
                 if (Mathf.Abs(ver) > 0.1f && Mathf.Abs(hor) > 0.1f)
                 {
-                    adjvar = 0.701f;
+                    adjvar = -0.701f;
                 }
                 else
                 {
-                    adjvar = 1f;
+                    adjvar = -1f;
                 }
 
                 moveDirection = new Vector3(hor * adjvar, -2f, ver * adjvar);
@@ -100,7 +100,7 @@ public class Pl_Controller : MonoBehaviour {
             curState = states[2];
         }
 
-        //speed = curState.speed;
+        speed = curState.speed;
         controller.height = curState.height;
         controller.center = curState.center;
         //adjTrans.localPosition = Vector3.Lerp(adjTrans.localPosition, curState.camPos, Time.deltaTime * 10);

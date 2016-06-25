@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fc04e8a00e5f2c4bb9be9b0f4f5d06a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 6
   jumpSpeed: 8
   gravity: 20
   controller: {fileID: 3522453}
@@ -130,18 +130,18 @@ MonoBehaviour:
   state: 0
   running: 0
   states:
-  - name: Stand
-    speed: 0
+  - name: Running
+    speed: 10
     height: 0
     center: {x: 0, y: 0, z: 0}
     camPos: {x: 0, y: 0, z: 0}
   - name: Stand
-    speed: 0
+    speed: 6
     height: 0
     center: {x: 0, y: 0, z: 0}
     camPos: {x: 0, y: 0, z: 0}
   - name: Stand
-    speed: 0
+    speed: 3
     height: 0
     center: {x: 0, y: 0, z: 0}
     camPos: {x: 0, y: 0, z: 0}
