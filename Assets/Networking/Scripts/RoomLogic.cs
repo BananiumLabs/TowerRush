@@ -17,6 +17,9 @@ public class RoomLogic : MonoBehaviour {
     public Transform[] blueCrateSpawns;
     public GameObject[] goldCrates;
     public Transform[] goldCrateSpawns;
+    public GameObject[] crates;
+    private bool started;
+    public bool debugMode;
 
     public void Awake()
     {
@@ -28,11 +31,9 @@ public class RoomLogic : MonoBehaviour {
         }
         PhotonNetwork.isMessageQueueRunning = true;
 
-        foreach(var crate in blueCrates) {
-            crate.SetActive(true);
-        } foreach(var crate in goldCrates) {
-            crate.SetActive(true);
-        }
+        foreach(var crate in crates) crate.SetActive(true);
+        blueCrates = new GameObject[5];
+        goldCrates = new GameObject[5];
     
     }
 
@@ -89,14 +90,28 @@ public class RoomLogic : MonoBehaviour {
         }
     }
 
-    public void SpawnCrates(int numberOfCrates) {
+    public void StartGame() {
+      
+        if(debugMode || (GameObject.FindGameObjectsWithTag("Player").Length % 2 == 0 && !started)) {
+            foreach(GameObject crate in crates) crate.SetActive(true);
 
-        for(int i=0; i< numberOfCrates-1; i++) {
-            blueCrates[i].SetActive(true);
-            goldCrates[i].SetActive(true);
-            blueCrates[i].transform.position = blueCrateSpawns[i].position;
+            for(int i=0; i< 4/*(GameObject.FindGameObjectsWithTag("Player").Length/2)-1*/; i++) {
+                  Debug.Log(blueCrates.Length);
+                  Debug.Log(i);
+            blueCrates[i] = (i % 3 == 0) 
+                ? PhotonNetwork.Instantiate(GameObject.FindGameObjectsWithTag("CarryCrate")[Random.Range(0,GameObject.FindGameObjectsWithTag("CarryCrate").Length-1)].ToString(), blueCrateSpawns[i].position, Quaternion.identity, 0)
+                : (i % 3 == 1) ? PhotonNetwork.Instantiate(GameObject.FindGameObjectsWithTag("SupportCrate")[Random.Range(0,GameObject.FindGameObjectsWithTag("SupportCrate").Length-1)].ToString(), blueCrateSpawns[i].position, Quaternion.identity, 0 )
+                : PhotonNetwork.Instantiate (GameObject.FindGameObjectsWithTag("TankCrate")[GameObject.FindGameObjectsWithTag("TankCrate").Length].ToString(), blueCrateSpawns[i].position, Quaternion.identity, 0 );
+            goldCrates[i] = GameObject.Instantiate(blueCrates[i]);
+            blueCrates[i].transform.position = 
             goldCrates[i].transform.position = goldCrateSpawns[i].position;
+        
         }
+
+        foreach(GameObject crate in crates) crate.SetActive(false);
+        started = true;
+        }
+        else Debug.LogWarning("Teams are not even! Cannot start match");
     }
 
 }

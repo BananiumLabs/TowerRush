@@ -9,6 +9,9 @@ TagManager:
   - GoldSpawn
   - BluePlayer
   - GoldPlayer
+  - CarryCrate
+  - SupportCrate
+  - TankCrate
   layers:
   - Default
   - TransparentFX
