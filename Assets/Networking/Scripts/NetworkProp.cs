@@ -7,13 +7,13 @@ public class NetworkProp : Photon.MonoBehaviour {
     public MouseLook mousey;
 
     public Camera camplayer;
-    public PlayerController controllerScript;
+    public Pl_Controller controllerScript;
 
     // Use this for initialization
     void Awake () {
         mousex = GetComponentInChildren<MouseLook>();
         camplayer = GetComponentInChildren<Camera>();
-        controllerScript = GetComponentInChildren<PlayerController>();
+        controllerScript = GetComponentInChildren<Pl_Controller>();
 
         if (photonView.isMine)
         {
