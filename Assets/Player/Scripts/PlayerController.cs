@@ -160,6 +160,7 @@ public class PlayerController : MonoBehaviour
 
         // Move the controller, and set grounded true or false depending on whether we're standing on something
         grounded = (controller.Move(moveDirection * Time.deltaTime) & CollisionFlags.Below) != 0;
+        Debug.Log(speed);
     }
 
     void Update()
