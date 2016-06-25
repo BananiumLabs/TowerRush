@@ -13,22 +13,34 @@ public class RoomLogic : MonoBehaviour {
     public ButtonActions buttons;
     public Vars.Team team;
 
+    public GameObject[] blueCrates;
+    public Transform[] blueCrateSpawns;
+    public GameObject[] goldCrates;
+    public Transform[] goldCrateSpawns;
+
     public void Awake()
     {
         // LoadMenu
         if (!PhotonNetwork.connected)
         {
-            Debug.LogError("Lost Connection");
             SceneManager.LoadScene("MainMenu");
             return;
         }
         PhotonNetwork.isMessageQueueRunning = true;
 
+        foreach(var crate in blueCrates) {
+            crate.SetActive(true);
+        } foreach(var crate in goldCrates) {
+            crate.SetActive(true);
+        }
+    
     }
 
     public void Start()
     {
         PhotonNetwork.isMessageQueueRunning = true;
+
+
     }
 
     // Update is called once per frame
@@ -74,6 +86,16 @@ public class RoomLogic : MonoBehaviour {
         }
         else if(player.tag == "GoldPlayer") {
             player.position = gspawn[Random.Range(0,4)].transform.position;
+        }
+    }
+
+    public void SpawnCrates(int numberOfCrates) {
+
+        for(int i=0; i< numberOfCrates-1; i++) {
+            blueCrates[i].SetActive(true);
+            goldCrates[i].SetActive(true);
+            blueCrates[i].transform.position = blueCrateSpawns[i].position;
+            goldCrates[i].transform.position = goldCrateSpawns[i].position;
         }
     }
 
