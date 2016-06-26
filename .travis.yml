@@ -4,8 +4,8 @@ sudo: true
 rvm:
 - 2.1.2
 before_install:
-- chmod 777 ./Scripts/install.sh
 - chmod 777 ./Scripts/build.sh
+- "./Scripts/before_install.sh"
 install:
 - "./Scripts/install.sh"
 script:
