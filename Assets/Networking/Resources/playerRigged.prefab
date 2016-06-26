@@ -1291,7 +1291,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000014214962336}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2aadc7dc08185b04199b44463696d747, type: 3}
   m_Name: 
@@ -1306,7 +1306,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000014214962336}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09982f710702c564a94d0bda0a8f5bc1, type: 3}
   m_Name: 
@@ -1323,7 +1323,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000014214962336}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8659b22f3b6bd9142a5c437cc3fa0647, type: 3}
   m_Name: 
@@ -1350,8 +1350,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 114000010115057820}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 0
-  instantiationId: -1
+  viewIdField: 1
+  instantiationId: 1
   isRuntimeInstantiated: 0
 --- !u!114 &114000013643465016
 MonoBehaviour:
@@ -1375,18 +1375,18 @@ MonoBehaviour:
   states:
   - name: Running
     speed: 10
-    height: 0
-    center: {x: 0, y: 0, z: 0}
+    height: 9.63
+    center: {x: 0, y: -3.34, z: 0}
     camPos: {x: 0, y: 0, z: 0}
   - name: Walking
     speed: 6
-    height: 0
-    center: {x: 0, y: 0, z: 0}
+    height: 9.63
+    center: {x: 0, y: -3.34, z: 0}
     camPos: {x: 0, y: 0, z: 0}
   - name: Crouching
     speed: 3
-    height: 0
-    center: {x: 0, y: 0, z: 0}
+    height: 4.99
+    center: {x: 0, y: -5.27, z: 0}
     camPos: {x: 0, y: 0, z: 0}
   adjTrans: {fileID: 4000013903171200}
 --- !u!124 &124000010458251156
@@ -1478,10 +1478,10 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 9.63
+  m_Height: 4.99
   m_Radius: 1.51
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: -3.34, z: 0}
+  m_Center: {x: 0, y: -5.27, z: 0}
