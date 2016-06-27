@@ -567,7 +567,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012332392406}
   - 143: {fileID: 143000012470141406}
-  - 114: {fileID: 114000010616530400}
   - 114: {fileID: 114000010351831264}
   - 114: {fileID: 114000010115057820}
   - 114: {fileID: 114000013291114304}
@@ -1170,7 +1169,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000014214962336}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
   m_Name: 
@@ -1243,30 +1242,6 @@ MonoBehaviour:
   maximumX: 360
   minimumY: -60
   maximumY: 60
---- !u!114 &114000010616530400
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000014214962336}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00160dc4c523a0b45ad6cae6abacf46e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  walkSpeed: 10
-  runSpeed: 15
-  limitDiagonalSpeed: 1
-  toggleRun: 0
-  jumpSpeed: 8
-  gravity: 20
-  fallingDamageThreshold: 10
-  slideWhenOverSlopeLimit: 0
-  slideOnTaggedObjects: 0
-  slideSpeed: 12
-  airControl: 0
-  antiBumpFactor: 0.75
-  antiBunnyHopFactor: 1
 --- !u!114 &114000011669280562
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1291,7 +1266,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000014214962336}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2aadc7dc08185b04199b44463696d747, type: 3}
   m_Name: 
@@ -1299,14 +1274,14 @@ MonoBehaviour:
   mousex: {fileID: 114000010351831264}
   mousey: {fileID: 114000011669280562}
   camplayer: {fileID: 20000014208509788}
-  controllerScript: {fileID: 114000010616530400}
+  controllerScript: {fileID: 0}
 --- !u!114 &114000012017900096
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000014214962336}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09982f710702c564a94d0bda0a8f5bc1, type: 3}
   m_Name: 
@@ -1323,7 +1298,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000014214962336}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8659b22f3b6bd9142a5c437cc3fa0647, type: 3}
   m_Name: 
@@ -1350,8 +1325,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 114000010115057820}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 0
-  instantiationId: -1
+  viewIdField: 1
+  instantiationId: 1
   isRuntimeInstantiated: 0
 --- !u!114 &114000013643465016
 MonoBehaviour:
@@ -1388,7 +1363,7 @@ MonoBehaviour:
     height: 4.99
     center: {x: 0, y: -5.27, z: 0}
     camPos: {x: 0, y: 0, z: 0}
-  adjTrans: {fileID: 4000013903171200}
+  adjTrans: {fileID: 4000012332392406}
 --- !u!124 &124000010458251156
 Behaviour:
   m_ObjectHideFlags: 1
