@@ -50,7 +50,7 @@ public class Pl_Controller : MonoBehaviour {
 
                 moveDirection = new Vector3(hor * adjvar, -2f, ver * adjvar);
                 moveDirection = transform.TransformDirection(moveDirection);
-                Debug.Log(moveDirection);
+                //Debug.Log(moveDirection);
                 moveDirection *= speed;
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
