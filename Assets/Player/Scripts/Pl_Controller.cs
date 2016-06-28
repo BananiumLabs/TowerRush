@@ -22,6 +22,7 @@ public class Pl_Controller : MonoBehaviour {
     public float ver;
     public int state;
     public bool running;
+    private Pl_InputManager input;
 
     public state[] states = new state[3];
     private state curState;
@@ -30,14 +31,21 @@ public class Pl_Controller : MonoBehaviour {
 
     private float adjvar = 1;
 
+    void Start() {
+        input = GetComponentInParent<Pl_InputManager> ();
+    }
     void Update()
     {
             CheckState();
             CheckInput();
             if (controller.isGrounded)
             {
-                ver = Input.GetAxis("Vertical");
-                hor = Input.GetAxis("Horizontal");
+                if(Input.GetKey(input.GetKey(1))) ver = -1f;
+                else if(Input.GetKey(input.GetKey(2))) ver = 1f;
+                else ver = 0f;
+                if(Input.GetKey(input.GetKey(3))) hor = 1f;
+                else if(Input.GetKey(input.GetKey(4))) hor = -1f;
+                else hor = 0f;
 
                 if (Mathf.Abs(ver) > 0.1f && Mathf.Abs(hor) > 0.1f)
                 {
@@ -48,11 +56,11 @@ public class Pl_Controller : MonoBehaviour {
                     adjvar = -1f;
                 }
 
-                moveDirection = new Vector3(hor * adjvar, -2f, ver * adjvar);
+                moveDirection = new Vector3(hor * adjvar, -1f, ver * adjvar);
                 moveDirection = transform.TransformDirection(moveDirection);
                 //Debug.Log(moveDirection);
                 moveDirection *= speed;
-                if (Input.GetKeyDown(KeyCode.Space))
+                if (Input.GetKeyDown(input.GetKey(5)))
                 {
                     if (state == 0)
                     {
@@ -90,7 +98,7 @@ public class Pl_Controller : MonoBehaviour {
             }
             //else if (state == 2) state = 1;
         }
-        running = (controller.isGrounded && controller.velocity.magnitude > 1 && state == 0 && Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S));
+        running = (controller.isGrounded && controller.velocity.magnitude > 1 && state == 0 && Input.GetKey(input.GetKey(6)) && Input.GetKey(input.GetKey(1)) && !Input.GetKey(input.GetKey(2)));
     }
 
     void CheckState()
