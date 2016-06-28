@@ -31,12 +31,13 @@ public class NetworkController : Photon.MonoBehaviour {
             mousey.enabled = false;
             camplayer.enabled = false;
             controllerScript.enabled = false;
+            gameObject.name = "RemotePlayer";
         }
         
 
     }
 
-    void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    /*void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
         if (stream.isWriting)
         {
@@ -66,5 +67,5 @@ public class NetworkController : Photon.MonoBehaviour {
             Debug.Log("Lerping");
             transform.rotation = Quaternion.Lerp(transform.rotation, correctPlayerRot, Time.deltaTime * 5);
         }
-    }
+    }*/
 }

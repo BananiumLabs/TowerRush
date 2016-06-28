@@ -1408,6 +1408,7 @@ MonoBehaviour:
   ver: 0
   state: 0
   running: 0
+  grounded: 0
   states:
   - name: Running
     speed: 10
