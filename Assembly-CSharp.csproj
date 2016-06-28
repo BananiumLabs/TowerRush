@@ -13,8 +13,7 @@
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>Assets</BaseDirectory>
-	<LangVersion>default</LangVersion>
-</PropertyGroup>
+  </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
@@ -24,8 +23,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
-	<LangVersion>default</LangVersion>
-</PropertyGroup>
+  </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
@@ -33,8 +31,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
-	<LangVersion>default</LangVersion>
-</PropertyGroup>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.XML" />
@@ -125,10 +122,11 @@
      <Compile Include="Assets\Networking\PhotonChatApi\ChatState.cs" />
      <Compile Include="Assets\Networking\PhotonChatApi\ChatUserStatus.cs" />
      <Compile Include="Assets\Networking\PhotonChatApi\IChatClientListener.cs" />
-     <Compile Include="Assets\Networking\Scripts\AnimatorController.cs" />
+     <Compile Include="Assets\Networking\Scripts\NetworkAnimation.cs" />
      <Compile Include="Assets\Networking\Scripts\NetworkController.cs" />
      <Compile Include="Assets\Networking\Scripts\NetworkProp.cs" />
      <Compile Include="Assets\Networking\Scripts\PhotonConnection.cs" />
+     <Compile Include="Assets\Networking\Scripts\Pl_Values.cs" />
      <Compile Include="Assets\Networking\Scripts\RoomLogic.cs" />
      <Compile Include="Assets\Player\Scripts\MouseLock.cs" />
      <Compile Include="Assets\Player\Scripts\MouseLook.cs" />
@@ -137,8 +135,7 @@
      <Compile Include="Assets\Player\Scripts\OLD\PlayerUI.cs" />
      <Compile Include="Assets\Player\Scripts\OLD\TeamManager.cs" />
      <Compile Include="Assets\Player\Scripts\Pl_Controller.cs" />
-     <Compile Include="Assets\Player\Scripts\PlayerController.cs" />
-     <Compile Include="Assets\Player\Scripts\PlayerControls.cs" />
+     <Compile Include="Assets\Player\Scripts\Pl_InputManager.cs" />
      <Compile Include="Assets\Player\Scripts\playerHelper.cs" />
      <Compile Include="Assets\Test Map\MapEvents.cs" />
      <Compile Include="Assets\Turrets\Projectile.cs" />
@@ -181,4 +178,5 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  
 </Project>

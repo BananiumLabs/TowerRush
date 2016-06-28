@@ -1249,8 +1249,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 114000013424476990}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 2
-  instantiationId: 2
+  viewIdField: 0
+  instantiationId: -1
   isRuntimeInstantiated: 0
 --- !u!114 &114000010351831264
 MonoBehaviour:
@@ -1371,8 +1371,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 114000010115057820}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 1
-  instantiationId: 1
+  viewIdField: 0
+  instantiationId: -1
   isRuntimeInstantiated: 0
 --- !u!114 &114000013424476990
 MonoBehaviour:
@@ -1408,16 +1408,17 @@ MonoBehaviour:
   ver: 0
   state: 0
   running: 0
+  grounded: 0
   states:
   - name: Running
     speed: 10
-    height: 9.63
-    center: {x: 0, y: -3.34, z: 0}
+    height: 9.14
+    center: {x: 0, y: -3.01, z: 0}
     camPos: {x: 0, y: 0, z: 0}
   - name: Walking
     speed: 6
-    height: 9.63
-    center: {x: 0, y: -3.34, z: 0}
+    height: 9.14
+    center: {x: 0, y: -3.01, z: 0}
     camPos: {x: 0, y: 0, z: 0}
   - name: Crouching
     speed: 3
@@ -1514,10 +1515,10 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 4.99
-  m_Radius: 8
+  m_Height: 9.14
+  m_Radius: 1.22
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: -5.27, z: 0}
+  m_Center: {x: 0, y: -3.01, z: 0}

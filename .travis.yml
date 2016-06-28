@@ -1,0 +1,29 @@
+language: objective-c
+osx_image: xcode61
+sudo: true
+rvm:
+- 2.1.2
+before_install:
+- chmod 777 ./Scripts/before_install.sh
+- "./Scripts/before_install.sh"
+install:
+- "./Scripts/install.sh"
+script:
+- "./Scripts/build.sh"
+branches:
+  only:
+    - master
+    - develop
+deploy:
+  provider: releases
+  api_key:
+    secure: SG6BcPcIMMT5fhtkKIbl5BFgpEQVDCY+uhpiLSDiKZM3IGLVW9eXP3anIkMDRoJXod8ij/Nvjao23uOtu4IkEU4jlKF67aHCuaIM2OmLz55LzU2eil+QUaVjqdxzzTeHmKrOO60UziLxCrFevoHs7bUBim2UaAU67Wpip3pa1dtHnd1yVFCRJOvjnz7YAtcI6GnOM6iFblHw1sUda7bESZ7NYu7AcU2+CY2Sp7+64KW/ESef7OlCfgZcLr5amVDXNSuIx0dd+5R0PHchLqqpOpg/e1i4IIt+y/v3znquIJodBdGanOEqqQeD8Juzqo4NxMN9pNdiUDBE9t6WImn74ibdv9Ilv2WQgXJ9EYZBvPqw6znlCTrCiO/HSNKl9G0FZDqfK5FoR6btBEnbWmw1y5i+8XqbRcqUouYEZdOpdWkeB6acYPRyrvGpt3o86NZ4C9PLXSqlDPu8SsBB8Xuii53kaDvNzCiC4n4EIQTshuXqKvE01lfL6bJfwmnSf8OmXNU7BfoLaEuAQPaJfi7ivs/WIgoql6OfBUhFHzVxGLj6LfID751Ids7m1h976ywOIhP9Bpozrae4S3jvdkqIdMe0VtZw5URiEpFfzlW4nG+jbSVWLx5Ge2RpEtnBKgKCURfKcQEWK9tvPjkIag/XWrM6kbD4LjYiJ7JXBFJQqYY=
+  local-dir: Build
+  file:
+    - "/Users/travis/build/FewdpewGames/unity-game/Build/windows/Windows.exe"
+    - "/Users/travis/build/FewdpewGames/unity-game/Build/osx/OS X.app"
+    - "/Users/travis/build/FewdpewGames/unity-game/Build/linux/Linux.exe"
+  skip_cleanup: true
+  on:
+    tags: true
+    all_branches: true

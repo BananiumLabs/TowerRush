@@ -23,6 +23,7 @@ public class Pl_Controller : MonoBehaviour {
     public int state;
     public bool running;
     private Pl_InputManager input;
+    public bool grounded;
 
     public state[] states = new state[3];
     private state curState;
@@ -36,10 +37,19 @@ public class Pl_Controller : MonoBehaviour {
     }
     void Update()
     {
+            if (controller.isGrounded)
+            {
+                grounded = true;
+            }
+            else
+            {
+                grounded = false;
+            }
             CheckState();
             CheckInput();
             if (controller.isGrounded)
             {
+
                 if(Input.GetKey(input.GetKey(1))) ver = -1f;
                 else if(Input.GetKey(input.GetKey(2))) ver = 1f;
                 else ver = 0f;
@@ -129,5 +139,6 @@ public class Pl_Controller : MonoBehaviour {
         plValues.speed = speed;
         plValues.running = running;
         plValues.state = state;
+        plValues.grounded = grounded;
     }
 }

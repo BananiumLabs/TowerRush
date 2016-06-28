@@ -131,6 +131,7 @@ MonoBehaviour:
   ver: 0
   state: 0
   running: 0
+  grounded: 0
   states:
   - name: Running
     speed: 10
@@ -307,17 +308,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &756123070 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114000013643465016, guid: c3a317e35bbc8fb49a5125ee5321bb1c,
-    type: 2}
-  m_PrefabInternal: {fileID: 1909686744}
-  m_Script: {fileID: 11500000, guid: 5fc04e8a00e5f2c4bb9be9b0f4f5d06a, type: 3}
---- !u!4 &947751296 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4000012332392406, guid: c3a317e35bbc8fb49a5125ee5321bb1c,
-    type: 2}
-  m_PrefabInternal: {fileID: 1909686744}
 --- !u!1 &1040759367
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,143 +506,16 @@ Prefab:
       propertyPath: instantiationId
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114000013643465016, guid: c3a317e35bbc8fb49a5125ee5321bb1c,
+    - target: {fileID: 114000010173388558, guid: c3a317e35bbc8fb49a5125ee5321bb1c,
         type: 2}
-      propertyPath: states.Array.data[1].center.y
-      value: -3.34
+      propertyPath: viewIdField
+      value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114000013643465016, guid: c3a317e35bbc8fb49a5125ee5321bb1c,
+    - target: {fileID: 114000010173388558, guid: c3a317e35bbc8fb49a5125ee5321bb1c,
         type: 2}
-      propertyPath: states.Array.data[1].height
-      value: 9.63
+      propertyPath: instantiationId
+      value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114000013643465016, guid: c3a317e35bbc8fb49a5125ee5321bb1c,
-        type: 2}
-      propertyPath: states.Array.data[0].height
-      value: 9.63
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000013643465016, guid: c3a317e35bbc8fb49a5125ee5321bb1c,
-        type: 2}
-      propertyPath: states.Array.data[0].center.y
-      value: -3.34
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000011864015312, guid: c3a317e35bbc8fb49a5125ee5321bb1c,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000013108196172, guid: c3a317e35bbc8fb49a5125ee5321bb1c,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012017900096, guid: c3a317e35bbc8fb49a5125ee5321bb1c,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 143000012470141406, guid: c3a317e35bbc8fb49a5125ee5321bb1c,
-        type: 2}
-      propertyPath: m_Center.y
-      value: -5.27
-      objectReference: {fileID: 0}
-    - target: {fileID: 143000012470141406, guid: c3a317e35bbc8fb49a5125ee5321bb1c,
-        type: 2}
-      propertyPath: m_Height
-      value: 4.99
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000013643465016, guid: c3a317e35bbc8fb49a5125ee5321bb1c,
-        type: 2}
-      propertyPath: states.Array.data[2].center.y
-      value: -5.27
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000013643465016, guid: c3a317e35bbc8fb49a5125ee5321bb1c,
-        type: 2}
-      propertyPath: states.Array.data[2].height
-      value: 4.99
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000013643465016, guid: c3a317e35bbc8fb49a5125ee5321bb1c,
-        type: 2}
-      propertyPath: adjTrans
-      value: 
-      objectReference: {fileID: 947751296}
-    - target: {fileID: 114000013643465016, guid: c3a317e35bbc8fb49a5125ee5321bb1c,
-        type: 2}
-      propertyPath: plValues
-      value: 
-      objectReference: {fileID: 1909686748}
-    - target: {fileID: 114000011864015312, guid: c3a317e35bbc8fb49a5125ee5321bb1c,
-        type: 2}
-      propertyPath: controllerScript
-      value: 
-      objectReference: {fileID: 756123070}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c3a317e35bbc8fb49a5125ee5321bb1c, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1909686745 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000011600032374, guid: c3a317e35bbc8fb49a5125ee5321bb1c,
-    type: 2}
-  m_PrefabInternal: {fileID: 1909686744}
---- !u!114 &1909686746
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1909686745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a186fbbe1bf88940b7ab50237e3018b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 1909686749}
-  plValues: {fileID: 1909686748}
-  photonView: {fileID: 1909686747}
---- !u!114 &1909686747
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1909686745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ownerId: 0
-  group: 0
-  prefixBackup: -1
-  observed: {fileID: 0}
-  synchronization: 3
-  onSerializeTransformOption: 3
-  onSerializeRigidBodyOption: 2
-  ownershipTransfer: 0
-  ObservedComponents:
-  - {fileID: 1909686746}
-  ObservedComponentsFoldoutOpen: 1
-  viewIdField: 2
-  instantiationId: 2
-  isRuntimeInstantiated: 0
---- !u!114 &1909686748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1909686745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b64d16857d57f9b4394845b000845a76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  grounded: 0
-  height: 0
-  hor: 0
-  ver: 0
-  state: 0
-  running: 0
-  speed: 0
---- !u!95 &1909686749 stripped
-Animator:
-  m_PrefabParentObject: {fileID: 95000013564689378, guid: c3a317e35bbc8fb49a5125ee5321bb1c,
-    type: 2}
-  m_PrefabInternal: {fileID: 1909686744}
