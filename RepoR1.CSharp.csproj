@@ -157,7 +157,7 @@
     <Compile Include="Assets\Networking\PhotonChatApi\ChatState.cs" />
     <Compile Include="Assets\Networking\PhotonChatApi\ChatUserStatus.cs" />
     <Compile Include="Assets\Networking\PhotonChatApi\IChatClientListener.cs" />
-    <Compile Include="Assets\Networking\Scripts\AnimatorController.cs" />
+    <Compile Include="Assets\Networking\Scripts\NetworkAnimation.cs" />
     <Compile Include="Assets\Networking\Scripts\NetworkController.cs" />
     <Compile Include="Assets\Networking\Scripts\NetworkProp.cs" />
     <Compile Include="Assets\Networking\Scripts\PhotonConnection.cs" />

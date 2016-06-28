@@ -155,6 +155,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011159528310}
   - 95: {fileID: 95000013564689378}
+  - 114: {fileID: 114000013424476990}
+  - 114: {fileID: 114000010173388558}
+  - 114: {fileID: 114000012532821770}
   m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
@@ -854,7 +857,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000014214962336}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.7292147, y: 3.91, z: -285.18994}
+  m_LocalPosition: {x: 5.25, y: 6, z: 3.02}
   m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
   m_Children:
   - {fileID: 4000012783314416}
@@ -1224,6 +1227,31 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
+--- !u!114 &114000010173388558
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011600032374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerId: 0
+  group: 0
+  prefixBackup: -1
+  observed: {fileID: 0}
+  synchronization: 3
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 114000013424476990}
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 2
+  instantiationId: 2
+  isRuntimeInstantiated: 0
 --- !u!114 &114000010351831264
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1274,14 +1302,14 @@ MonoBehaviour:
   mousex: {fileID: 114000010351831264}
   mousey: {fileID: 114000011669280562}
   camplayer: {fileID: 20000014208509788}
-  controllerScript: {fileID: 0}
+  controllerScript: {fileID: 114000013643465016}
 --- !u!114 &114000012017900096
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000014214962336}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09982f710702c564a94d0bda0a8f5bc1, type: 3}
   m_Name: 
@@ -1292,6 +1320,24 @@ MonoBehaviour:
   Right: 100
   Jump: 32
   Run: 304
+--- !u!114 &114000012532821770
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011600032374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b64d16857d57f9b4394845b000845a76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grounded: 0
+  height: 0
+  hor: 0
+  ver: 0
+  state: 0
+  running: 0
+  speed: 0
 --- !u!114 &114000013108196172
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1325,9 +1371,23 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 114000010115057820}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 0
-  instantiationId: -1
+  viewIdField: 1
+  instantiationId: 1
   isRuntimeInstantiated: 0
+--- !u!114 &114000013424476990
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011600032374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a186fbbe1bf88940b7ab50237e3018b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 95000013564689378}
+  plValues: {fileID: 114000012532821770}
+  photonView: {fileID: 114000010173388558}
 --- !u!114 &114000013643465016
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1343,6 +1403,7 @@ MonoBehaviour:
   jumpSpeed: 8
   gravity: 20
   controller: {fileID: 143000012470141406}
+  plValues: {fileID: 114000012532821770}
   hor: 0
   ver: 0
   state: 0
@@ -1453,10 +1514,10 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 0
+  m_Height: 4.99
   m_Radius: 8
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: -5.27, z: 0}
