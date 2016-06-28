@@ -1,0 +1,9 @@
+Archer: Bow, quiver, arrow, bulletproof sunglasses
+Miner: Mining helmet, pickaxe, rocks
+Bomber: Metal helmet, grenades
+Farmer: No idea. please give suggestions
+Ninja: Ninja stars, black cloth mask
+Troll: troll hat
+Mad scientist: goggles, antidote vial, plasma spheres
+Hacker: missing texture helmet
+Humanoid: Body armor/dart gun

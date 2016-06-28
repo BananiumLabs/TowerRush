@@ -4,7 +4,25 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This changelog follows the format as defined by [Keep a Changelog](http://keepachangelog.com/).
 All unreleased changes are found in develop. Master is for released content only.
 
-## [Alpha 1.1.0]
+## [Alpha 1.2.0] - 2016-06-27
+###Added
+- Crates (Archer, Ninja, Bomber and Miner)
+- Randomized crate spawning
+- Controls menu (editable controls)
+- Animations for player
+- Weapon and Armor models (currently unimplemented)
+
+###Changed
+ - Placeholder player model replaced with new one
+ - Joining server now built in to main menu
+ - Updated player controller
+ 
+###Fixed
+ - Fall detection
+ - Problems with joining server 
+ - Player glitching through walls
+ 
+## [Alpha 1.1.0] - 2016-06-05
 ###Added
 - Basic multiplayer setup
 - Basic teams system
@@ -19,7 +37,7 @@ All unreleased changes are found in develop. Master is for released content only
  - Main Menu background improved
  
 
-## [Alpha 1.0.1]
+## [Alpha 1.0.1] - 2016-05-08
 ###Added
  - Ability to jump
  - Basic player GUI (Pause menu)
@@ -31,7 +49,7 @@ All unreleased changes are found in develop. Master is for released content only
 ###Removed
  - Unity Popup
 
-## [Alpha 1.0.0]
+## [Alpha 1.0.0] - 2016-05-07
 ### Added
 - Main Menu (Options, Credits, Level Select)
 - Testing level

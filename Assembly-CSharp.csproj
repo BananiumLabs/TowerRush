@@ -13,8 +13,7 @@
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>Assets</BaseDirectory>
-	<LangVersion>default</LangVersion>
-</PropertyGroup>
+  </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
@@ -24,8 +23,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
-	<LangVersion>default</LangVersion>
-</PropertyGroup>
+  </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
@@ -33,26 +31,25 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
-	<LangVersion>default</LangVersion>
-</PropertyGroup>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.XML" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine">
-      <HintPath>C:/Program Files/Unity 5.4.0b18/Editor/Data/Managed/UnityEngine.dll</HintPath>
+      <HintPath>C:/Program Files/Unity 5.4.0b22/Editor/Data/Managed/UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
-      <HintPath>C:/Program Files/Unity 5.4.0b18/Editor/Data/Managed/UnityEditor.dll</HintPath>
+      <HintPath>C:/Program Files/Unity 5.4.0b22/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\GUI\ButtonActions.cs" />
      <Compile Include="Assets\GUI\PlayerGUI.cs" />
      <Compile Include="Assets\GUI\PlayerHUD.cs" />
-     <Compile Include="Assets\Global\Controls.cs" />
      <Compile Include="Assets\Global\Vars.cs" />
+     <Compile Include="Assets\Main Menu\Scripts\Controls.cs" />
      <Compile Include="Assets\Main Menu\Scripts\MainMenu.cs" />
      <Compile Include="Assets\Main Menu\Scripts\Options.cs" />
      <Compile Include="Assets\Networking\Photon Unity Networking\Plugins\PhotonNetwork\CustomTypes.cs" />
@@ -125,34 +122,42 @@
      <Compile Include="Assets\Networking\PhotonChatApi\ChatState.cs" />
      <Compile Include="Assets\Networking\PhotonChatApi\ChatUserStatus.cs" />
      <Compile Include="Assets\Networking\PhotonChatApi\IChatClientListener.cs" />
+     <Compile Include="Assets\Networking\Scripts\NetworkAnimation.cs" />
      <Compile Include="Assets\Networking\Scripts\NetworkController.cs" />
+     <Compile Include="Assets\Networking\Scripts\NetworkProp.cs" />
      <Compile Include="Assets\Networking\Scripts\PhotonConnection.cs" />
+     <Compile Include="Assets\Networking\Scripts\Pl_Values.cs" />
      <Compile Include="Assets\Networking\Scripts\RoomLogic.cs" />
      <Compile Include="Assets\Player\Scripts\MouseLock.cs" />
      <Compile Include="Assets\Player\Scripts\MouseLook.cs" />
      <Compile Include="Assets\Player\Scripts\OLD\PlayerControllerOLD.cs" />
      <Compile Include="Assets\Player\Scripts\OLD\PlayerGuiOLD.cs" />
      <Compile Include="Assets\Player\Scripts\OLD\PlayerUI.cs" />
-     <Compile Include="Assets\Player\Scripts\PlayerController.cs" />
-     <Compile Include="Assets\Player\Scripts\TeamManager.cs" />
+     <Compile Include="Assets\Player\Scripts\OLD\TeamManager.cs" />
+     <Compile Include="Assets\Player\Scripts\Pl_Controller.cs" />
+     <Compile Include="Assets\Player\Scripts\Pl_InputManager.cs" />
      <Compile Include="Assets\Player\Scripts\playerHelper.cs" />
      <Compile Include="Assets\Test Map\MapEvents.cs" />
+     <Compile Include="Assets\Turrets\Projectile.cs" />
+     <Compile Include="Assets\Turrets\Turret.cs" />
      <None Include="Assets\Plugins\Photon3Unity3D.xml" />
      <None Include="Assets\Plugins\release_history.txt" />
      <None Include="Assets\Plugins\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+     <None Include="Assets\Networking\Resources\Animations\Raw Mocap Data\Animations\_CompleteAnimationList.txt" />
      <None Include="Assets\Networking\Photon Unity Networking\readme.txt" />
      <None Include="Assets\Networking\Photon Unity Networking\changelog.txt" />
+     <None Include="Assets\list.txt" />
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Program Files/Unity 5.4.0b18/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Program Files/Unity 5.4.0b22/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
- <HintPath>C:/Program Files/Unity 5.4.0b18/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ <HintPath>C:/Program Files/Unity 5.4.0b22/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Analytics">
- <HintPath>C:/Program Files/Unity 5.4.0b18/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+ <HintPath>C:/Program Files/Unity 5.4.0b22/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Purchasing">
- <HintPath>C:/Program Files/Unity 5.4.0b18/Editor/Data/UnityExtensions/Unity/UnityPurchasing/UnityEngine.Purchasing.dll</HintPath>
+ <HintPath>C:/Program Files/Unity 5.4.0b22/Editor/Data/UnityExtensions/Unity/UnityPurchasing/UnityEngine.Purchasing.dll</HintPath>
  </Reference>
  <Reference Include="Photon3Unity3D">
  <HintPath>C:/Users/BenCu/Documents/unity-game/Assets/Plugins/Photon3Unity3D.dll</HintPath>
@@ -173,4 +178,5 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  
 </Project>

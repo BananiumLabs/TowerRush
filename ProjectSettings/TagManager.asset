@@ -6,7 +6,12 @@ TagManager:
   tags:
   - fallDetector
   - BlueSpawn
-  - RedSpawn
+  - GoldSpawn
+  - BluePlayer
+  - GoldPlayer
+  - CarryCrate
+  - SupportCrate
+  - TankCrate
   layers:
   - Default
   - TransparentFX

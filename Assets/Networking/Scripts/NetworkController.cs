@@ -5,14 +5,16 @@ public class NetworkController : Photon.MonoBehaviour {
     public MouseLook mousex;
     public MouseLook mousey;
     public Camera camplayer;
-    public CharacterController controllerScript;
+    public Pl_Controller controllerScript;
+    //public PhotonView photonView;
 
     void Awake()
     {
-        mousex = GetComponent<MouseLook>();
+        mousex = GetComponentInChildren<MouseLook>();
         //mousey = GetComponentInChildren<MouseLook>();
         camplayer = GetComponentInChildren<Camera>();
-        controllerScript = GetComponent<CharacterController>();
+        controllerScript = GetComponentInChildren<Pl_Controller>();
+        //PhotonView photonView = PhotonView.Get(this);
 
         if (photonView.isMine)
         {
@@ -29,12 +31,13 @@ public class NetworkController : Photon.MonoBehaviour {
             mousey.enabled = false;
             camplayer.enabled = false;
             controllerScript.enabled = false;
+            gameObject.name = "RemotePlayer";
         }
-
         
+
     }
 
-    void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    /*void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
         if (stream.isWriting)
         {
@@ -64,5 +67,5 @@ public class NetworkController : Photon.MonoBehaviour {
             Debug.Log("Lerping");
             transform.rotation = Quaternion.Lerp(transform.rotation, correctPlayerRot, Time.deltaTime * 5);
         }
-    }
+    }*/
 }

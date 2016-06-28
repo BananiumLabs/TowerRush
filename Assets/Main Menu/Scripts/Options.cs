@@ -12,10 +12,16 @@ public class Options : MonoBehaviour {
 	public Canvas controlsPanel;
 	public Canvas optionsMenu;
 	public Dropdown graphics;
-	public Dropdown uiSize;
+	public Dropdown resolution;
 
 	public Canvas mainMenu;
+	public Button fullscreen;
+	public Text fullscreenLabel;
+	
+	public Controls controls;
 
+	private bool fullscreenEnabled = true;
+	
 	void Start () {
 		
 		volume = volume.GetComponent<Slider> ();
@@ -24,24 +30,27 @@ public class Options : MonoBehaviour {
 		generalPanel = generalPanel.GetComponent<Canvas> ();
 		controlsPanel = controlsPanel.GetComponent<Canvas> ();
 		graphics = graphics.GetComponent<Dropdown> ();
-		uiSize = uiSize.GetComponent<Dropdown> ();
+		resolution = resolution.GetComponent<Dropdown> ();
 		optionsMenu = optionsMenu.GetComponent<Canvas> ();
 		mainMenu = mainMenu.GetComponent<Canvas> ();
+		fullscreen = fullscreen.GetComponent<Button> ();
+		fullscreenLabel = fullscreenLabel.GetComponent<Text> ();
+		controls = controls.GetComponent<Controls> ();
 
 		volume.maxValue = 100;
 		volume.minValue = 0;
 		volume.wholeNumbers = true;
 
 		generalPanel.transform.Rotate (20.0f, 0.0f, 0.0f);
-		
-		if(Screen.width > 1300) uiSize.value = 2;
-		else if(Screen.width < 800) uiSize.value = 0;
-		else uiSize.value = 1;
 	
 	}
 
 	void Update () {
-
+		
+		if(Screen.width > 1300) mainMenu.scaleFactor = 2;
+		else if(Screen.width < 700) mainMenu.scaleFactor = .5f;
+		else mainMenu.scaleFactor = 1;
+			
 		AudioListener.volume = volume.value / 100;
 
 		volumeValue.text = volume.value.ToString ();
@@ -78,26 +87,51 @@ public class Options : MonoBehaviour {
 
 		}
 
-		//UI Size setting
-		switch (uiSize.value) {
-		case 0:
-			mainMenu.scaleFactor = 0.5f;
+		//Screen resolution
+		switch (resolution.value) {
+		case 0: //auto
+			Screen.SetResolution(Screen.currentResolution.width,Screen.currentResolution.height,Screen.fullScreen);
 			break;
-		case 1:
-			mainMenu.scaleFactor = 1f;
+		case 1: //1920x1200
+			Screen.SetResolution(1920,1200,Screen.fullScreen);
 			break;
-		case 2:
-			mainMenu.scaleFactor = 1.5f;
+		case 2: //1920x1080
+			Screen.SetResolution(1920,1080,Screen.fullScreen);
+			break;
+		case 3: //1366x768
+			Screen.SetResolution(1366,768,Screen.fullScreen);
+			break;
+		case 4: //1280x1024
+			Screen.SetResolution(1280,1024,Screen.fullScreen);
+			break;
+		case 5: //1024x768
+			Screen.SetResolution(1024,768,Screen.fullScreen);
 			break;
 		}
-			
 			
 	}
 
 	//when "reset to default" is pressed
 	public void resetOptions() {
-		graphics.value = 4;
+		if(generalPanel.enabled) {
+			graphics.value = 4;
 		volume.value = 50;
-		uiSize.value = 1;
+		resolution.value = 1;
+		} else if(controlsPanel.enabled) {
+			controls.WriteDefaultControls();
+		}
+		
+	}
+	
+	public void fullscreenToggle() {
+		if(fullscreenEnabled) {
+			fullscreenEnabled = false;
+			Screen.fullScreen = true;
+			fullscreenLabel.text = "Enabled";
+		} else {
+			fullscreenEnabled = true;
+			Screen.fullScreen = false;
+			fullscreenLabel.text = "Disabled";
+		}
 	}
 }

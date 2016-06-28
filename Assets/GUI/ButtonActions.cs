@@ -3,10 +3,10 @@ using UnityEngine.SceneManagement;
 
 
 public class ButtonActions : MonoBehaviour {
-	private GameObject gui; 
-	private PlayerGUI pgui;
+	public GameObject gui; 
+	public PlayerGUI pgui;
 	void Start () {
-		gui = GameObject.Find("RoomGui");
+		//gui = GameObject.Find("RoomGui");
 		pgui = gui.GetComponent<PlayerGUI> ();
 	}
 	
@@ -19,6 +19,7 @@ public class ButtonActions : MonoBehaviour {
 	}
 	
 	public void CloseTeamSelect () {
+        Debug.Log("Works?");
 		pgui.CloseTeamSelect();
 	}
 }

@@ -33,7 +33,7 @@ public class MouseLook : MonoBehaviour {
 				Quaternion xQuaternion = Quaternion.AngleAxis (rotationX, Vector3.up);
 				transform.localRotation = originalRotation * xQuaternion;
 			} else {
-				rotationY -= Input.GetAxis ("Mouse Y") * sensitivityY;
+				rotationY += Input.GetAxis ("Mouse Y") * sensitivityY;
 				rotationY = ClampAngle (rotationY, minimumY, maximumY);
 				Quaternion yQuaternion = Quaternion.AngleAxis (-rotationY, Vector3.right);
 				transform.localRotation = originalRotation * yQuaternion;

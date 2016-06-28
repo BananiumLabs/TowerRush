@@ -16,7 +16,7 @@ MonoBehaviour:
   ServerAddress: 
   ServerPort: 5055
   AppID: 4ba7117a-da46-40bf-8ac8-2eda4d611e80
-  PreferredRegion: 0
+  PreferredRegion: 1
   EnabledRegions: -1
   JoinLobby: 0
   EnableLobbyStatistics: 0
@@ -37,4 +37,6 @@ MonoBehaviour:
   - RequestForPickupTimes
   - TaggedPlayer
   - SpawnPlayer
+  - SpawnPlayerB
+  - SpawnPlayerG
   DisableAutoOpenWizard: 1
