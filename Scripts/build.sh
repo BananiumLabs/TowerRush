@@ -1,6 +1,6 @@
 #! /bin/sh
 
-project="BumRush"
+project="TowerRush"
 projectWin="Windows"
 projectMac="OS X"
 projectLinux="Linux"
