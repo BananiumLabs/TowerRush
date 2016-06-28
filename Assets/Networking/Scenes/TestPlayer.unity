@@ -125,6 +125,7 @@ MonoBehaviour:
   jumpSpeed: 8
   gravity: 20
   controller: {fileID: 3522453}
+  plValues: {fileID: 0}
   hor: 0
   ver: 0
   state: 0
@@ -568,6 +569,74 @@ Prefab:
       propertyPath: adjTrans
       value: 
       objectReference: {fileID: 947751296}
+    - target: {fileID: 114000013643465016, guid: c3a317e35bbc8fb49a5125ee5321bb1c,
+        type: 2}
+      propertyPath: plValues
+      value: 
+      objectReference: {fileID: 1909686748}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c3a317e35bbc8fb49a5125ee5321bb1c, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1909686745 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000011600032374, guid: c3a317e35bbc8fb49a5125ee5321bb1c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1909686744}
+--- !u!114 &1909686746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1909686745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters: []
+  m_SynchronizeLayers: []
+--- !u!114 &1909686747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1909686745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerId: 0
+  group: 0
+  prefixBackup: -1
+  observed: {fileID: 0}
+  synchronization: 3
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 1909686746}
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 2
+  instantiationId: 2
+  isRuntimeInstantiated: 0
+--- !u!114 &1909686748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1909686745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b64d16857d57f9b4394845b000845a76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grounded: 0
+  height: 0
+  hor: 0
+  ver: 0
+  state: 0
+  running: 0
+  speed: 0

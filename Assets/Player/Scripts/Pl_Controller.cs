@@ -17,7 +17,7 @@ public class Pl_Controller : MonoBehaviour {
     public float gravity = 20.0F;
     private Vector3 moveDirection = Vector3.zero;
     public CharacterController controller;
-
+    public Pl_Values plValues;
     public float hor;
     public float ver;
     public int state;
@@ -71,6 +71,7 @@ public class Pl_Controller : MonoBehaviour {
             }
             moveDirection.y -= gravity * Time.deltaTime;
             controller.Move(moveDirection * Time.deltaTime);
+            SetPlValues();
             //Debug.Log(moveDirection);
     }
 
@@ -78,8 +79,15 @@ public class Pl_Controller : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.C) && controller.isGrounded)
         {
-            if (state == 0) state = 1;
-            else if (state == 1) state = 0;
+            if (state == 0)
+            {
+                state = 1;
+            }
+
+            else if (state == 1)
+            {
+                state = 0;
+            }
             //else if (state == 2) state = 1;
         }
         running = (controller.isGrounded && controller.velocity.magnitude > 1 && state == 0 && Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S));
@@ -104,5 +112,14 @@ public class Pl_Controller : MonoBehaviour {
         controller.height = curState.height;
         controller.center = curState.center;
         //adjTrans.localPosition = Vector3.Lerp(adjTrans.localPosition, curState.camPos, Time.deltaTime * 10);
+    }
+
+    void SetPlValues()
+    {
+        plValues.hor = hor;
+        plValues.ver = ver;
+        plValues.speed = speed;
+        plValues.running = running;
+        plValues.state = state;
     }
 }
