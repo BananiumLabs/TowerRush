@@ -22,6 +22,7 @@ public class Pl_Controller : MonoBehaviour {
     public float ver;
     public int state;
     public bool running;
+    public bool grounded;
 
     public state[] states = new state[3];
     private state curState;
@@ -32,10 +33,19 @@ public class Pl_Controller : MonoBehaviour {
 
     void Update()
     {
+            if (controller.isGrounded)
+            {
+                grounded = true;
+            }
+            else
+            {
+                grounded = false;
+            }
             CheckState();
             CheckInput();
             if (controller.isGrounded)
             {
+            
                 ver = Input.GetAxis("Vertical");
                 hor = Input.GetAxis("Horizontal");
 
@@ -121,5 +131,6 @@ public class Pl_Controller : MonoBehaviour {
         plValues.speed = speed;
         plValues.running = running;
         plValues.state = state;
+        plValues.grounded = grounded;
     }
 }
