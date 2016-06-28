@@ -23,6 +23,7 @@ public class RoomLogic : MonoBehaviour {
 
     public void Awake()
     {
+        if(debugMode) Debug.LogWarning("Debug is enabled for RoomLogic.cs");
         // LoadMenu
         if (!PhotonNetwork.connected)
         {
@@ -90,6 +91,7 @@ public class RoomLogic : MonoBehaviour {
 
     public void StartGame() {
         if(debugMode || (GameObject.FindGameObjectsWithTag("Player").Length % 2 == 0 && !started)) {
+            
             foreach(GameObject crate in crates) crate.SetActive(true);
 
             GameObject[] carryCrates = GameObject.FindGameObjectsWithTag("CarryCrate");
@@ -101,19 +103,18 @@ public class RoomLogic : MonoBehaviour {
            
             blueCrates.SetValue(
                 (i % 3 == 0) 
-                    ? PhotonNetwork.Instantiate(carryCrates[Random.Range(0,carryCrates.Length-1)].name , blueCrateSpawns[i].position, Quaternion.identity, 0)
-                    : (i % 3 == 1) ? PhotonNetwork.Instantiate(supportCrates[Random.Range(0,carryCrates.Length-1)].name, blueCrateSpawns[i].position, Quaternion.identity, 0 )
-                    : PhotonNetwork.Instantiate (tankCrates[Random.Range(0,carryCrates.Length-1)].name, blueCrateSpawns[i].position, Quaternion.identity, 0 ) 
+                    ? PhotonNetwork.Instantiate(carryCrates[Random.Range(0,carryCrates.Length-1)].name , blueCrateSpawns[i].position, Quaternion.Euler(-90f,0,0), 0)
+                    : (i % 3 == 1) ? PhotonNetwork.Instantiate(supportCrates[Random.Range(0,carryCrates.Length-1)].name, blueCrateSpawns[i].position, Quaternion.Euler(-90f,0,0), 0 )
+                    : PhotonNetwork.Instantiate (tankCrates[Random.Range(0,carryCrates.Length-1)].name, blueCrateSpawns[i].position, Quaternion.Euler(-90f,0,0), 0 ) 
                 , i); 
-            goldCrates[i] = GameObject.Instantiate(blueCrates[i]);
-            goldCrates[i].transform.position = goldCrateSpawns[i].position;
+            goldCrates[i] = PhotonNetwork.Instantiate(blueCrates[i].name.Replace("(Clone)", null), goldCrateSpawns[i].position, Quaternion.Euler(-90f,0,0), 0);
             Debug.Log("Spawned crate " + i);
         }
 
         foreach(GameObject crate in crates) crate.SetActive(false);
         started = true;
         }
-        else Debug.LogWarning("Teams are not even! Cannot start match");
+        else Debug.LogWarning("Teams are not even or game has already started! Enable debug mode to force start.");
     }
 
 }
