@@ -18,6 +18,7 @@ echo $(pwd)
 if [ $? -eq 0 ]
 then
   echo "Windows Build Successful"
+  break
 else
   echo "Windows Build Failed" >&2
   exit 1
@@ -36,6 +37,7 @@ echo "Attempting to build $project for OS X"
 if [ $? -eq 0 ]
 then
   echo "Mac Build Successful"
+  break
 else
   echo "Mac Build Failed" >&2
   exit 1
@@ -54,6 +56,7 @@ echo "Attempting to build $project for Linux"
 if [ $? -eq 0 ]
 then
   echo "Linux Build Successful"
+  break
 else
   echo "Linux Build Failed" >&2
   exit 1
@@ -65,6 +68,7 @@ cat $(pwd)/unity.log
 if [ $? -eq 0 ]
 then
   echo "Unity Log Printed"
+  break
 else
   echo "Unity Log Returned Error" >&2
   exit 1
