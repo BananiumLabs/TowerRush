@@ -1,7 +1,7 @@
-#BUMRUSH
+#TOWERRUSH
 ___
 ####Current Status
-[![Build Status](https://travis-ci.org/FewdpewGames/unity-game.svg?branch=master)](https://travis-ci.org/FewdpewGames/unity-game)
+[![Build Status](https://travis-ci.org/dbqeo/TowerRush.svg?branch=master)](https://travis-ci.org/dbqeo/TowerRush)
 ___
 ##**Download** The Game From Official Project Website:
 [https://fewdpew.me/download](https://fewdpew.me/download)
@@ -40,7 +40,6 @@ ___
  - **Project Manager** [Eric Q](https://github.com/eric1084)
  - **Lead Programmer** [Vikram P](https://github.com/DarkFlamex1)
  - **Concept Designer** [Aryan S](https://github.com/CrispyCookieHD)
- - **Artist** [Dohyun K](https://github.com/DohyunK)
  
 Contact us by sending an email to [contact@fewdpew.me](mailto:contact@fewdpew.me).
 
