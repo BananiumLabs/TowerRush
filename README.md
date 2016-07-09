@@ -1,7 +1,7 @@
 #TOWERRUSH
 ___
 ####Current Status
-[![Build Status](https://travis-ci.org/dbqeo/TowerRush.svg?branch=master)](https://travis-ci.org/dbqeo/TowerRush)
+[![Build Status](https://travis-ci.org/dbqeo/TowerRush.svg?branch=develop)](https://travis-ci.org/dbqeo/TowerRush)
 ___
 ##**Download** The Game From Official Project Website:
 [https://fewdpew.me/download](https://fewdpew.me/download)
