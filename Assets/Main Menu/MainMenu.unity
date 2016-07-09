@@ -3479,7 +3479,6 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -7352,9 +7351,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Project Leads: Ben C.\nGame Design: Aryan S.\nNetworking & Programming:
-    Vikram P.\nExternal Relations & Project Manager: Eric Q.\nMusic Director: Aki
-    T.\n\n\nCopyright \xA9 2017 Fewdpew Games.\nAll rights reserved."
+  m_Text: "Project Leads: Ben C.\nProject Manager & PR: Eric Q.\nGame Design: Aryan
+    S.\nNetworking & Programming: Vikram P.\nMusic Director: Aki T.\n\nCopyright \xA9
+    2016 Fewdpew Games.\nAll rights reserved."
 --- !u!222 &1523153131
 CanvasRenderer:
   m_ObjectHideFlags: 0
