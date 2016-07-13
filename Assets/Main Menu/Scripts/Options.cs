@@ -19,8 +19,6 @@ public class Options : MonoBehaviour {
 	public Text fullscreenLabel;
 	
 	public Controls controls;
-
-	private bool fullscreenEnabled = true;
 	
 	void Start () {
 		
@@ -47,6 +45,8 @@ public class Options : MonoBehaviour {
 
 	void Update () {
 		
+		fullscreenLabel.text = (Screen.fullScreen) ? "Enabled" : "Disabled";
+		if(Input.GetKey(KeyCode.F11)) fullscreenToggle();
 		if(Screen.width > 1300) mainMenu.scaleFactor = 2;
 		else if(Screen.width < 700) mainMenu.scaleFactor = .5f;
 		else mainMenu.scaleFactor = 1;
@@ -124,14 +124,6 @@ public class Options : MonoBehaviour {
 	}
 	
 	public void fullscreenToggle() {
-		if(fullscreenEnabled) {
-			fullscreenEnabled = false;
-			Screen.fullScreen = true;
-			fullscreenLabel.text = "Enabled";
-		} else {
-			fullscreenEnabled = true;
-			Screen.fullScreen = false;
-			fullscreenLabel.text = "Disabled";
-		}
+		Screen.fullScreen = !Screen.fullScreen;
 	}
 }

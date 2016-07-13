@@ -11,7 +11,7 @@ public class ButtonActions : MonoBehaviour {
 	}
 	
 	public void QuitToMainMenu () {
-		SceneManager.LoadScene(0);
+		PhotonNetwork.LeaveRoom();
 	}
 	
 	public void SwitchTeams () {
@@ -19,7 +19,6 @@ public class ButtonActions : MonoBehaviour {
 	}
 	
 	public void CloseTeamSelect () {
-        Debug.Log("Works?");
 		pgui.CloseTeamSelect();
 	}
 }

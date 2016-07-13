@@ -19,11 +19,9 @@ public class RoomLogic : MonoBehaviour {
     public Transform[] goldCrateSpawns;
     public GameObject[] crates;
     private bool started;
-    public bool debugMode;
 
     public void Awake()
     {
-        if(debugMode) Debug.LogWarning("Debug is enabled for RoomLogic.cs");
         // LoadMenu
         if (!PhotonNetwork.connected)
         {
@@ -90,7 +88,7 @@ public class RoomLogic : MonoBehaviour {
     }
 
     public void StartGame() {
-        if(debugMode || (GameObject.FindGameObjectsWithTag("Player").Length % 2 == 0 && !started)) {
+        if(Application.isEditor || (GameObject.FindGameObjectsWithTag("Player").Length % 2 == 0 && !started)) {
             
             foreach(GameObject crate in crates) crate.SetActive(true);
 
@@ -100,7 +98,6 @@ public class RoomLogic : MonoBehaviour {
             Debug.Log(carryCrates.Length);
 
             for(int i=0; i< /*(GameObject.FindGameObjectsWithTag("Player").Length/2) -1*/ 3; i++) {
-           
             blueCrates.SetValue(
                 (i % 3 == 0) 
                     ? PhotonNetwork.Instantiate(carryCrates[Random.Range(0,carryCrates.Length-1)].name , blueCrateSpawns[i].position, Quaternion.Euler(-90f,0,0), 0)

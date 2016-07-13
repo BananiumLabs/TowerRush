@@ -52,7 +52,6 @@ public class MainMenu : MonoBehaviour {
 
 		homeScreen.enabled = false;
 		levelSelect.enabled = true;
-		Debug.Log("Opened Level Select");
 	}
 
 	public void OpenOptions() {
@@ -62,7 +61,6 @@ public class MainMenu : MonoBehaviour {
 		optionDropdown.value = 0;
 		general.transform.rotation = new Quaternion (0.0f, 0.0f, 0.0f, 0.0f);
 		general.enabled = true;
-		Debug.Log("Opened Options");
 
 	}
 
@@ -70,7 +68,6 @@ public class MainMenu : MonoBehaviour {
 
 		homeScreen.enabled = false;
 		creditsMenu.enabled = true;
-		Debug.Log("Opened Credits");
 
 	}
 
@@ -83,7 +80,6 @@ public class MainMenu : MonoBehaviour {
 			general.enabled = false;
 		levelSelect.enabled = false;
 		creditsMenu.enabled = false;
-		Debug.Log("Closed Menus");
 
 	}
 
