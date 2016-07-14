@@ -67,6 +67,11 @@ public class PhotonConnection : MonoBehaviour {
         
     }
 
+    void OnLeftRoom()
+    {
+    SceneManager.LoadScene("MainMenu");
+    }
+
     /*public void playerFieldname()
     {
         PhotonNetwork.playerName = playerfield.text;

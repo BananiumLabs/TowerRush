@@ -24,6 +24,7 @@ public class Pl_Controller : MonoBehaviour {
     public bool running;
     private Pl_InputManager input;
     public bool grounded;
+    public RoomLogic roomlogic;
 
     public state[] states = new state[3];
     private state curState;
@@ -31,12 +32,18 @@ public class Pl_Controller : MonoBehaviour {
     public Transform adjTrans;
 
     private float adjvar = 1;
-
+    
     void Start() {
         input = GetComponentInParent<Pl_InputManager> ();
+        roomlogic = GameObject.FindObjectOfType<RoomLogic> ();
+       
     }
-    void Update()
-    {
+
+    void Update()  {
+        Ray ray = new Ray (transform.position, Vector3.down);
+        if(!Physics.Raycast(ray)) {
+            roomlogic.Respawn(transform);
+        }
             if (controller.isGrounded)
             {
                 grounded = true;
@@ -50,12 +57,8 @@ public class Pl_Controller : MonoBehaviour {
             if (controller.isGrounded)
             {
 
-                if(Input.GetKey(input.GetKey(1))) ver = -1f;
-                else if(Input.GetKey(input.GetKey(2))) ver = 1f;
-                else ver = 0f;
-                if(Input.GetKey(input.GetKey(3))) hor = 1f;
-                else if(Input.GetKey(input.GetKey(4))) hor = -1f;
-                else hor = 0f;
+               ver = -input.GetAxis("Horizontal");
+               hor = input.GetAxis("Vertical");
 
                 if (Mathf.Abs(ver) > 0.1f && Mathf.Abs(hor) > 0.1f)
                 {
@@ -70,7 +73,7 @@ public class Pl_Controller : MonoBehaviour {
                 moveDirection = transform.TransformDirection(moveDirection);
                 //Debug.Log(moveDirection);
                 moveDirection *= speed;
-                if (Input.GetKeyDown(input.GetKey(5)))
+                if (Input.GetKeyDown(input.Key(5)))
                 {
                     if (state == 0)
                     {
@@ -108,7 +111,7 @@ public class Pl_Controller : MonoBehaviour {
             }
             //else if (state == 2) state = 1;
         }
-        running = (controller.isGrounded && controller.velocity.magnitude > 1 && state == 0 && Input.GetKey(input.GetKey(6)) && Input.GetKey(input.GetKey(1)) && !Input.GetKey(input.GetKey(2)));
+        running = (controller.isGrounded && controller.velocity.magnitude > 1 && state == 0 && Input.GetKey(input.Key(6)) && input.GetAxis("Horizontal") > 0);
     }
 
     void CheckState()

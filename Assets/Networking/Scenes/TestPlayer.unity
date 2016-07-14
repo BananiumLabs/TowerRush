@@ -132,6 +132,7 @@ MonoBehaviour:
   state: 0
   running: 0
   grounded: 0
+  roomlogic: {fileID: 0}
   states:
   - name: Running
     speed: 10
@@ -457,7 +458,7 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
---- !u!1001 &1909686744
+--- !u!1001 &2000507235
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -496,22 +497,22 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114000013291114304, guid: c3a317e35bbc8fb49a5125ee5321bb1c,
+    - target: {fileID: 114000010173388558, guid: c3a317e35bbc8fb49a5125ee5321bb1c,
         type: 2}
       propertyPath: viewIdField
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114000013291114304, guid: c3a317e35bbc8fb49a5125ee5321bb1c,
+    - target: {fileID: 114000010173388558, guid: c3a317e35bbc8fb49a5125ee5321bb1c,
         type: 2}
       propertyPath: instantiationId
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114000010173388558, guid: c3a317e35bbc8fb49a5125ee5321bb1c,
+    - target: {fileID: 114000013291114304, guid: c3a317e35bbc8fb49a5125ee5321bb1c,
         type: 2}
       propertyPath: viewIdField
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114000010173388558, guid: c3a317e35bbc8fb49a5125ee5321bb1c,
+    - target: {fileID: 114000013291114304, guid: c3a317e35bbc8fb49a5125ee5321bb1c,
         type: 2}
       propertyPath: instantiationId
       value: 2
