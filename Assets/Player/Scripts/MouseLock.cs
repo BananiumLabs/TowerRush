@@ -4,22 +4,20 @@ using System.Collections;
 //SUMMARY: Locks the mouse onto the center of the screen during play.
 public class MouseLock : MonoBehaviour
 {
-    CursorLockMode isLocked;
 
     // Apply requested cursor state
     void SetCursorState()
     {
-        Cursor.lockState = isLocked;
+		Cursor.lockState = Vars.lockMode;
         // Hide cursor when locking
-        Cursor.visible = (CursorLockMode.Locked != isLocked);
+		Cursor.visible = (CursorLockMode.Locked != Vars.lockMode);
     }
-
     void OnGUI()
     {
         GUILayout.BeginVertical();
         // Release cursor on escape keypress
         if (Input.GetKeyDown(KeyCode.Escape))
-            Cursor.lockState = isLocked = CursorLockMode.None;
+			Cursor.lockState = Vars.lockMode = CursorLockMode.None;
 
         GUILayout.EndVertical();
 
@@ -28,7 +26,7 @@ public class MouseLock : MonoBehaviour
 
     void Update()
     {
-       // if (Input.GetMouseButtonDown(0))
-           // isLocked = CursorLockMode.Locked;
+       //if (Input.GetMouseButtonDown(0))
+		//	Vars.lockMode = CursorLockMode.Locked;
     }
 } 

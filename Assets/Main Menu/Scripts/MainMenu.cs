@@ -29,6 +29,7 @@ public class MainMenu : MonoBehaviour {
 		optionDropdown = optionDropdown.GetComponent<Dropdown> ();
 		general = general.GetComponent<Canvas> ();
 		controls = controls.GetComponent<Canvas> ();
+		Debug.Log(SceneManager.GetActiveScene().buildIndex);
 
 		CloseSubmenu();
 

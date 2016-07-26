@@ -11,7 +11,9 @@ public class ButtonActions : MonoBehaviour {
 	}
 	
 	public void QuitToMainMenu () {
+		PhotonNetwork.DestroyPlayerObjects(PhotonNetwork.player);
 		PhotonNetwork.LeaveRoom();
+		SceneManager.LoadScene(0); //Load Main Menu
 	}
 	
 	public void SwitchTeams () {
