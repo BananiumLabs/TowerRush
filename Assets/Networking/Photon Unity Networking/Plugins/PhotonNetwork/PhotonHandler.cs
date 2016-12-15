@@ -12,6 +12,7 @@ using UnityEngine;
 using Debug = UnityEngine.Debug;
 using Hashtable = ExitGames.Client.Photon.Hashtable;
 using SupportClassPun = ExitGames.Client.Photon.SupportClass;
+using UnityEngine.Profiling;
 
 
 /// <summary>
