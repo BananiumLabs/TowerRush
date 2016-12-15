@@ -1,7 +1,10 @@
 #TOWERRUSH
 ___
-####Current Status
-[![Build Status](https://travis-ci.com/dbqeo/TowerRush.svg?token=JfBJk9gm8EheDBEGwTCZ&branch=master)](Travis Build Status)
+####Build Status: Latest (develop branch)
+[![Build Status](https://travis-ci.com/dbqeo/TowerRush.svg?token=JfBJk9gm8EheDBEGwTCZ&branch=master)](https://travis-ci.com/dbqeo/TowerRush/branches)
+
+####Build Status: Stable (master branch)
+[![Build Status](https://travis-ci.com/dbqeo/TowerRush.svg?token=JfBJk9gm8EheDBEGwTCZ&branch=develop)](https://travis-ci.com/dbqeo/TowerRush/branches)
 ___
 ##**Download** The Game From Official Project Website:
 [https://fewdpew.me/download](https://fewdpew.me/download)
