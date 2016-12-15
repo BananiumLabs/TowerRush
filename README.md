@@ -1,7 +1,10 @@
 #TOWERRUSH
 ___
-####Current Status
-[![Build Status](https://travis-ci.org/dbqeo/TowerRush.svg?branch=develop)](https://travis-ci.org/dbqeo/TowerRush)
+####Build Status: Latest (develop branch)
+[![Build Status](https://travis-ci.com/dbqeo/TowerRush.svg?token=JfBJk9gm8EheDBEGwTCZ&branch=master)](https://travis-ci.com/dbqeo/TowerRush/branches)
+
+####Build Status: Stable (master branch)
+[![Build Status](https://travis-ci.com/dbqeo/TowerRush.svg?token=JfBJk9gm8EheDBEGwTCZ&branch=develop)](https://travis-ci.com/dbqeo/TowerRush/branches)
 ___
 ##**Download** The Game From Official Project Website:
 [https://fewdpew.me/download](https://fewdpew.me/download)
@@ -10,7 +13,6 @@ ___
 ### **CURRENT FOCUS: [HUD & Weapons](https://github.com/FewdpewGames/unity-game/tree/develop)**
 
 ###The tower defense game where you are the attacker.
-###This project is open-source under the [GNU General Public License v3.0](http://www.gnu.org/licenses/gpl-3.0.en.html).
 
 ###[Click here](https://github.com/BenCuan/unity-game/wiki) to check out the Wiki
 ###[Click here](https://github.com/BenCuan/unity-game/wiki/getting-started) if you need help getting started
@@ -41,6 +43,6 @@ ___
  - **Lead Programmer** [Vikram P](https://github.com/DarkFlamex1)
  - **Concept Designer** [Aryan S](https://github.com/CrispyCookieHD)
  
-Contact us by sending an email to [contact@fewdpew.me](mailto:contact@fewdpew.me).
+Contact us by sending an email to [contact@mvgd.club](mailto:contact@mvgd.club).
 
 ##This project adheres to [Semantic Versioning](semver.org).
