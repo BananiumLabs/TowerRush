@@ -54,8 +54,8 @@ public class PhotonConnection : MonoBehaviour {
     public void OnJoinedRoom()
     {
         PhotonNetwork.isMessageQueueRunning = false;
-        SceneManager.LoadScene("The map");
-        SceneManager.UnloadScene("MainMenu");
+        SceneManager.LoadScene("TestMap");
+        SceneManager.UnloadSceneAsync("MainMenu");
         Debug.Log("Joined Room");
     }
 

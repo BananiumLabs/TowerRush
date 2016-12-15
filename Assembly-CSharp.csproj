@@ -50,7 +50,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\ButtonActions.cs" />
-     <Compile Include="Assets\Scripts\Controls.cs" />
+     <Compile Include="Assets\Scripts\InputManager.cs" />
      <Compile Include="Assets\Scripts\MainMenu.cs" />
      <Compile Include="Assets\Scripts\MapEvents.cs" />
      <Compile Include="Assets\Scripts\MouseLock.cs" />
@@ -61,7 +61,6 @@
      <Compile Include="Assets\Scripts\Options.cs" />
      <Compile Include="Assets\Scripts\PhotonConnection.cs" />
      <Compile Include="Assets\Scripts\Pl_Controller.cs" />
-     <Compile Include="Assets\Scripts\Pl_InputManager.cs" />
      <Compile Include="Assets\Scripts\Pl_Values.cs" />
      <Compile Include="Assets\Scripts\PlayerGUI.cs" />
      <Compile Include="Assets\Scripts\PlayerHUD.cs" />

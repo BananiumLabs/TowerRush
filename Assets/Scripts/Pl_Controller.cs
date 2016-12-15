@@ -22,7 +22,7 @@ public class Pl_Controller : MonoBehaviour {
     public float ver;
     public int state;
     public bool running;
-    private Pl_InputManager input;
+    private InputManager input;
     public bool grounded;
     public RoomLogic roomlogic;
 
@@ -34,7 +34,7 @@ public class Pl_Controller : MonoBehaviour {
     private float adjvar = 1;
     
     void Start() {
-        input = GetComponentInParent<Pl_InputManager> ();
+        input = GetComponentInParent<InputManager> ();
         roomlogic = GameObject.FindObjectOfType<RoomLogic> ();
        
     }
