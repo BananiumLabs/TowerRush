@@ -73,7 +73,7 @@ public class Pl_Controller : MonoBehaviour {
                 moveDirection = transform.TransformDirection(moveDirection);
                 //Debug.Log(moveDirection);
                 moveDirection *= speed;
-                if (Input.GetKeyDown(input.Key(5)))
+                if (input.GetKeyDown("Jump"))
                 {
                     if (state == 0)
                     {
@@ -111,7 +111,7 @@ public class Pl_Controller : MonoBehaviour {
             }
             //else if (state == 2) state = 1;
         }
-        running = (controller.isGrounded && controller.velocity.magnitude > 1 && state == 0 && Input.GetKey(input.Key(6)) && input.GetAxis("Horizontal") > 0);
+        running = (controller.isGrounded && controller.velocity.magnitude > 1 && state == 0 && input.GetKey("Run") && input.GetAxis("Horizontal") > 0);
     }
 
     void CheckState()

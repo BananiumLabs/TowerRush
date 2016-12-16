@@ -12,6 +12,7 @@ TagManager:
   - CarryCrate
   - SupportCrate
   - TankCrate
+  - SetControlsButton
   layers:
   - Default
   - TransparentFX

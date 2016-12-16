@@ -55,7 +55,6 @@ public class PhotonConnection : MonoBehaviour {
     {
         PhotonNetwork.isMessageQueueRunning = false;
         SceneManager.LoadScene("TestMap");
-        SceneManager.UnloadSceneAsync("MainMenu");
         Debug.Log("Joined Room");
     }
 
@@ -63,7 +62,7 @@ public class PhotonConnection : MonoBehaviour {
     {
         //PhotonNetwork.JoinRoom("Room 1");
         //Debug.Log(PhotonNetwork.playerName);
-        SceneManager.LoadScene("The map");
+        SceneManager.LoadScene("Testmap");
         
     }
 
