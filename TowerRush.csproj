@@ -127,6 +127,8 @@
     <Compile Include="Assets\Networking\DarkRift\PlayerDemo\NetworkPlayer.cs" />
     <Compile Include="Assets\Networking\DarkRift\PlayerDemo\Player.cs" />
     <Compile Include="Assets\Networking\DarkRift\PlayerDemo\TagIndex.cs" />
+    <Compile Include="Assets\Networking\Scripts\N_Movement.cs" />
+    <Compile Include="Assets\Networking\Scripts\Pl_NetworkManager.cs" />
     <Compile Include="Assets\Scripts\ButtonActions.cs" />
     <Compile Include="Assets\Scripts\InputManager.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
