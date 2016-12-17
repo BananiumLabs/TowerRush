@@ -4,6 +4,29 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This changelog follows the format as defined by [Keep a Changelog](http://keepachangelog.com/).
 All unreleased changes are found in develop. Master is for released content only.
 
+## [Alpha 1.3.1] - Unreleased
+###Added
+ - Inventory System
+ - Functionality for Crates
+ - Basic gameplay management
+ - In-game options menu
+
+###Fixed
+ - Return to Main Menu occasionally fails
+ 
+## [Alpha 1.2.1] - 2016-07-13
+###Added
+ - Fullscreen toggle
+ - InputManager Axis Support
+###Changed
+ - Splash image replaced with more finalized version
+ - Updated Input Manager: improved custom key management
+
+###Fixed
+ - Could not rejoin after leaving to main menu
+ - Controls.cfg not generating properly in build mode
+ - Running not toggling properly
+ 
 ## [Alpha 1.2.0] - 2016-06-27
 ###Added
 - Crates (Archer, Ninja, Bomber and Miner)
@@ -60,6 +83,8 @@ All unreleased changes are found in develop. Master is for released content only
 [Alpha 1.0.0]: https://github.com/FewdpewGames/unity-game/releases/tag/v1.0.0-alpha
 [Alpha 1.0.1]: https://github.com/FewdpewGames/unity-game/releases/tag/v1.0.1-alpha
 [Alpha 1.1.0]: https://github.com/FewdpewGames/unity-game/releases/tag/v1.1.0-alpha
+[Alpha 1.2.0]: https://github.com/FewdpewGames/unity-game/releases/tag/v1.2.0-alpha
+[Alpha 1.2.1]: https://github.com/FewdpewGames/unity-game/releases/tag/v1.2.1-alpha
 
 <!---
 [//]: # ## [X.y.z] - YYYY-MM-DD
