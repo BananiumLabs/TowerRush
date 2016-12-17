@@ -265,7 +265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 412eec0c69a25f549bbccae5983ca453, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serverIP: 3132372e302e302e31
+  serverIP: 127.0.0.1
   playerObject: {fileID: 100000, guid: 23ea91ab516563a479347a8dd26d325c, type: 2}
 --- !u!4 &687266891
 Transform:
