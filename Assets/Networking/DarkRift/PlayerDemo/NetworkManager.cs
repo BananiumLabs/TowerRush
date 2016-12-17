@@ -18,15 +18,18 @@ public class NetworkManager : MonoBehaviour
 
 	void Start ()
 	{
-		//Connect to the DarkRift Server using the Ip specified (will hang until connected or timeout)
-		DarkRiftAPI.Connect (serverIP);
+        Debug.Log("Spawns");
+        //Connect to the DarkRift Server using the Ip specified (will hang until connected or timeout)
+        DarkRiftAPI.Connect (serverIP);
 		//Setup a receiver so we can create players when told to.
 		DarkRiftAPI.onDataDetailed += ReceiveData;
 
-		//Tell others that we've entered the game and to instantiate a player object for us.
-		if (DarkRiftAPI.isConnected)
+        Debug.Log("Connecting");
+        //Tell others that we've entered the game and to instantiate a player object for us.
+        if (DarkRiftAPI.isConnected)
 		{
-			//Get everyone else to tell us to spawn them a player (this doesn't need the data field so just put whatever)
+            //Get everyone else to tell us to spawn them a player (this doesn't need the data field so just put whatever)
+            Debug.Log("Spawn");
 			DarkRiftAPI.SendMessageToOthers (TagIndex.Controller, TagIndex.ControllerSubjects.JoinMessage, "hi");
 			//Then tell them to spawn us a player! (this time the data is the spawn position)
 			DarkRiftAPI.SendMessageToAll (TagIndex.Controller, TagIndex.ControllerSubjects.SpawnPlayer, new Vector3(0f,0f,0f));
@@ -69,7 +72,7 @@ public class NetworkManager : MonoBehaviour
 				//If it's our player being created allow control and set the reference
 				if (senderID == DarkRiftAPI.id)
 				{
-					clone.GetComponent<Player>().isControllable = true;
+					clone.GetComponent<N_Movement>().isMine = true;
 					player = clone.transform;
 				}
 			}
