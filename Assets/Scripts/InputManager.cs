@@ -9,33 +9,39 @@ using System.Collections;
 public class InputManager : MonoBehaviour {
 
 ///List of editable controls
-protected KeyCode Forward, Back, Left, Right, Jump, Run, Crouch;
+protected KeyCode Forward, Back, Left, Right, Jump, Run, Crouch, Inventory;
 public List<KeyCode> controlList;
 
 ///Array containing the display names for above keyCodes
-public List<string> controlListNames = new List<string> {"Forward", "Back", "Left","Right","Jump","Run", "Crouch"};
+public List<string> controlListNames = new List<string> {"Forward", "Back", "Left","Right","Jump","Run", "Crouch", "Inventory"};
 
 ///Dynamic path to controls.cfg
 protected String configPath; 
 
 ///Default assigned controls
-string[] defaultControls = {"W","S","A","D","Space","LeftShift", "LeftControl"};
+string[] defaultControls = {"W","S","A","D","Space","LeftShift", "LeftControl", "E"};
 string[] axes = {"Vertical","Horizontal"};
 protected Event currentEvent;
-//Array containing the text displays in controls assign menu
+
+///Array containing the text displays in controls assign menu
 public List<Text> textList = new List<Text> {};
-//Text that displays message when in controls assign mode
+///Text that displays message when in controls assign mode
 public Text infoText;
 
 
 	void Start () {
 
-		try {infoText = infoText.GetComponent<Text> (); infoText.enabled = false;} catch{}
+		try {
+			infoText = infoText.GetComponent<Text> (); 
+			infoText.enabled = false;
+		} catch {
+			Debug.LogWarning("InfoText not found for InputManager.");
+		}
 		
 
 		configPath = Application.dataPath + "/controls.cfg";
 
-		controlList = new List<KeyCode> {Forward, Back, Left, Right, Jump, Run, Crouch};
+		controlList = new List<KeyCode> {Forward, Back, Left, Right, Jump, Run, Crouch, Inventory};
 
 		
 		//validate controls file
@@ -132,6 +138,7 @@ public Text infoText;
 			return (KeyCode)System.Enum.Parse(typeof(KeyCode), lines[id]);
 	}
 
+	///Assign this method to buttons in order to change key bindings
 	public void SetKey (int id) {
 		
 			Text buttonText = textList[id];
