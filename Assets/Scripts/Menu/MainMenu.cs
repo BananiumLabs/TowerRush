@@ -1,19 +1,14 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using System;
 
 //Code for the entire main menu (EXCEPT Options)
 public class MainMenu : MonoBehaviour {
 	
-	public Canvas homeScreen;
-	public Canvas options;
-	public Canvas levelSelect;
-	public Canvas creditsMenu;
+	public Canvas homeScreen, options, levelSelect, creditsMenu;
 
 	public Dropdown optionDropdown;
-	public Canvas general;
-	public Canvas controls;
+	public Canvas general, controls;
 
 	private int levelNumber;
 
@@ -22,32 +17,13 @@ public class MainMenu : MonoBehaviour {
 		Cursor.lockState = CursorLockMode.None;
 		Cursor.visible = true;
 
-		levelSelect = levelSelect.GetComponent<Canvas> ();
-		options = options.GetComponent<Canvas> ();
-		creditsMenu = creditsMenu.GetComponent<Canvas> ();
-
-		optionDropdown = optionDropdown.GetComponent<Dropdown> ();
-		general = general.GetComponent<Canvas> ();
-		controls = controls.GetComponent<Canvas> ();
-		Debug.Log("Started Scene " + SceneManager.GetActiveScene().buildIndex);
+		Debug.Log("Started MainMenu, scene " + SceneManager.GetActiveScene().buildIndex);
 
 		CloseSubmenu();
 
 	}
 
-	void Update () {
-		
-	}
-
-	//Unused, might be useful later
-	private void EnableChildren(Component[] Parent, bool enabled) {
-		Parent = GetComponentsInChildren<Image> ();
-		foreach (Image child in Parent) {
-			child.enabled = true;
-		}
-	}
-
-	//Used for toggling submenus
+	///Used for toggling submenus
 		
 	public void OpenLevelSelect() {
 
@@ -72,7 +48,7 @@ public class MainMenu : MonoBehaviour {
 
 	}
 
-	//Code for closing every submenu
+	///Code for closing every submenu
 	public void CloseSubmenu() {
 		
 		homeScreen.enabled = true;
@@ -84,22 +60,7 @@ public class MainMenu : MonoBehaviour {
 
 	}
 
-	//When the level buttons are pressed
-	public void SelectLevel(int level) {
-			levelNumber = level;
-	}
-
-	//When the "Join" button is pressed
-	public void LoadLevel() {
-        Debug.Log("Initializing Level " + levelNumber);
-        if (levelNumber != 0)
-			SceneManager.LoadScene (levelNumber);
-        //If No Level Was Selected(0), it defaults to 1.
-        else
-            SceneManager.LoadScene(1);
-	}
-
-	//Quits the entire game
+	///Quits the entire game
 	public void Quit() {
 		Application.Quit ();
 	}
