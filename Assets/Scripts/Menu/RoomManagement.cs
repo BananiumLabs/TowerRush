@@ -29,7 +29,7 @@ public Canvas error;
 		} catch {
 			
 			errorText.text = "Could not connect to " + ip + ". Please verify that the ip is correct.";
-			Debug.LogError(errorText);
+			Debug.LogError(errorText.text);
 			error.enabled = true;
 		}
 	}
