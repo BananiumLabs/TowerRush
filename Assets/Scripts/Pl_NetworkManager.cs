@@ -29,6 +29,7 @@ public class Pl_NetworkManager : MonoBehaviour {
             //Spawn the player
             Debug.Log("Spawning");
             DarkRiftAPI.SendMessageToAll(TagIndex.Controller, TagIndex.ControllerSubjects.SpawnPlayer, new Vector3(0f, 0f, 0f));
+            Instantiate(playerObject, Vars.lobby, Quaternion.identity);
         }
         else
             Debug.Log("Failed to connect to DarkRift Server!");

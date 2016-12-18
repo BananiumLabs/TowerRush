@@ -3,11 +3,13 @@ using UnityEngine.SceneManagement;
 
 
 public class ButtonActions : MonoBehaviour {
-	public GameObject gui; 
 	public PlayerGUI pgui;
+	protected Transform playerTransform;
+	public Vars.Team team;
+
 	void Start () {
-		//gui = GameObject.Find("RoomGui");
-		pgui = gui.GetComponent<PlayerGUI> ();
+		pgui = GetComponent<PlayerGUI> ();
+		playerTransform = GetComponentInParent<Transform> ();
 	}
 	
 	public void QuitToMainMenu () {
@@ -23,4 +25,27 @@ public class ButtonActions : MonoBehaviour {
 	public void CloseTeamSelect () {
 		pgui.CloseTeamSelect();
 	}
+
+	public void joinBlue()
+    {
+        if(!Input.GetKey(KeyCode.Space)) {
+            Debug.Log("JOINING BLUE");
+        	playerTransform.position = Vars.testMapBlue;
+       		team = Vars.Team.blue;
+        	CloseTeamSelect();
+        	playerTransform.tag = "BluePlayer";
+		}
+    }
+
+    public void joinGold()
+    {
+        if(!Input.GetKey(KeyCode.Space)) {
+            Debug.Log("JOINING GOLD");
+        	playerTransform.position = Vars.testMapGold;
+       		team = Vars.Team.gold;
+        	CloseTeamSelect();
+        	playerTransform.tag = "GoldPlayer";
+		}
+        
+    }
 }

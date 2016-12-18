@@ -6,11 +6,11 @@ using DarkRift;
 
 public class CubeNetworkManager : MonoBehaviour
 {
-	public string IP = "127.0.0.1";
+	public string IP = "localhost";
 
 	void Start()
 	{
-		DarkRiftAPI.Connect(IP);
+		Debug.Log(DarkRiftAPI.Connect(IP));
 	}
 
 	void OnApplicationQuit()

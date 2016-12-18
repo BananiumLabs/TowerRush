@@ -4895,8 +4895,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1943425735}
   m_HandleRect: {fileID: 1943425733}
   m_Direction: 0
-  m_Value: 0.9999997
-  m_Size: 0.551189
+  m_Value: 1
+  m_Size: 0.58753866
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -6798,8 +6798,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 925799918}
-        m_MethodName: joinRoom
+      - m_Target: {fileID: 1338993473}
+        m_MethodName: LoadLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
