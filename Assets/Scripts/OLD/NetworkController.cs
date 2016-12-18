@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-public class NetworkController : Photon.MonoBehaviour {
+public class NetworkController : MonoBehaviour {
 
-    public MouseLook mousex;
+   /* public MouseLook mousex;
     public MouseLook mousey;
     public Camera camplayer;
     public Pl_Controller controllerScript;

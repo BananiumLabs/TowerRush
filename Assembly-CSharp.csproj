@@ -74,7 +74,7 @@
      <Compile Include="Assets\Scripts\MouseLock.cs" />
      <Compile Include="Assets\Scripts\MouseLook.cs" />
      <Compile Include="Assets\Scripts\N_Movement.cs" />
-     <Compile Include="Assets\Scripts\NetworkAnimation.cs" />
+     <Compile Include="Assets\Scripts\OLD\NetworkAnimation.cs" />
      <Compile Include="Assets\Scripts\OLD\NetworkController.cs" />
      <Compile Include="Assets\Scripts\OLD\NetworkProp.cs" />
      <Compile Include="Assets\Scripts\OLD\PhotonConnection.cs" />
@@ -100,9 +100,7 @@
      <None Include="Assets\Networking\DarkRift\DarkRift\Plugins\DarkRiftAPI.xml" />
      <None Include="Assets\Plugins\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Animations\Raw Mocap Data\Animations\_CompleteAnimationList.txt" />
-     <None Include="Assets\Plugins\Photon Unity Networking\readme.txt" />
      <None Include="Assets\Networking\DarkRift\HeavySyncDemo\Readme.txt" />
-     <None Include="Assets\Plugins\Photon Unity Networking\changelog.txt" />
      <None Include="Assets\Networking\DarkRift\Readme.txt" />
      <None Include="Assets\list.txt" />
  <Reference Include="UnityEngine.UI">

@@ -62,9 +62,7 @@
      <None Include="Assets\Networking\DarkRift\DarkRift\Plugins\DarkRiftAPI.xml" />
      <None Include="Assets\Plugins\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Animations\Raw Mocap Data\Animations\_CompleteAnimationList.txt" />
-     <None Include="Assets\Plugins\Photon Unity Networking\readme.txt" />
      <None Include="Assets\Networking\DarkRift\HeavySyncDemo\Readme.txt" />
-     <None Include="Assets\Plugins\Photon Unity Networking\changelog.txt" />
      <None Include="Assets\Networking\DarkRift\Readme.txt" />
      <None Include="Assets\list.txt" />
  <Reference Include="UnityEditor.Advertisements">
@@ -126,9 +124,6 @@
  </Reference>
  <Reference Include="Photon3Unity3D">
  <HintPath>C:/Users/BenCu/OneDrive/Documents/Git/TowerRush/Assets/Plugins/Photon3Unity3D.dll</HintPath>
- </Reference>
- <Reference Include="Newtonsoft.Json">
- <HintPath>C:/Users/BenCu/OneDrive/Documents/Git/TowerRush/Assets/Plugins/Photon Unity Networking/Editor/PhotonNetwork/Newtonsoft.Json.dll</HintPath>
  </Reference>
  <Reference Include="websocket-sharp">
  <HintPath>C:/Users/BenCu/OneDrive/Documents/Git/TowerRush/Assets/Plugins/WebSocket/websocket-sharp.dll</HintPath>

@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class NetworkProp : Photon.MonoBehaviour {
+public class NetworkProp : MonoBehaviour {
 
+    /*
     public MouseLook mousex;
     public MouseLook mousey;
 
@@ -37,4 +38,5 @@ public class NetworkProp : Photon.MonoBehaviour {
     void Update () {
 	
 	}
+    */
 }

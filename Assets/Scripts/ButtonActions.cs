@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using DarkRift;
 
 
 public class ButtonActions : MonoBehaviour {
@@ -13,8 +14,7 @@ public class ButtonActions : MonoBehaviour {
 	}
 	
 	public void QuitToMainMenu () {
-		PhotonNetwork.DestroyPlayerObjects(PhotonNetwork.player);
-		PhotonNetwork.LeaveRoom();
+		DarkRiftAPI.Disconnect();
 		SceneManager.LoadScene(0); //Load Main Menu
 	}
 	

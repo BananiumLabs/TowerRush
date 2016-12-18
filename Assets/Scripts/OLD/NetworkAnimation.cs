@@ -3,6 +3,7 @@ using System.Collections;
 
 public class NetworkAnimation : MonoBehaviour {
 
+    /*
     public Animator anim;
     public Pl_Values plValues;
     public PhotonView photonView;
@@ -52,4 +53,5 @@ public class NetworkAnimation : MonoBehaviour {
             anim.SetFloat("Vertical", plValues.ver);
         }
     }
+    */
 }

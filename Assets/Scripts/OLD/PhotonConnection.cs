@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PhotonConnection : MonoBehaviour {
-    [Header("Photon")]
+   /* [Header("Photon")]
     public string versionNumber = "v1.1";
     public int port = 5055;
 
@@ -14,7 +14,7 @@ public class PhotonConnection : MonoBehaviour {
     /* [Header("Player Info")]
     public Text playerfield;p
     public GameObject playerPanel;
-    private string plname; */
+    private string plname; 
 
     [Header("Menu UI")]
     public GameObject roomPanel;
