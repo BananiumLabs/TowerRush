@@ -62,9 +62,10 @@ public class Pl_NetworkManager : MonoBehaviour {
             if (subject == TagIndex.ControllerSubjects.SpawnPlayer)
             {
                 //Instantiate the player
+                Debug.Log("Cloning");
                 GameObject clone = (GameObject)Instantiate(playerObject, (Vector3)data, Quaternion.identity);
                 //Tell the network player who owns it so it tunes into the right updates.
-                clone.GetComponent<NetworkPlayer>().networkID = senderID;
+                clone.GetComponent<N_Movement>().networkID = senderID;
 
                 //If it's our player being created allow control and set the reference
                 if (senderID == DarkRiftAPI.id)

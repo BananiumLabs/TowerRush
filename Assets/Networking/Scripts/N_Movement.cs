@@ -6,6 +6,7 @@ using DarkRift;
 
 public class N_Movement : MonoBehaviour {
 
+    public ushort networkID;
     public bool isMine;
 
     //public GameObject playerObject;
