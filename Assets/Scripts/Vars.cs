@@ -9,4 +9,6 @@ public class Vars : MonoBehaviour {
 	public static Vector3 lobby = new Vector3(0,0,0);
 	
 	public enum Team {blue, gold};
+
+	public static string path = Application.dataPath;
 }

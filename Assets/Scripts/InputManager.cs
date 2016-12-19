@@ -39,7 +39,7 @@ public Text infoText;
 		}
 		
 
-		configPath = Application.dataPath + "/controls.cfg";
+		configPath = Vars.path + "/controls.cfg";
 
 		controlList = new List<KeyCode> {Forward, Back, Left, Right, Jump, Run, Crouch, Inventory};
 

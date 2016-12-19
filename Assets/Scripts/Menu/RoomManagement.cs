@@ -4,15 +4,29 @@ using UnityEngine;
 using UnityEngine.UI;
 using DarkRift;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class RoomManagement : MonoBehaviour {
 
 public Text usernameText, ipText, errorText;
 public Canvas error;
+protected string autofillPath;
+protected string user, ip;
 
 	// Use this for initialization
 	void Start () {
+
+		autofillPath = Vars.path + "/autofill.cfg";
 		error.enabled = false;
+
+		try {
+			ipText.GetComponentInParent<InputField>().text = File.ReadAllLines(autofillPath)[0];
+			usernameText.GetComponentInParent<InputField>().text = File.ReadAllLines(autofillPath)[1];
+			Debug.Log(File.ReadAllLines(autofillPath)[0]);
+		} catch {
+			Debug.LogWarning("autofill.cfg missing or corrupt.");
+		}
+		
 	}
 	
 	// Update is called once per frame
@@ -26,7 +40,14 @@ public Canvas error;
 		string user = usernameText.text;
 		if(ip.Equals("")) ip = "localhost";
 		if(user.Equals("")) user = "Player";
-		
+
+		PlayerPrefs.SetString("Username", user);
+		using (var writer = new StreamWriter(File.Create(autofillPath))) {
+			writer.WriteLine(ip);
+			writer.WriteLine(user);
+			Debug.Log("Successfully wrote autofill.cfg");
+		};
+
         Debug.Log("Attempting to connect to " + ip + " as " + user);
 		try {
 			DarkRiftAPI.Connect(ip);
