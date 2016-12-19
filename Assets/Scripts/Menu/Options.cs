@@ -20,6 +20,7 @@ public class Options : MonoBehaviour {
 		volume.maxValue = 100;
 		volume.minValue = 0;
 		volume.wholeNumbers = true;
+		resolution.value = 3;
 
 		generalPanel.transform.Rotate (20.0f, 0.0f, 0.0f);
 	
