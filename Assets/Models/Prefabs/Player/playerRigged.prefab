@@ -177,6 +177,7 @@ GameObject:
   - component: {fileID: 114074346181099300}
   - component: {fileID: 114258742992803816}
   - component: {fileID: 114259595646063008}
+  - component: {fileID: 114202868912778782}
   m_Layer: 0
   m_Name: playerRigged
   m_TagString: Untagged
@@ -1054,7 +1055,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1181690931821958}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 4.23164, y: -4.1403956e-17, z: 137.794}
   m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
   m_Children:
   - {fileID: 4026279523456114}
@@ -1854,6 +1855,17 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!114 &114202868912778782
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1181690931821958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecb84c8190e27c641bab7651eb2b9f5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114218912881663454
 MonoBehaviour:
   m_ObjectHideFlags: 1
