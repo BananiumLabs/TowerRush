@@ -22,7 +22,6 @@ protected string user, ip;
 		try {
 			ipText.GetComponentInParent<InputField>().text = File.ReadAllLines(autofillPath)[0];
 			usernameText.GetComponentInParent<InputField>().text = File.ReadAllLines(autofillPath)[1];
-			Debug.Log(File.ReadAllLines(autofillPath)[0]);
 		} catch {
 			Debug.LogWarning("autofill.cfg missing or corrupt.");
 		}

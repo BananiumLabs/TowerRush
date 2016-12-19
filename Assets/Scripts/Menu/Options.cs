@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.IO;
+using System;
 
 ///Code for the Options submenu in the Main Menu.
 public class Options : MonoBehaviour {
@@ -14,19 +16,30 @@ public class Options : MonoBehaviour {
 	public bool fullscreen;
 	
 	public InputManager controls;
+
+	protected string optionsPath;
+	protected string[] defaultOptions = {"50", "true", "3", "0"};
 	
 	void Start () {
+		controls.configPath = Vars.path + "/controls.cfg";
+		optionsPath = Vars.path + "/options.cfg";
 
 		volume.maxValue = 100;
 		volume.minValue = 0;
 		volume.wholeNumbers = true;
-		resolution.value = 3;
+		
 
 		generalPanel.transform.Rotate (20.0f, 0.0f, 0.0f);
-	
+		
+		ReadConfig();
+		UpdateValues();
 	}
 
-	void Update () {
+	void Update() {
+		if(optionsMenu.enabled) UpdateValues();
+	}
+
+	public void UpdateValues () {
 		
 		fullscreenLabel.text = (Screen.fullScreen) ? "Enabled" : "Disabled";
 		if(Input.GetKey(KeyCode.F11)) fullscreenToggle();
@@ -97,16 +110,61 @@ public class Options : MonoBehaviour {
 	//when "reset to default" is pressed
 	public void resetOptions() {
 		if(generalPanel.enabled) {
-			graphics.value = 4;
-		volume.value = 50;
-		resolution.value = 1;
+			resetOptions(true);
+
 		} else if(controlsPanel.enabled) {
 			controls.WriteDefaultControls();
 		}
+
+		UpdateValues();
 		
+	}
+
+	//Allows for resetting of options from within code
+	protected void resetOptions(bool usingCode) {
+		if(usingCode) {
+			graphics.value = 4;
+			volume.value = 50;
+			if(SystemInfo.operatingSystemFamily.Equals(OperatingSystemFamily.Windows)) resolution.value = 0;
+			else resolution.value = 3;
+
+			WriteConfig();
+			UpdateValues();
+		} else resetOptions();
+	}
+
+	public void WriteConfig() {
+		using (var writer = new StreamWriter(File.Create(optionsPath))) {
+			writer.WriteLine(volume.value);
+			writer.WriteLine(fullscreen);
+			writer.WriteLine(graphics.value);
+			writer.WriteLine(resolution.value);
+			Debug.Log("Wrote options");
+		}
+	}
+
+
+	public void ReadConfig() {
+		try {
+			string[] tempOptions = File.ReadAllLines(optionsPath);
+			volume.value = Int32.Parse(tempOptions[0]);
+			fullscreen = Boolean.Parse(tempOptions[1]);
+			graphics.value = Int32.Parse(tempOptions[2]);
+			resolution.value = Int32.Parse(tempOptions[3]);
+			Debug.Log("Successfully loaded options file");
+		} catch (Exception e) {
+			Debug.LogWarning("Error when reading config file: " + e);
+			resetOptions(true);
+		}
+	}
+
+	public void CloseOptions() {
+		optionsMenu.enabled = false;
+		WriteConfig();
 	}
 	
 	public void fullscreenToggle() {
 		fullscreen = !fullscreen;
+		UpdateValues();
 	}
 }

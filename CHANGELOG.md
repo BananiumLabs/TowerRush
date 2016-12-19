@@ -23,6 +23,7 @@ All unreleased changes are found in develop. Master is for released content only
 ###Fixed
  - Return to Main Menu occasionally fails
  - Fullscreen toggle not working
+ - Game not launching on Mac
  
 ## [Alpha 1.2.1] - 2016-07-13
 ###Added

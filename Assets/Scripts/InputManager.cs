@@ -16,7 +16,7 @@ public List<KeyCode> controlList;
 public List<string> controlListNames = new List<string> {"Forward", "Back", "Left","Right","Jump","Run", "Crouch", "Inventory"};
 
 ///Dynamic path to controls.cfg
-protected String configPath; 
+public String configPath; 
 
 ///Default assigned controls
 string[] defaultControls = {"W","S","A","D","Space","LeftShift", "LeftControl", "E"};
@@ -31,6 +31,8 @@ public Text infoText;
 
 	void Start () {
 
+		configPath = Vars.path + "/controls.cfg";
+
 		try {
 			infoText = infoText.GetComponent<Text> (); 
 			infoText.enabled = false;
@@ -39,7 +41,7 @@ public Text infoText;
 		}
 		
 
-		configPath = Vars.path + "/controls.cfg";
+		
 
 		controlList = new List<KeyCode> {Forward, Back, Left, Right, Jump, Run, Crouch, Inventory};
 
@@ -98,8 +100,6 @@ public Text infoText;
 		for(int i = 0; i < controlList.Count; i++) {
 			controlList[i] = GetKeyInternal(i);
 		}
-		
-		Debug.Log("Successfully reloaded controls");
 	}
 	
 	protected bool ControlsValid () {

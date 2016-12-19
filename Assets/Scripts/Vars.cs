@@ -10,5 +10,6 @@ public class Vars : MonoBehaviour {
 	
 	public enum Team {blue, gold};
 
+	///Path to config folder
 	public static string path = Application.dataPath;
 }

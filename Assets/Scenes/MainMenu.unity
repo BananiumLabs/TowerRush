@@ -4287,10 +4287,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3dacb29c1988964e8d3f6a7f38297ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  versionNumber: v1.1
-  port: 5055
-  connectionText: {fileID: 917620183}
-  roomPanel: {fileID: 0}
 --- !u!1 &937428227
 GameObject:
   m_ObjectHideFlags: 0
@@ -7930,7 +7926,7 @@ MonoBehaviour:
   mainMenu: {fileID: 1338993471}
   graphics: {fileID: 937428229}
   resolution: {fileID: 2093409698}
-  fullscreenButton: {fileID: 0}
+  fullscreenButton: {fileID: 466094189}
   fullscreen: 0
   controls: {fileID: 1512194498}
 --- !u!114 &1512194498
@@ -7953,6 +7949,7 @@ MonoBehaviour:
   - Jump
   - Run
   - Crouch
+  configPath: 
   textList: []
   infoText: {fileID: 409467897}
 --- !u!1 &1523153128
