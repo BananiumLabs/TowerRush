@@ -2,7 +2,7 @@
 using System.Collections;
 
 //SUMMARY: Allows player to look around in-game
-public class MouseLook : MonoBehaviour {
+public class Pl_MouseLook : MonoBehaviour {
 
 	public enum RotationAxes { MouseXAndY = 0, MouseX = 1, MouseY = 2 }
 	public RotationAxes axes = RotationAxes.MouseXAndY;
@@ -15,6 +15,8 @@ public class MouseLook : MonoBehaviour {
 	float rotationX = 0F;
 	float rotationY = 0F;
 	Quaternion originalRotation;
+	public bool isEnabled = true;
+
 	void Update ()
 	{
 		if (Time.timeScale != 0) {

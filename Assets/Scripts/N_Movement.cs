@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using DarkRift;
 
 
@@ -23,7 +21,7 @@ public class N_Movement : MonoBehaviour {
             DarkRiftAPI.onPlayerDisconnected += PlayerDisconnected;
 
             gameObject.GetComponent<MouseLock>().enabled = true;
-            gameObject.GetComponent<MouseLook>().enabled = true;
+            gameObject.GetComponent<Pl_MouseLook>().enabled = true;
             gameObject.GetComponent<Pl_Controller>().enabled = true;
             gameObject.GetComponent<InputManager>().enabled = true;
             transform.GetChild(0).gameObject.SetActive(true);

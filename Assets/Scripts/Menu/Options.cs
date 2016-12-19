@@ -43,9 +43,12 @@ public class Options : MonoBehaviour {
 		
 		fullscreenLabel.text = (Screen.fullScreen) ? "Enabled" : "Disabled";
 		if(Input.GetKey(KeyCode.F11)) fullscreenToggle();
-		if(Screen.width > 1300) mainMenu.scaleFactor = 2;
-		else if(Screen.width < 700) mainMenu.scaleFactor = .5f;
-		else mainMenu.scaleFactor = 1;
+		
+		try {
+			if(Screen.width > 1300) mainMenu.scaleFactor = 2;
+			else if(Screen.width < 700) mainMenu.scaleFactor = .5f;
+			else mainMenu.scaleFactor = 1;
+		} catch {}
 			
 		AudioListener.volume = volume.value / 100;
 

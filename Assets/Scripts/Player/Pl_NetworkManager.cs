@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DarkRift;
+using UnityEngine.SceneManagement;
 
 public class Pl_NetworkManager : MonoBehaviour {
 
@@ -27,7 +28,7 @@ public class Pl_NetworkManager : MonoBehaviour {
             //Instantiate(playerObject, Vars.lobby, Quaternion.identity);
         }
         else
-            Debug.Log("Failed to connect to DarkRift Server!");
+            Debug.Log("Failed to connect to DarkRift Server!"); 
 
     }
 
