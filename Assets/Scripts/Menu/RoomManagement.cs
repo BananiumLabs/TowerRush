@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DarkRift;
+using UnityEngine.SceneManagement;
 
 public class RoomManagement : MonoBehaviour {
 
@@ -26,6 +27,8 @@ public Canvas error;
         Debug.Log("Attempting to connect to " + ip + " as " + user);
 		try {
 			DarkRiftAPI.Connect(ip);
+
+            SceneManager.LoadScene("TestMap");
 		} catch {
 			
 			errorText.text = "Could not connect to " + ip + ". Please verify that the ip is correct.";

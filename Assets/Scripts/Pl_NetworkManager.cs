@@ -5,9 +5,6 @@ using DarkRift;
 
 public class Pl_NetworkManager : MonoBehaviour {
 
-    //This is the server IP
-    public string IP = "127.0.0.1";
-
     //Object that will spawn when player connects
     public GameObject playerObject;
 
@@ -17,8 +14,6 @@ public class Pl_NetworkManager : MonoBehaviour {
     void Start()
     {
         
-        DarkRiftAPI.Connect(IP);
-
         //Recieve Data
         DarkRiftAPI.onDataDetailed += ReceiveData;
 
@@ -28,8 +23,8 @@ public class Pl_NetworkManager : MonoBehaviour {
             DarkRiftAPI.SendMessageToOthers(TagIndex.Controller, TagIndex.ControllerSubjects.JoinMessage, "New Player Joined");
             //Spawn the player
             Debug.Log("Spawning");
-            DarkRiftAPI.SendMessageToAll(TagIndex.Controller, TagIndex.ControllerSubjects.SpawnPlayer, new Vector3(0f, 0f, 0f));
-            Instantiate(playerObject, Vars.lobby, Quaternion.identity);
+            DarkRiftAPI.SendMessageToAll(TagIndex.Controller, TagIndex.ControllerSubjects.SpawnPlayer, Vars.lobby);
+            //Instantiate(playerObject, Vars.lobby, Quaternion.identity);
         }
         else
             Debug.Log("Failed to connect to DarkRift Server!");
@@ -44,12 +39,8 @@ public class Pl_NetworkManager : MonoBehaviour {
 
     void ReceiveData(ushort senderID, byte tag, ushort subject, object data)
     {
-        //When any data is received it will be passed here, 
-        //we then need to process it if it's got a tag of 0 and, if 
-        //so, create an object. This is where you'd handle most admin 
-        //stuff like that.
 
-        //Ok, if data has a Controller tag then it's for us
+        //Controller Tag
         if (tag == TagIndex.Controller)
         {
             //If a player has joined tell them to give us a player
@@ -57,13 +48,13 @@ public class Pl_NetworkManager : MonoBehaviour {
             {
                 //Tell them to spawn you
                 DarkRiftAPI.SendMessageToID(senderID, TagIndex.Controller, TagIndex.ControllerSubjects.SpawnPlayer, player.position);
+                //Later we should use another one to assign the username
             }
 
             //Spawn the player
             if (subject == TagIndex.ControllerSubjects.SpawnPlayer)
             {
                 //Instantiate the player
-                Debug.Log("Cloning");
                 GameObject clone = (GameObject)Instantiate(playerObject, (Vector3)data, Quaternion.identity);
                 //Tell the network player who owns it so it tunes into the right updates.
                 clone.GetComponent<N_Movement>().networkID = senderID;
