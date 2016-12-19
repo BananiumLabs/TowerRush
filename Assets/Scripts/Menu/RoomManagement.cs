@@ -24,6 +24,9 @@ public Canvas error;
 	public void LoadLevel() {
 		string ip = ipText.text;
 		string user = usernameText.text;
+		if(ip.Equals("")) ip = "localhost";
+		if(user.Equals("")) user = "Player";
+		
         Debug.Log("Attempting to connect to " + ip + " as " + user);
 		try {
 			DarkRiftAPI.Connect(ip);

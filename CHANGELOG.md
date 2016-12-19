@@ -4,15 +4,25 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This changelog follows the format as defined by [Keep a Changelog](http://keepachangelog.com/).
 All unreleased changes are found in develop. Master is for released content only.
 
-## [Alpha 1.3.1] - Unreleased
+## [Alpha 1.3.0] - Unreleased
 ###Added
  - Inventory System
  - Functionality for Crates
  - Basic gameplay management
  - In-game options menu
-
+ - More user-friendly error popups
+ - Users can now host their own private servers
+ - Game saves last entered username and IP
+ - Game saves options
+ - Crouching
+###Changed
+ - Servers now run on DarkRift API instead of Photon API
+ - User enters username and IP instead of blind joining
+ - Players spawn in lobby upon joining
+ - Updated Input Manager: automatically detects buttons for changing controls
 ###Fixed
  - Return to Main Menu occasionally fails
+ - Fullscreen toggle not working
  
 ## [Alpha 1.2.1] - 2016-07-13
 ###Added
@@ -85,6 +95,8 @@ All unreleased changes are found in develop. Master is for released content only
 [Alpha 1.1.0]: https://github.com/FewdpewGames/unity-game/releases/tag/v1.1.0-alpha
 [Alpha 1.2.0]: https://github.com/FewdpewGames/unity-game/releases/tag/v1.2.0-alpha
 [Alpha 1.2.1]: https://github.com/FewdpewGames/unity-game/releases/tag/v1.2.1-alpha
+[Alpha 1.3.0]: https://github.com/FewdpewGames/unity-game/releases/tag/v1.3.0-alpha
+
 
 <!---
 [//]: # ## [X.y.z] - YYYY-MM-DD
