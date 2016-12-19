@@ -90,11 +90,11 @@ public class N_Movement : MonoBehaviour {
         {
             if (tag == TagIndex.PlayerUpdate)
             {
-
+                Debug.Log("PlayerUpdate");
                 //update our position
                 if (subject == TagIndex.PlayerUpdateSubjects.Position)
                 {
-                    Debug.Log("Deserialize");
+                    Debug.Log("Position");
                     transform.position = (Vector3)data;
                     // DeserialisePos(data);
                 }
@@ -102,7 +102,7 @@ public class N_Movement : MonoBehaviour {
                 //update our rotation
                 if (subject == TagIndex.PlayerUpdateSubjects.Rotation)
                 {
-                    Debug.Log("deserrot");
+                    Debug.Log("Rotation");
                     transform.rotation = (Quaternion)data;
                     // DeserialiseRot(data);
                 }
