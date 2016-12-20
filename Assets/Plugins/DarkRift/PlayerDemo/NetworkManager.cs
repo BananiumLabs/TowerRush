@@ -6,7 +6,7 @@ using DarkRift;
 
 public class NetworkManager : MonoBehaviour
 {
-
+	/*
 	//The server IP to connect to.
 	public string serverIP = "127.0.0.1";
 
@@ -78,4 +78,5 @@ public class NetworkManager : MonoBehaviour
 			}
 		}
 	}
+	*/
 }

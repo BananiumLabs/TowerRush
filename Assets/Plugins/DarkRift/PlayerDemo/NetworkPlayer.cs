@@ -4,6 +4,7 @@ using System.Collections;
 using DarkRift;
 
 public class NetworkPlayer : MonoBehaviour {
+	/*
 
 	//The ID of the client that owns this player (so we can check if it's us updating)
 	public ushort networkID;
@@ -73,4 +74,5 @@ public class NetworkPlayer : MonoBehaviour {
 			Destroy(gameObject);
 		}
 	}
+	*/
 }

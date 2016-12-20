@@ -50,19 +50,19 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
-     <None Include="Assets\Networking\DarkRift\ChangeLog.txt" />
-     <None Include="Assets\Networking\DarkRift\DarkRift\Plugins\Readme.txt" />
-     <None Include="Assets\Networking\DarkRift\PlayerDemo\Readme.txt" />
-     <None Include="Assets\Networking\DarkRift\EmbeddedServer\ReadMe.txt" />
-     <None Include="Assets\Networking\DarkRift\CustomSerialisationDemo\Readme.txt" />
-     <None Include="Assets\Networking\DarkRift\CubeDemo\Readme.txt" />
+     <None Include="Assets\Plugins\DarkRift\ChangeLog.txt" />
+     <None Include="Assets\Plugins\DarkRift\DarkRift\Plugins\Readme.txt" />
+     <None Include="Assets\Plugins\DarkRift\PlayerDemo\Readme.txt" />
+     <None Include="Assets\Plugins\DarkRift\EmbeddedServer\ReadMe.txt" />
+     <None Include="Assets\Plugins\DarkRift\CustomSerialisationDemo\Readme.txt" />
+     <None Include="Assets\Plugins\DarkRift\CubeDemo\Readme.txt" />
      <None Include="Assets\Plugins\Photon3Unity3D.xml" />
-     <None Include="Assets\Networking\DarkRift\EmbeddedServer\DarkRift.xml" />
+     <None Include="Assets\Plugins\DarkRift\EmbeddedServer\DarkRift.xml" />
      <None Include="Assets\Plugins\release_history.txt" />
-     <None Include="Assets\Networking\DarkRift\DarkRift\Plugins\DarkRiftAPI.xml" />
+     <None Include="Assets\Plugins\DarkRift\DarkRift\Plugins\DarkRiftAPI.xml" />
      <None Include="Assets\Animations\Raw Mocap Data\Animations\_CompleteAnimationList.txt" />
-     <None Include="Assets\Networking\DarkRift\HeavySyncDemo\Readme.txt" />
-     <None Include="Assets\Networking\DarkRift\Readme.txt" />
+     <None Include="Assets\Plugins\DarkRift\HeavySyncDemo\Readme.txt" />
+     <None Include="Assets\Plugins\DarkRift\Readme.txt" />
      <None Include="Assets\list.txt" />
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>C:/Apps/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
@@ -115,15 +115,6 @@
  <Reference Include="UnityEngine.VR">
  <HintPath>C:/Apps/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
  </Reference>
- <Reference Include="DarkRiftAPI">
- <HintPath>C:/Users/BenCu/OneDrive/Documents/Git/TowerRush/Assets/Networking/DarkRift/DarkRift/Plugins/DarkRiftAPI.dll</HintPath>
- </Reference>
- <Reference Include="Transmission">
- <HintPath>C:/Users/BenCu/OneDrive/Documents/Git/TowerRush/Assets/Networking/DarkRift/DarkRift/Plugins/Transmission.dll</HintPath>
- </Reference>
- <Reference Include="DarkRift">
- <HintPath>C:/Users/BenCu/OneDrive/Documents/Git/TowerRush/Assets/Networking/DarkRift/EmbeddedServer/DarkRift.dll</HintPath>
- </Reference>
  <Reference Include="Photon3Unity3D">
  <HintPath>C:/Users/BenCu/OneDrive/Documents/Git/TowerRush/Assets/Plugins/Photon3Unity3D.dll</HintPath>
  </Reference>
@@ -141,6 +132,15 @@
  </Reference>
  <Reference Include="UnityEditor.OSXStandalone.Extensions">
  <HintPath>C:/Apps/Unity/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="Transmission">
+ <HintPath>C:/Users/BenCu/OneDrive/Documents/Git/TowerRush/Assets/Plugins/DarkRift/DarkRift/Plugins/Transmission.dll</HintPath>
+ </Reference>
+ <Reference Include="DarkRiftAPI">
+ <HintPath>C:/Users/BenCu/OneDrive/Documents/Git/TowerRush/Assets/Plugins/DarkRift/DarkRift/Plugins/DarkRiftAPI.dll</HintPath>
+ </Reference>
+ <Reference Include="DarkRift">
+ <HintPath>C:/Users/BenCu/OneDrive/Documents/Git/TowerRush/Assets/Plugins/DarkRift/EmbeddedServer/DarkRift.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

@@ -49,20 +49,35 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Plugins\DarkRift\CubeDemo\CubeMove.cs" />
+     <Compile Include="Assets\Plugins\DarkRift\CubeDemo\CubeNetworkManager.cs" />
+     <Compile Include="Assets\Plugins\DarkRift\CustomSerialisationDemo\CSCubeMove.cs" />
+     <Compile Include="Assets\Plugins\DarkRift\CustomSerialisationDemo\CSCubeNetworkManager.cs" />
+     <Compile Include="Assets\Plugins\DarkRift\DarkRift\Plugins\DarkRiftReceiver.cs" />
+     <Compile Include="Assets\Plugins\DarkRift\EmbeddedServer\EmbeddedCubeManager.cs" />
+     <Compile Include="Assets\Plugins\DarkRift\EmbeddedServer\EmbeddedCubeMove.cs" />
+     <Compile Include="Assets\Plugins\DarkRift\EmbeddedServer\Server.cs" />
+     <Compile Include="Assets\Plugins\DarkRift\HeavySyncDemo\CharacterMovement.cs" />
+     <Compile Include="Assets\Plugins\DarkRift\HeavySyncDemo\HSNetworkManager.cs" />
+     <Compile Include="Assets\Plugins\DarkRift\HeavySyncDemo\ObjectSpawner.cs" />
+     <Compile Include="Assets\Plugins\DarkRift\HeavySyncDemo\SyncCharacter.cs" />
+     <Compile Include="Assets\Plugins\DarkRift\PlayerDemo\NetworkManager.cs" />
+     <Compile Include="Assets\Plugins\DarkRift\PlayerDemo\NetworkPlayer.cs" />
+     <Compile Include="Assets\Plugins\DarkRift\PlayerDemo\Player.cs" />
      <Compile Include="Assets\Plugins\WebSocket\WebSocket.cs" />
-     <None Include="Assets\Networking\DarkRift\ChangeLog.txt" />
-     <None Include="Assets\Networking\DarkRift\DarkRift\Plugins\Readme.txt" />
-     <None Include="Assets\Networking\DarkRift\PlayerDemo\Readme.txt" />
-     <None Include="Assets\Networking\DarkRift\EmbeddedServer\ReadMe.txt" />
-     <None Include="Assets\Networking\DarkRift\CustomSerialisationDemo\Readme.txt" />
-     <None Include="Assets\Networking\DarkRift\CubeDemo\Readme.txt" />
+     <None Include="Assets\Plugins\DarkRift\ChangeLog.txt" />
+     <None Include="Assets\Plugins\DarkRift\DarkRift\Plugins\Readme.txt" />
+     <None Include="Assets\Plugins\DarkRift\PlayerDemo\Readme.txt" />
+     <None Include="Assets\Plugins\DarkRift\EmbeddedServer\ReadMe.txt" />
+     <None Include="Assets\Plugins\DarkRift\CustomSerialisationDemo\Readme.txt" />
+     <None Include="Assets\Plugins\DarkRift\CubeDemo\Readme.txt" />
      <None Include="Assets\Plugins\Photon3Unity3D.xml" />
-     <None Include="Assets\Networking\DarkRift\EmbeddedServer\DarkRift.xml" />
+     <None Include="Assets\Plugins\DarkRift\EmbeddedServer\DarkRift.xml" />
      <None Include="Assets\Plugins\release_history.txt" />
-     <None Include="Assets\Networking\DarkRift\DarkRift\Plugins\DarkRiftAPI.xml" />
+     <None Include="Assets\Plugins\DarkRift\DarkRift\Plugins\DarkRiftAPI.xml" />
      <None Include="Assets\Animations\Raw Mocap Data\Animations\_CompleteAnimationList.txt" />
-     <None Include="Assets\Networking\DarkRift\HeavySyncDemo\Readme.txt" />
-     <None Include="Assets\Networking\DarkRift\Readme.txt" />
+     <None Include="Assets\Plugins\DarkRift\HeavySyncDemo\Readme.txt" />
+     <None Include="Assets\Plugins\DarkRift\Readme.txt" />
      <None Include="Assets\list.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Apps/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
@@ -85,20 +100,20 @@
  <Reference Include="UnityEngine.VR">
  <HintPath>C:/Apps/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
  </Reference>
- <Reference Include="DarkRiftAPI">
- <HintPath>C:/Users/BenCu/OneDrive/Documents/Git/TowerRush/Assets/Networking/DarkRift/DarkRift/Plugins/DarkRiftAPI.dll</HintPath>
- </Reference>
- <Reference Include="Transmission">
- <HintPath>C:/Users/BenCu/OneDrive/Documents/Git/TowerRush/Assets/Networking/DarkRift/DarkRift/Plugins/Transmission.dll</HintPath>
- </Reference>
- <Reference Include="DarkRift">
- <HintPath>C:/Users/BenCu/OneDrive/Documents/Git/TowerRush/Assets/Networking/DarkRift/EmbeddedServer/DarkRift.dll</HintPath>
- </Reference>
  <Reference Include="Photon3Unity3D">
  <HintPath>C:/Users/BenCu/OneDrive/Documents/Git/TowerRush/Assets/Plugins/Photon3Unity3D.dll</HintPath>
  </Reference>
  <Reference Include="websocket-sharp">
  <HintPath>C:/Users/BenCu/OneDrive/Documents/Git/TowerRush/Assets/Plugins/WebSocket/websocket-sharp.dll</HintPath>
+ </Reference>
+ <Reference Include="Transmission">
+ <HintPath>C:/Users/BenCu/OneDrive/Documents/Git/TowerRush/Assets/Plugins/DarkRift/DarkRift/Plugins/Transmission.dll</HintPath>
+ </Reference>
+ <Reference Include="DarkRiftAPI">
+ <HintPath>C:/Users/BenCu/OneDrive/Documents/Git/TowerRush/Assets/Plugins/DarkRift/DarkRift/Plugins/DarkRiftAPI.dll</HintPath>
+ </Reference>
+ <Reference Include="DarkRift">
+ <HintPath>C:/Users/BenCu/OneDrive/Documents/Git/TowerRush/Assets/Plugins/DarkRift/EmbeddedServer/DarkRift.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
