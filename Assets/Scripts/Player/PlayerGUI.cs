@@ -2,20 +2,26 @@
 
 public class PlayerGUI : MonoBehaviour {
 
-	public Canvas HUD, PauseMenu, TeamSelection, Options;
+	public Canvas HUD, PauseMenu, TeamSelection, Options, Inventory;
 	public Pl_MouseLook mLookX, mLookY;
+	protected InputManager input;
 
-	///0 = HUD, 1 = TeamSelection, 2 = PauseMenu, 3 = Options
+	///0 = HUD, 1 = TeamSelection, 2 = Inventory, 3 = PauseMenu, 4 = Options
 	protected bool[] enabledCanvases; 
 	
 	void Start () {
-		enabledCanvases = new bool[] {false, true, false, false};
+		enabledCanvases = new bool[] {false, true, false, false, false};
+		input = GetComponentInParent<InputManager> ();
 	}
 	
 	void Update () {
 		
-		if(Input.GetKeyDown(KeyCode.Escape)) {
+		if(Input.GetKeyDown(KeyCode.Escape))
 			Escape();
+
+		if(input.GetKeyDown("Inventory")) {
+			if(Active()) enabledCanvases[2] = true;
+			else enabledCanvases[2] = false;	
 		}
 
 		ManageCanvases();
@@ -24,25 +30,32 @@ public class PlayerGUI : MonoBehaviour {
 
 	///When Switch Teams button is pressed
 	public void SwitchTeams () {
-		enabledCanvases[0] = false;
-		enabledCanvases[1] = true;
-		enabledCanvases[2] = false;
+		SetCanvases(false,true,false,false,false);
 	}
 	
 	public void CloseTeamSelect () {
-		enabledCanvases[0] = true;
-		enabledCanvases[1] = false;
+		SetCanvases(true,false,false,false,false);
+	}
+
+	///Changes the state of canvases
+	protected void SetCanvases (bool tHUD, bool TSelection, bool Inv, bool Pause, bool tOptions) {
+		enabledCanvases[0] = (tHUD) ? true : false;
+		enabledCanvases[1] = (TSelection) ? true : false;
+		enabledCanvases[2] = (Inv) ? true : false;
+		enabledCanvases[3] = (Pause) ? true : false;
+		enabledCanvases[4] = (tOptions) ? true : false;
 	}
 
 	///Translates enabledCanvases[] into actions
 	public void ManageCanvases () {
 		HUD.enabled = (enabledCanvases[0]) ? true : false;
 		TeamSelection.enabled = (enabledCanvases[1]) ? true : false;
-		PauseMenu.enabled = (enabledCanvases[2]) ? true : false;
-		Options.enabled = (enabledCanvases[3]) ? true : false;
+		Inventory.enabled = (enabledCanvases[2]) ? true : false;
+		PauseMenu.enabled = (enabledCanvases[3]) ? true : false;
+		Options.enabled = (enabledCanvases[4]) ? true : false;
 
 		//Enables and disables MouseLook based on open canvases
-		if(enabledCanvases[0] && !enabledCanvases[2] && !enabledCanvases[3]) {
+		if(Active()) {
 			mLookX.enabled = true;
 			mLookY.enabled = true;
 		} else {
@@ -58,16 +71,23 @@ public class PlayerGUI : MonoBehaviour {
 				enabledCanvases[i] = false;
 				break;
 			} else if (i == 0)
-				enabledCanvases[2] = true;
+				enabledCanvases[3] = true;
 		}
 	}
 
 	public void OpenOptions () {
-		enabledCanvases[3] = true;
-		enabledCanvases[2] = false;
+		SetCanvases(true, false, false, false, true);
 	}
 
 	public void CloseOptions () {
-		enabledCanvases[3] = false;
+		enabledCanvases[4] = false;
+	}
+
+	protected bool Active () {
+		return enabledCanvases[0] 
+			&& !enabledCanvases[3] 
+			&& !enabledCanvases[4]
+			&& !enabledCanvases[2]
+			&& !enabledCanvases[1];
 	}
 }

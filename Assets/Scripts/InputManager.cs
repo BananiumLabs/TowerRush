@@ -86,6 +86,7 @@ public Text infoText;
 		return Input.GetKey(Key(id));
 	}
 
+	///Returns true upon downstroke of key
 	public bool GetKeyDown (string id) {
 		return Input.GetKeyDown(Key(id));
 	}
