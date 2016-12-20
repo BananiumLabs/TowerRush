@@ -3053,7 +3053,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52dfbccd92d82c743abe2110685c16b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerObject: {fileID: 1276127261169418, guid: 3de762dd3a8555040a04c605ad16678c,
+  playerObject: {fileID: 1181690931821958, guid: 027543b97c6decf499e61daae696a475,
     type: 2}
 --- !u!114 &1165134440
 MonoBehaviour:
