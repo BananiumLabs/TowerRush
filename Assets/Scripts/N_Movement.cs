@@ -14,12 +14,13 @@ public class N_Movement : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        DarkRiftAPI.onDataDetailed += OnDataRecieved;
+
+        DarkRiftAPI.onPlayerDisconnected += PlayerDisconnected;
+
         if (isMine)
         {
-            DarkRiftAPI.onDataDetailed += OnDataRecieved;
-
-            DarkRiftAPI.onPlayerDisconnected += PlayerDisconnected;
-
+            
             gameObject.GetComponent<MouseLock>().enabled = true;
             gameObject.GetComponent<Pl_MouseLook>().enabled = true;
             gameObject.GetComponent<Pl_Controller>().enabled = true;
@@ -37,12 +38,15 @@ public class N_Movement : MonoBehaviour {
         {
             //Serialize if the position or rotation changes
             if (transform.position != lastPosition)
+            {
                 DarkRiftAPI.SendMessageToOthers(TagIndex.PlayerUpdate, TagIndex.PlayerUpdateSubjects.Position, transform.position);
-            //SerialisePos(transform.position);
-
+                //SerialisePos(transform.position);
+            }
             if (transform.rotation != lastRotation)
+            {
                 DarkRiftAPI.SendMessageToOthers(TagIndex.PlayerUpdate, TagIndex.PlayerUpdateSubjects.Rotation, transform.rotation);
-            //SerialiseRot(transform.rotation);
+                //SerialiseRot(transform.rotation);
+            }
 
             //Update stuff
             lastPosition = transform.position;
@@ -50,7 +54,7 @@ public class N_Movement : MonoBehaviour {
         }
 
     }
-    /*
+    
     void SerialisePos(Vector3 pos)
     {
         //Serilize the position ORDER MATTERS
@@ -81,7 +85,7 @@ public class N_Movement : MonoBehaviour {
             DarkRiftAPI.SendMessageToOthers(TagIndex.PlayerUpdate, TagIndex.PlayerUpdateSubjects.Rotation, writer);
         }
     }
-    */
+    
     void OnDataRecieved(ushort senderID, byte tag, ushort subject, object data) {
         Debug.Log("Recieve");
         if (senderID == networkID)
@@ -94,7 +98,7 @@ public class N_Movement : MonoBehaviour {
                 {
                     Debug.Log("Position");
                     transform.position = (Vector3)data;
-                    // DeserialisePos(data);
+                    //DeserialisePos(data);
                 }
 
                 //update our rotation
@@ -102,7 +106,7 @@ public class N_Movement : MonoBehaviour {
                 {
                     Debug.Log("Rotation");
                     transform.rotation = (Quaternion)data;
-                    // DeserialiseRot(data);
+                    //DeserialiseRot(data);
                 }
 
             }
@@ -110,7 +114,7 @@ public class N_Movement : MonoBehaviour {
 
         }
     }
-   /* void DeserialisePos(object data)
+   void DeserialisePos(object data)
     {
         //Here we decode the stream, the data will arrive as a DarkRiftReader so we need to cast to it
         if (data is DarkRiftReader)
@@ -143,7 +147,7 @@ public class N_Movement : MonoBehaviour {
             }
         }
         
-    } */
+    } 
     void PlayerDisconnected(ushort ID) { 
 
         //Get rid of gameobject
