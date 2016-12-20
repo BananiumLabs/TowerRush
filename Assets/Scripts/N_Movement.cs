@@ -40,12 +40,12 @@ public class N_Movement : MonoBehaviour {
             if (transform.position != lastPosition)
             {
                 DarkRiftAPI.SendMessageToOthers(TagIndex.PlayerUpdate, TagIndex.PlayerUpdateSubjects.Position, transform.position);
-                //SerialisePos(transform.position);
+                
             }
             if (transform.rotation != lastRotation)
             {
                 DarkRiftAPI.SendMessageToOthers(TagIndex.PlayerUpdate, TagIndex.PlayerUpdateSubjects.Rotation, transform.rotation);
-                //SerialiseRot(transform.rotation);
+                
             }
 
             //Update stuff
@@ -55,36 +55,9 @@ public class N_Movement : MonoBehaviour {
 
     }
     
-    void SerialisePos(Vector3 pos)
-    {
-        //Serilize the position ORDER MATTERS
-        using (DarkRiftWriter writer = new DarkRiftWriter())
-        {
-            //Next we write any data to the writer, as we never change the z pos there's no need to 
-            //send it.
-            writer.Write(pos.x);
-            writer.Write(pos.y);
-            writer.Write(pos.z);
+    
 
-            Debug.Log("Seralisinzg");
-            DarkRiftAPI.SendMessageToOthers(TagIndex.PlayerUpdate, TagIndex.PlayerUpdateSubjects.Position, writer);
-        }
-    }
-
-    void SerialiseRot(Quaternion rot)
-    {
-        //Serilize the rotation ORDER MATTERS
-        using (DarkRiftWriter writer = new DarkRiftWriter())
-        {
-            //Write the data
-            writer.Write(rot.x);
-            writer.Write(rot.y);
-            writer.Write(rot.z);
-            writer.Write(rot.w);
-            Debug.Log("Seralisinzgrot");
-            DarkRiftAPI.SendMessageToOthers(TagIndex.PlayerUpdate, TagIndex.PlayerUpdateSubjects.Rotation, writer);
-        }
-    }
+   
     
     void OnDataRecieved(ushort senderID, byte tag, ushort subject, object data) {
         Debug.Log("Recieve");
@@ -98,15 +71,17 @@ public class N_Movement : MonoBehaviour {
                 {
                     Debug.Log("Position");
                     transform.position = (Vector3)data;
-                    //DeserialisePos(data);
+                    //Vector3.Lerp(transform.position, (Vector3)data, Time.deltaTime * 5);
+                   
                 }
 
                 //update our rotation
                 if (subject == TagIndex.PlayerUpdateSubjects.Rotation)
                 {
                     Debug.Log("Rotation");
+                    //Quaternion.Lerp(transform.rotation, (Quaternion)data, Time.deltaTime * 5);
                     transform.rotation = (Quaternion)data;
-                    //DeserialiseRot(data);
+                  
                 }
 
             }
@@ -114,40 +89,10 @@ public class N_Movement : MonoBehaviour {
 
         }
     }
-   void DeserialisePos(object data)
-    {
-        //Here we decode the stream, the data will arrive as a DarkRiftReader so we need to cast to it
-        if (data is DarkRiftReader)
-        {
-       
-            using (DarkRiftReader reader = (DarkRiftReader)data)
-            {
-                //Then read!
-                transform.position = new Vector3(
-                    (float)reader.ReadDouble(),
-                    (float)reader.ReadDouble(),
-                    (float)reader.ReadDouble()
-                );
-            }
-        }
-    }
-    void DeserialiseRot(object data)
-    {
-        if (data is DarkRiftReader)
-        {
-            //Read the rotation
-            using(DarkRiftReader reader = (DarkRiftReader)data)
-            {
-                transform.rotation = new Quaternion(
-                    (float)reader.ReadDouble(),
-                    (float)reader.ReadDouble(),
-                    (float)reader.ReadDouble(),
-                    (float)reader.ReadDouble()
-                    );
-            }
-        }
+  
+    
         
-    } 
+     
     void PlayerDisconnected(ushort ID) { 
 
         //Get rid of gameobject
