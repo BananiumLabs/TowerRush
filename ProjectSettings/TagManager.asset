@@ -13,6 +13,7 @@ TagManager:
   - SupportCrate
   - TankCrate
   - SetControlsButton
+  - InventorySlot
   layers:
   - Default
   - TransparentFX
