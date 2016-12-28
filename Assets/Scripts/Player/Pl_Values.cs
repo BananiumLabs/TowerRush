@@ -11,9 +11,5 @@ public class Pl_Values : MonoBehaviour {
     public int state;
     public bool running;
     public float speed;
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
 }

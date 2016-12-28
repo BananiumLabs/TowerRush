@@ -7,6 +7,9 @@ public class N_Movement : MonoBehaviour {
     public ushort networkID;
     public bool isMine;
 
+    public Animator anim;
+    public Pl_Values plValues;
+
     Vector3 lastPosition;
     Quaternion lastRotation;
 
@@ -40,12 +43,11 @@ public class N_Movement : MonoBehaviour {
             if (transform.position != lastPosition)
             {
                 //DarkRiftAPI.SendMessageToOthers(TagIndex.PlayerUpdate, TagIndex.PlayerUpdateSubjects.Position, transform.position);
-                SerialisePos(transform.position);
+                SerialisePosA(transform.position);
             }
             if (transform.rotation != lastRotation)
             {
-                DarkRiftAPI.SendMessageToOthers(TagIndex.PlayerUpdate, TagIndex.PlayerUpdateSubjects.Rotation, transform.rotation);
-                
+                DarkRiftAPI.SendMessageToOthers(TagIndex.PlayerUpdate, TagIndex.PlayerUpdateSubjects.Rotation, transform.rotation); 
             }
 
             //Update stuff
@@ -53,12 +55,19 @@ public class N_Movement : MonoBehaviour {
             lastRotation = transform.rotation;
         }
 
+        //Animation Settings
+        anim.SetBool("IsRunning", plValues.running);
+        anim.SetBool("IsGrounded", plValues.grounded);
+        anim.SetInteger("State", plValues.state);
+        anim.SetFloat("Speed", plValues.speed);
+        anim.SetFloat("Horizontal", plValues.hor);
+        anim.SetFloat("Vertical", plValues.ver);
     }
 
 
-    void SerialisePos(Vector3 pos)
+    void SerialisePosA(Vector3 pos)
     {
-
+        //Serialise Position and Animation Values
         using (DarkRiftWriter writer = new DarkRiftWriter())
         {
             //Next we write any data to the writer
@@ -66,12 +75,19 @@ public class N_Movement : MonoBehaviour {
             writer.Write(pos.y);
             writer.Write(pos.z);
 
+            writer.Write(anim.GetBool("IsRunning"));
+            writer.Write(anim.GetBool("IsGrounded"));
+            writer.Write(anim.GetInteger("State"));
+            writer.Write(anim.GetFloat("Speed"));
+            writer.Write(anim.GetFloat("Horizontal"));
+            writer.Write(anim.GetFloat("Vertical"));
+
             Debug.Log("Serialize");
             DarkRiftAPI.SendMessageToOthers(TagIndex.PlayerUpdate, TagIndex.PlayerUpdateSubjects.Position, writer);
         }
     }
 
-    void DeserialisePos(object data)
+    void DeserialisePosA(object data)
     {
 
         if (data is DarkRiftReader)
@@ -84,6 +100,13 @@ public class N_Movement : MonoBehaviour {
                     reader.ReadSingle(),
                     reader.ReadSingle()
                 );
+
+                plValues.running = reader.ReadBoolean();
+                plValues.grounded = reader.ReadBoolean();
+                plValues.state = reader.ReadInt32();
+                plValues.speed = reader.ReadSingle();
+                plValues.hor = reader.ReadSingle();
+                plValues.ver = reader.ReadSingle();
             }
         }
         else
@@ -103,7 +126,7 @@ public class N_Movement : MonoBehaviour {
                 if (subject == TagIndex.PlayerUpdateSubjects.Position)
                 {
                     Debug.Log("De Position");
-                    DeserialisePos(data);
+                    DeserialisePosA(data);
                     //transform.position = (Vector3)data;
                     //Vector3.Lerp(transform.position, (Vector3)data, Time.deltaTime * 5);
                    
@@ -134,7 +157,7 @@ public class N_Movement : MonoBehaviour {
         if (ID == networkID)
         {
             DestroyImmediate(gameObject);
-            return;
         }
+        return;
     }
 }
