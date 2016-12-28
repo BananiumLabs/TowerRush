@@ -39,8 +39,8 @@ public class N_Movement : MonoBehaviour {
             //Serialize if the position or rotation changes
             if (transform.position != lastPosition)
             {
-                DarkRiftAPI.SendMessageToOthers(TagIndex.PlayerUpdate, TagIndex.PlayerUpdateSubjects.Position, transform.position);
-                
+                //DarkRiftAPI.SendMessageToOthers(TagIndex.PlayerUpdate, TagIndex.PlayerUpdateSubjects.Position, transform.position);
+                SerialisePos(transform.position);
             }
             if (transform.rotation != lastRotation)
             {
@@ -54,12 +54,45 @@ public class N_Movement : MonoBehaviour {
         }
 
     }
-    
-    
 
-   
-    
-    void OnDataRecieved(ushort senderID, byte tag, ushort subject, object data) {
+
+    void SerialisePos(Vector3 pos)
+    {
+
+        using (DarkRiftWriter writer = new DarkRiftWriter())
+        {
+            //Next we write any data to the writer
+            writer.Write(pos.x);
+            writer.Write(pos.y);
+            writer.Write(pos.z);
+
+            Debug.Log("Serialize");
+            DarkRiftAPI.SendMessageToOthers(TagIndex.PlayerUpdate, TagIndex.PlayerUpdateSubjects.Position, writer);
+        }
+    }
+
+    void DeserialisePos(object data)
+    {
+
+        if (data is DarkRiftReader)
+        {
+            using (DarkRiftReader reader = (DarkRiftReader)data)
+            {
+                //Then read!
+                transform.position = new Vector3(
+                    reader.ReadSingle(),
+                    reader.ReadSingle(),
+                    reader.ReadSingle()
+                );
+            }
+        }
+        else
+        {
+            Debug.LogError("Should have recieved a DarkRiftReciever but didn't! (Got: " + data.GetType() + ")");
+            transform.position = transform.position;
+        }
+    }
+        void OnDataRecieved(ushort senderID, byte tag, ushort subject, object data) {
         Debug.Log("Recieve");
         if (senderID == networkID)
         {
@@ -69,8 +102,9 @@ public class N_Movement : MonoBehaviour {
                 //update our position
                 if (subject == TagIndex.PlayerUpdateSubjects.Position)
                 {
-                    Debug.Log("Position");
-                    transform.position = (Vector3)data;
+                    Debug.Log("De Position");
+                    DeserialisePos(data);
+                    //transform.position = (Vector3)data;
                     //Vector3.Lerp(transform.position, (Vector3)data, Time.deltaTime * 5);
                    
                 }
@@ -99,7 +133,8 @@ public class N_Movement : MonoBehaviour {
 
         if (ID == networkID)
         {
-            Destroy(gameObject);
+            DestroyImmediate(gameObject);
+            return;
         }
     }
 }
