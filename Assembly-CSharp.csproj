@@ -54,11 +54,11 @@
      <Compile Include="Assets\Scripts\Inventory\InvSlot.cs" />
      <Compile Include="Assets\Scripts\Inventory\Inventory.cs" />
      <Compile Include="Assets\Scripts\Inventory\Item.cs" />
-     <Compile Include="Assets\Scripts\MapEvents.cs" />
      <Compile Include="Assets\Scripts\Menu\MainMenu.cs" />
      <Compile Include="Assets\Scripts\Menu\Options.cs" />
      <Compile Include="Assets\Scripts\Menu\RoomManagement.cs" />
      <Compile Include="Assets\Scripts\N_Movement.cs" />
+     <Compile Include="Assets\Scripts\OLD\MapEvents.cs" />
      <Compile Include="Assets\Scripts\OLD\NetworkAnimation.cs" />
      <Compile Include="Assets\Scripts\OLD\NetworkController.cs" />
      <Compile Include="Assets\Scripts\OLD\NetworkProp.cs" />
@@ -88,9 +88,6 @@
      <None Include="Assets\Plugins\DarkRift\HeavySyncDemo\Readme.txt" />
      <None Include="Assets\Plugins\DarkRift\Readme.txt" />
      <None Include="Assets\list.txt" />
- <Reference Include="UnityEngine.Advertisements">
- <HintPath>C:/Apps/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
- </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Apps/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

@@ -27,14 +27,18 @@ public class Pl_NetworkManager : MonoBehaviour {
             DarkRiftAPI.SendMessageToAll(TagIndex.Controller, TagIndex.ControllerSubjects.SpawnPlayer, Vars.lobby);
             //Instantiate(playerObject, Vars.lobby, Quaternion.identity);
         }
-        else
-            Debug.Log("Failed to connect to DarkRift Server!"); 
+        else {
+            Debug.LogWarning("Failed to connect to DarkRift Server!"); 
+            SceneManager.LoadScene(0);
+        }
+            
 
     }
 
     void OnApplicationQuit()
     {
         DarkRiftAPI.Disconnect();
+
     }
 
 
@@ -42,7 +46,7 @@ public class Pl_NetworkManager : MonoBehaviour {
     {
 
         //Controller Tag
-        if (tag == TagIndex.Controller)
+        if (tag == TagIndex.Controller && DarkRiftAPI.isConnected)
         {
             //If a player has joined tell them to give us a player
             if (subject == TagIndex.ControllerSubjects.JoinMessage)
@@ -53,7 +57,7 @@ public class Pl_NetworkManager : MonoBehaviour {
             }
 
             //Spawn the player
-            if (subject == TagIndex.ControllerSubjects.SpawnPlayer)
+            if (subject == TagIndex.ControllerSubjects.SpawnPlayer && DarkRiftAPI.isConnected)
             {
                 //Instantiate the player
                 GameObject clone = (GameObject)Instantiate(playerObject, (Vector3)data, Quaternion.identity);

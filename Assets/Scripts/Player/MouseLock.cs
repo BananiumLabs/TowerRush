@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-//SUMMARY: Locks the mouse onto the center of the screen during play.
+///Locks the mouse onto the center of the screen during play.
 public class MouseLock : MonoBehaviour
 {
 

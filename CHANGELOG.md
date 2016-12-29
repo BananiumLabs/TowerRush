@@ -6,7 +6,6 @@ All unreleased changes are found in develop. Master is for released content only
 
 ## [Alpha 1.3.0] - Unreleased
 ###Added
- - Inventory System
  - Functionality for Crates
  - Basic gameplay management
  - In-game options menu
