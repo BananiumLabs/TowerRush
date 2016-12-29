@@ -10,8 +10,10 @@ public class N_Movement : MonoBehaviour {
     public Animator anim;
     public Pl_Values plValues;
 
+    
     Vector3 lastPosition;
     Quaternion lastRotation;
+    
 
     //public GameObject playerObject;
 
@@ -40,21 +42,23 @@ public class N_Movement : MonoBehaviour {
         if (DarkRiftAPI.isConnected && DarkRiftAPI.id == networkID)
         {
             //Serialize if the position or rotation changes
-            if (transform.position != lastPosition)
+            if (Vector3.Distance(lastPosition, transform.position) >= 1)
             {
                 //DarkRiftAPI.SendMessageToOthers(TagIndex.PlayerUpdate, TagIndex.PlayerUpdateSubjects.Position, transform.position);
                 SerialisePosA(transform.position);
+                lastPosition = transform.position;
             }
             if (transform.rotation != lastRotation)
             {
                 DarkRiftAPI.SendMessageToOthers(TagIndex.PlayerUpdate, TagIndex.PlayerUpdateSubjects.Rotation, transform.rotation); 
             }
-
+            SerializeAnim();
             //Update stuff
-            lastPosition = transform.position;
+           
             lastRotation = transform.rotation;
         }
-
+        
+        
         //Animation Settings
         anim.SetBool("IsRunning", plValues.running);
         anim.SetBool("IsGrounded", plValues.grounded);
@@ -75,12 +79,14 @@ public class N_Movement : MonoBehaviour {
             writer.Write(pos.y);
             writer.Write(pos.z);
 
+            SerializeAnim();
+            /*
             writer.Write(anim.GetBool("IsRunning"));
             writer.Write(anim.GetBool("IsGrounded"));
             writer.Write(anim.GetInteger("State"));
             writer.Write(anim.GetFloat("Speed"));
             writer.Write(anim.GetFloat("Horizontal"));
-            writer.Write(anim.GetFloat("Vertical"));
+            writer.Write(anim.GetFloat("Vertical"));*/
 
             Debug.Log("Serialize");
             DarkRiftAPI.SendMessageToOthers(TagIndex.PlayerUpdate, TagIndex.PlayerUpdateSubjects.Position, writer);
@@ -95,12 +101,55 @@ public class N_Movement : MonoBehaviour {
             using (DarkRiftReader reader = (DarkRiftReader)data)
             {
                 //Then read!
+               
                 transform.position = new Vector3(
                     reader.ReadSingle(),
                     reader.ReadSingle(),
                     reader.ReadSingle()
                 );
 
+                
+                /*
+                plValues.running = reader.ReadBoolean();
+                plValues.grounded = reader.ReadBoolean();
+                plValues.state = reader.ReadInt32();
+                plValues.speed = reader.ReadSingle();
+                plValues.hor = reader.ReadSingle();
+                plValues.ver = reader.ReadSingle();*/
+            }
+        }
+        else
+        {
+            Debug.LogError("Should have recieved a DarkRiftReciever but didn't! (Got: " + data.GetType() + ")");
+            transform.position = transform.position;
+        }
+    }
+
+    void SerializeAnim()
+    {
+        using (DarkRiftWriter writer = new DarkRiftWriter())
+        {
+            
+            writer.Write(anim.GetBool("IsRunning"));
+            writer.Write(anim.GetBool("IsGrounded"));
+            writer.Write(anim.GetInteger("State"));
+            writer.Write(anim.GetFloat("Speed"));
+            writer.Write(anim.GetFloat("Horizontal"));
+            writer.Write(anim.GetFloat("Vertical"));
+
+            Debug.Log("Serialize");
+            DarkRiftAPI.SendMessageToOthers(TagIndex.PlayerUpdate, TagIndex.PlayerUpdateSubjects.Animation, writer);
+        }
+    }
+
+    void DeserialiseAnim(object data)
+    {
+
+        if (data is DarkRiftReader)
+        {
+            using (DarkRiftReader reader = (DarkRiftReader)data)
+            {
+               
                 plValues.running = reader.ReadBoolean();
                 plValues.grounded = reader.ReadBoolean();
                 plValues.state = reader.ReadInt32();
@@ -115,7 +164,7 @@ public class N_Movement : MonoBehaviour {
             transform.position = transform.position;
         }
     }
-        void OnDataRecieved(ushort senderID, byte tag, ushort subject, object data) {
+    void OnDataRecieved(ushort senderID, byte tag, ushort subject, object data) {
         Debug.Log("Recieve");
         if (senderID == networkID)
         {
@@ -140,7 +189,10 @@ public class N_Movement : MonoBehaviour {
                     transform.rotation = (Quaternion)data;
                   
                 }
-
+                if (subject == TagIndex.PlayerUpdateSubjects.Animation)
+                {
+                    DeserialiseAnim(data);
+                }
             }
 
 
