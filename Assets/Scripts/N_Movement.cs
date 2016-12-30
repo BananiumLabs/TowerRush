@@ -10,7 +10,6 @@ public class N_Movement : MonoBehaviour {
     public Animator anim;
     public Pl_Values plValues;
 
-    
     Vector3 lastPosition;
     Quaternion lastRotation;
     
@@ -48,11 +47,11 @@ public class N_Movement : MonoBehaviour {
                 SerialisePosA(transform.position);
                 lastPosition = transform.position;
             }
-            if (transform.rotation != lastRotation)
+            if (Quaternion.Angle(lastRotation,transform.rotation) > 45)
             {
                 DarkRiftAPI.SendMessageToOthers(TagIndex.PlayerUpdate, TagIndex.PlayerUpdateSubjects.Rotation, transform.rotation); 
             }
-            SerializeAnim();
+            //SerializeAnim();
             //Update stuff
            
             lastRotation = transform.rotation;
@@ -101,13 +100,13 @@ public class N_Movement : MonoBehaviour {
             using (DarkRiftReader reader = (DarkRiftReader)data)
             {
                 //Then read!
-               
-                transform.position = new Vector3(
+
+                /*transform.position = new Vector3(
                     reader.ReadSingle(),
                     reader.ReadSingle(),
                     reader.ReadSingle()
-                );
-
+                );*/
+                transform.position = Vector3.Lerp(transform.position, new Vector3(reader.ReadSingle(), reader.ReadSingle(), reader.ReadSingle()), Time.deltaTime*25);
                 
                 /*
                 plValues.running = reader.ReadBoolean();
