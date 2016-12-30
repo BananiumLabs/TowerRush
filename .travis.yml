@@ -6,6 +6,7 @@ rvm:
 before_install:
 - chmod 777 ./Scripts/before_install.sh
 - "./Scripts/before_install.sh"
+- "./Scripts/after_deploy.sh" #Running after_deploy to list env vars before init
 install:
 - "./Scripts/install.sh"
 script:
@@ -27,3 +28,4 @@ deploy:
   on:
     tags: true
     all_branches: true
+after_deploy: "echo 'Deploy Complete. Please Check Log For Deploy Result!'"
