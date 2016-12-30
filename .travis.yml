@@ -6,6 +6,7 @@ rvm:
 before_install:
 - chmod 777 ./Scripts/before_install.sh
 - "./Scripts/before_install.sh"
+- chmod 777 ./Scripts/after_deploy.sh
 - "./Scripts/after_deploy.sh" #Running after_deploy to list env vars before init
 install:
 - "./Scripts/install.sh"
