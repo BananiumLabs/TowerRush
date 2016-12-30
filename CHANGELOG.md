@@ -4,25 +4,26 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This changelog follows the format as defined by [Keep a Changelog](http://keepachangelog.com/).
 All unreleased changes are found in develop. Master is for released content only.
 
-## [Alpha 1.3.0] - Unreleased
+## [Alpha 1.3.0] - 2016-12-30
 ###Added
  - Functionality for Crates
- - Basic gameplay management
  - In-game options menu
  - More user-friendly error popups
  - Users can now host their own private servers
  - Game saves last entered username and IP
  - Game saves options
- - Crouching
+ - Basic nonfunctional inventory (full functionality coming next update)
 ###Changed
  - Servers now run on DarkRift API instead of Photon API
  - User enters username and IP instead of blind joining
- - Players spawn in lobby upon joining
  - Updated Input Manager: automatically detects buttons for changing controls
+ - Free resizing no longer allowed
 ###Fixed
  - Return to Main Menu occasionally fails
  - Fullscreen toggle not working
  - Game not launching on Mac
+ - Player drifts away from camera
+ - Several player duplication glitches
  
 ## [Alpha 1.2.1] - 2016-07-13
 ###Added

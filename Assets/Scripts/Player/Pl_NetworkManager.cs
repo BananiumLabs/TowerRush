@@ -15,15 +15,15 @@ public class Pl_NetworkManager : MonoBehaviour {
     void Start()
     {
         
-        //Recieve Data
-        DarkRiftAPI.onDataDetailed += ReceiveData;
+       
 
         if (DarkRiftAPI.isConnected)
         {
+             //Recieve Data
+        DarkRiftAPI.onDataDetailed += ReceiveData;
             //Get everyone else to tell us to spawn them a player 
             DarkRiftAPI.SendMessageToOthers(TagIndex.Controller, TagIndex.ControllerSubjects.JoinMessage, "New Player Joined");
             //Spawn the player
-            Debug.Log("Spawning");
             DarkRiftAPI.SendMessageToAll(TagIndex.Controller, TagIndex.ControllerSubjects.SpawnPlayer, Vars.lobby);
             //Instantiate(playerObject, Vars.lobby, Quaternion.identity);
         }
@@ -61,11 +61,12 @@ public class Pl_NetworkManager : MonoBehaviour {
             {
                 //Instantiate the player
                 GameObject clone = (GameObject)Instantiate(playerObject, (Vector3)data, Quaternion.identity);
+                Debug.Log("Spawned Player");
                 //Tell the network player who owns it so it tunes into the right updates.
                 clone.GetComponent<N_Movement>().networkID = senderID;
 
                 //If it's our player being created allow control and set the reference
-                if (senderID == DarkRiftAPI.id)
+                if (senderID == DarkRiftAPI.id && DarkRiftAPI.isConnected)
                 {
                     clone.GetComponent<N_Movement>().isMine = true;
                     player = clone.transform;
