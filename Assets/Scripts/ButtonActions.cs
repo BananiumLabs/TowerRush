@@ -45,4 +45,9 @@ public class ButtonActions : MonoBehaviour {
         	playerTransform.tag = "GoldPlayer";
         
     }
+
+	public void StartGame()
+	{
+		GetComponentInParent<Pl_Controller>().roomlogic.StartGame();
+	}
 }
