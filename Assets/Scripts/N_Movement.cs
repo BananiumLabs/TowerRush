@@ -52,7 +52,7 @@ public class N_Movement : MonoBehaviour {
             {
                 DarkRiftAPI.SendMessageToOthers(TagIndex.PlayerUpdate, TagIndex.PlayerUpdateSubjects.Rotation, transform.rotation); 
             }
-            SerializeAnim();
+            //SerializeAnim();
             //Update stuff
            
             lastRotation = transform.rotation;
@@ -101,13 +101,13 @@ public class N_Movement : MonoBehaviour {
             using (DarkRiftReader reader = (DarkRiftReader)data)
             {
                 //Then read!
-               
-                transform.position = new Vector3(
+
+                /*transform.position = new Vector3(
                     reader.ReadSingle(),
                     reader.ReadSingle(),
                     reader.ReadSingle()
-                );
-
+                );*/
+                transform.position = Vector3.Lerp(transform.position, new Vector3(reader.ReadSingle(), reader.ReadSingle(), reader.ReadSingle()), Time.deltaTime*10);
                 
                 /*
                 plValues.running = reader.ReadBoolean();
