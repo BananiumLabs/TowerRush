@@ -43,7 +43,6 @@ public class RoomLogic : MonoBehaviour {
 
     //Spawns crates upon game begin
     public void StartGame() {
-		Vars.lockMode = CursorLockMode.Locked;
         if(Application.isEditor || (GameObject.FindGameObjectsWithTag("Player").Length % 2 == 0 && !started)) {
             
             foreach(GameObject crate in crates) crate.SetActive(true);

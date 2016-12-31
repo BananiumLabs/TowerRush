@@ -28,6 +28,23 @@ public class PlayerGUI : MonoBehaviour {
 
 	}
 
+	///Mouse lock function
+	void OnGUI()
+    {
+        GUILayout.BeginVertical();
+
+        //Lockss cursor when all menus but HUD are closed
+        if (Active()) {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        } else {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
+        GUILayout.EndVertical();
+		}
+    }
+
 	///When Switch Teams button is pressed
 	public void SwitchTeams () {
 		SetCanvases(false,true,false,false,false);
@@ -83,7 +100,7 @@ public class PlayerGUI : MonoBehaviour {
 		enabledCanvases[4] = false;
 	}
 
-	protected bool Active () {
+	public bool Active () {
 		return enabledCanvases[0] 
 			&& !enabledCanvases[3] 
 			&& !enabledCanvases[4]

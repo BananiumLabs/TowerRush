@@ -25,7 +25,6 @@ public class N_Movement : MonoBehaviour {
         if (isMine)
         {
             
-            gameObject.GetComponent<MouseLock>().enabled = true;
             gameObject.GetComponent<Pl_MouseLook>().enabled = true;
             gameObject.GetComponent<Pl_Controller>().enabled = true;
             gameObject.GetComponent<InputManager>().enabled = true;
