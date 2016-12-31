@@ -18,11 +18,12 @@ public class Crate : MonoBehaviour {
 		
 	}
 
-	void OnTriggerEnter(Collision col) {
-		Debug.Log("COLLIDE");
+	void OnTriggerEnter(Collider col) {
+		
 			if(col.gameObject.tag == "BluePlayer" || col.gameObject.tag == "GoldPlayer") {
 				GiveItems(col.gameObject);
 				Object.Destroy(gameObject);
+				Debug.Log(gameObject.name + "Received by" + col.gameObject.name);
 			}
 			
 	}

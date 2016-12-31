@@ -24,6 +24,7 @@ All unreleased changes are found in develop. Master is for released content only
  - Game not launching on Mac
  - Player drifts away from camera
  - Several player duplication glitches
+ - Mouse lock not working
  
 ## [Alpha 1.2.1] - 2016-07-13
 ###Added
