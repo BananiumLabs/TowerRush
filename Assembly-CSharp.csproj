@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\ButtonActions.cs" />
+     <Compile Include="Assets\Scripts\Crate.cs" />
      <Compile Include="Assets\Scripts\InputManager.cs" />
      <Compile Include="Assets\Scripts\Inventory\InvSlot.cs" />
      <Compile Include="Assets\Scripts\Inventory\Inventory.cs" />
@@ -67,6 +68,7 @@
      <Compile Include="Assets\Scripts\Player\Pl_Controller.cs" />
      <Compile Include="Assets\Scripts\Player\Pl_MouseLook.cs" />
      <Compile Include="Assets\Scripts\Player\Pl_NetworkManager.cs" />
+     <Compile Include="Assets\Scripts\Player\Pl_PositionStabilizer.cs" />
      <Compile Include="Assets\Scripts\Player\Pl_Values.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerGUI.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerHUD.cs" />

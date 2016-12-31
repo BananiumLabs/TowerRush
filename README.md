@@ -9,7 +9,7 @@ ___
 ##**Download** The Game From Official Project Website:
 [https://fewdpew.me/download](https://fewdpew.me/download)
 
-###This project is open-source under the [GNU General Public License v3.0](http://www.gnu.org/licenses/gpl-3.0.en.html).
+###TowerRush Alpha is open-source under the [GNU General Public License v3.0](http://www.gnu.org/licenses/gpl-3.0.en.html).
 ___
 ### **CURRENT STAGE: BASIC MECHANICS**
 ### **CURRENT FOCUS: [HUD & Weapons](https://github.com/FewdpewGames/unity-game/tree/develop)**
@@ -44,6 +44,7 @@ ___
  - **Project Manager** [Eric Q](https://github.com/eric1084)
  - **Lead Programmer** [Vikram P](https://github.com/DarkFlamex1)
  - **Concept Designer** [Aryan S](https://github.com/CrispyCookieHD)
+ - **Contributors** [Jeffery Y](https://github.com/JeffY95014), [Dohyun K](https://github.com/DohyunK), and [Omar H](https://github.com/OmarHossain)
  
 Contact us by sending an email to [contact@mvgd.club](mailto:contact@mvgd.club).
 

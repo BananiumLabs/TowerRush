@@ -14,13 +14,11 @@ public class Pl_NetworkManager : MonoBehaviour {
 
     void Start()
     {
-        
-       
 
         if (DarkRiftAPI.isConnected)
         {
-             //Recieve Data
-        DarkRiftAPI.onDataDetailed += ReceiveData;
+            //Recieve Data
+            DarkRiftAPI.onDataDetailed += ReceiveData;
             //Get everyone else to tell us to spawn them a player 
             DarkRiftAPI.SendMessageToOthers(TagIndex.Controller, TagIndex.ControllerSubjects.JoinMessage, "New Player Joined");
             //Spawn the player
@@ -31,8 +29,7 @@ public class Pl_NetworkManager : MonoBehaviour {
             Debug.LogWarning("Failed to connect to DarkRift Server!"); 
             SceneManager.LoadScene(0);
         }
-            
-
+    
     }
 
     void OnApplicationQuit()
