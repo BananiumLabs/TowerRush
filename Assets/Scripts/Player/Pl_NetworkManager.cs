@@ -11,6 +11,8 @@ public class Pl_NetworkManager : MonoBehaviour {
 
     //Our Player
     Transform player;
+    //Ensures that multiple players cannot spawn with one network id
+    int playerNo = 0;
 
     void Start()
     {
@@ -34,14 +36,15 @@ public class Pl_NetworkManager : MonoBehaviour {
 
     void OnApplicationQuit()
     {
+        DarkRiftAPI.onDataDetailed -= ReceiveData;
         DarkRiftAPI.Disconnect();
 
     }
 
-
+    
     void ReceiveData(ushort senderID, byte tag, ushort subject, object data)
     {
-
+         
         //Controller Tag
         if (tag == TagIndex.Controller && DarkRiftAPI.isConnected)
         {
@@ -54,21 +57,33 @@ public class Pl_NetworkManager : MonoBehaviour {
             }
 
             //Spawn the player
+           
             if (subject == TagIndex.ControllerSubjects.SpawnPlayer && DarkRiftAPI.isConnected)
             {
+
+                
                 //Instantiate the player
                 GameObject clone = (GameObject)Instantiate(playerObject, (Vector3)data, Quaternion.identity);
-                Debug.Log("Spawned Player");
-                //Tell the network player who owns it so it tunes into the right updates.
-                clone.GetComponent<N_Movement>().networkID = senderID;
-
-                //If it's our player being created allow control and set the reference
-                if (senderID == DarkRiftAPI.id && DarkRiftAPI.isConnected)
+                playerNo++;
+                if (playerNo == 1)
                 {
-                    clone.GetComponent<N_Movement>().isMine = true;
-                    player = clone.transform;
-                }
-            }
+                    
+                    Debug.Log("Spawned Player " + playerNo);
+
+                    //Tell the network player who owns it so it tunes into the right updates.
+                    clone.GetComponent<N_Movement>().networkID = senderID;
+
+                    //If it's our player being created allow control and set the reference
+                    //Only once! If not, it destroys player
+
+                    if (senderID == DarkRiftAPI.id && DarkRiftAPI.isConnected)
+                    {
+                        clone.GetComponent<N_Movement>().isMine = true;
+                        player = clone.transform;
+
+                    }
+                } else Destroy(clone);  
+            }   
         }
     }
 }

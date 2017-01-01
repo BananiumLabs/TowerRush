@@ -10,10 +10,10 @@ public class ButtonActions : MonoBehaviour {
 
 	void Start () {
 		pgui = GetComponent<PlayerGUI> ();
-		//playerTransform = GetComponentInParent<Transform> ();
 	}
 	
 	public void QuitToMainMenu () {
+		Destroy(playerTransform.gameObject);
 		DarkRiftAPI.Disconnect();
 		SceneManager.LoadScene(0); //Load Main Menu
 	}
