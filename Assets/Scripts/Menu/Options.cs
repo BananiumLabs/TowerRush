@@ -128,9 +128,7 @@ public class Options : MonoBehaviour {
 		if(usingCode) {
 			graphics.value = 4;
 			volume.value = 50;
-			if(SystemInfo.operatingSystemFamily.Equals(OperatingSystemFamily.Windows)) resolution.value = 0;
-			else resolution.value = 3;
-
+			resolution.value = 0;
 			WriteConfig();
 			UpdateValues();
 		} else resetOptions();
