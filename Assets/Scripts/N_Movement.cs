@@ -101,12 +101,12 @@ public class N_Movement : MonoBehaviour {
             {
                 //Then read!
 
-                /*transform.position = new Vector3(
+                transform.position = new Vector3(
                     reader.ReadSingle(),
                     reader.ReadSingle(),
                     reader.ReadSingle()
-                );*/
-                transform.position = Vector3.Lerp(transform.position, new Vector3(reader.ReadSingle(), reader.ReadSingle(), reader.ReadSingle()), Time.deltaTime*25);
+                );
+                //transform.position = Vector3.Lerp(transform.position, new Vector3(reader.ReadSingle(), reader.ReadSingle(), reader.ReadSingle()), Time.deltaTime*25);
                 
                 /*
                 plValues.running = reader.ReadBoolean();
@@ -175,7 +175,7 @@ public class N_Movement : MonoBehaviour {
                 {
                     Debug.Log("De Position");
                     DeserialisePosA(data);
-                    //transform.position = (Vector3)data;
+                    transform.position = (Vector3)data;
                     //Vector3.Lerp(transform.position, (Vector3)data, Time.deltaTime * 5);
                    
                 }
