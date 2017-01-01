@@ -19,6 +19,7 @@ sysinfo.txt
 /*.suo
 /*.user
 /*.booproj
+/*.csproj
  
 # ============ #
 # OS generated #
@@ -31,7 +32,6 @@ Icon?
 ehthumbs.db
 [Tt]humbs.db
 [Dd]esktop.ini
-.vscode/settings.json
-Assembly-CSharp-Editor-firstpass.csproj
-Assembly-CSharp-firstpass.csproj
-Assembly-CSharp-Editor.csproj
+.vscode/
+/Assets/*.cfg
+
