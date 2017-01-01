@@ -82,7 +82,7 @@ public class Pl_NetworkManager : MonoBehaviour {
                         player = clone.transform;
 
                     }
-                } else Destroy(clone);  
+                } else if(clone.GetComponent<N_Movement>().networkID == senderID) Destroy(clone);
             }   
         }
     }
