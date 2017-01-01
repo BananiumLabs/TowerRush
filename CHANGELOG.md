@@ -4,7 +4,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This changelog follows the format as defined by [Keep a Changelog](http://keepachangelog.com/).
 All unreleased changes are found in develop. Master is for released content only.
 
-## [Alpha 1.3.0] - 2016-12-30
+## [Alpha 1.3.0] - 2017-1-1
 ###Added
  - Functionality for Crates
  - In-game options menu
