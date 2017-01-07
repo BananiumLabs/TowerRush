@@ -12,6 +12,12 @@ install:
 - "./Scripts/install.sh"
 script:
 - "./Scripts/build.sh"
+after_success:
+- chmod 777 ./Scripts/after_success.sh
+- "./Scripts/after_success.sh"
+after_failure:
+- chmod 777 ./Scripts/after_failure.sh
+- "./Scripts/after_failure.sh"
 branches:
   only:
     - master
