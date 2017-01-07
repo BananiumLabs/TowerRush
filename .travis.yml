@@ -12,6 +12,8 @@ before_install:
 - "./Scripts/before_install.sh"
 - chmod 777 ./Scripts/after_deploy.sh
 - "./Scripts/after_deploy.sh" #Running after_deploy to list env vars before init
+install:		
+- "./Scripts/install.sh"
 script:
 - "./Scripts/build.sh"
 after_success:
