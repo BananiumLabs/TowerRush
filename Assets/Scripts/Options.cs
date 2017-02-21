@@ -90,22 +90,22 @@ public class Options : MonoBehaviour {
 		//Screen resolution
 		switch (resolution.value) {
 		case 0: //auto
-			Screen.SetResolution(Screen.currentResolution.width,Screen.currentResolution.height,Screen.fullScreen);
+			Screen.SetResolution(Screen.currentResolution.width,Screen.currentResolution.height,!Screen.fullScreen);
 			break;
 		case 1: //1920x1200
-			Screen.SetResolution(1920,1200,Screen.fullScreen);
+			Screen.SetResolution(1920,1200,false);
 			break;
 		case 2: //1920x1080
-			Screen.SetResolution(1920,1080,Screen.fullScreen);
+			Screen.SetResolution(1920,1080, false);
 			break;
 		case 3: //1366x768
-			Screen.SetResolution(1366,768,Screen.fullScreen);
+			Screen.SetResolution(1366,768, false);
 			break;
 		case 4: //1280x1024
-			Screen.SetResolution(1280,1024,Screen.fullScreen);
+			Screen.SetResolution(1280,1024, false);
 			break;
 		case 5: //1024x768
-			Screen.SetResolution(1024,768,Screen.fullScreen);
+			Screen.SetResolution(1024,768, false);
 			break;
 		}
 			
