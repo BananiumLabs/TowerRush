@@ -63,4 +63,8 @@ protected string user, ip;
 	public void CloseError() {
 		error.enabled = false;
 	}
+
+	public void StartServer() {
+		System.Diagnostics.Process.Start (Application.dataPath + "/server/DarkRiftServer.exe");
+	}
 }
