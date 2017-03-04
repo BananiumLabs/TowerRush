@@ -3,12 +3,16 @@ osx_image: xcode61
 sudo: true
 rvm:
 - 2.1.2
+cache:
+  timeout: 1000
+  directories:
+    - /Applications/Unity/
 before_install:
 - chmod 777 ./Scripts/before_install.sh
 - "./Scripts/before_install.sh"
 - chmod 777 ./Scripts/after_deploy.sh
 - "./Scripts/after_deploy.sh" #Running after_deploy to list env vars before init
-install:
+install:		
 - "./Scripts/install.sh"
 script:
 - "./Scripts/build.sh"
