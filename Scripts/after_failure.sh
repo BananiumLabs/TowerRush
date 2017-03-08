@@ -1,5 +1,8 @@
 #! /bin/sh
 
+echo 'Logs from failing build'
+cat $(pwd)/unity.log
+
 echo "Build Failed! Sending Notification Message. Please Wait"
 curl -s --user 'api:key-***REMOVED***' \
     https://api.mailgun.net/v3/m.enumc.com/messages \
