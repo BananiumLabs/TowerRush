@@ -8,12 +8,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 1456368863, guid: 65874a2067946134c9b9b435a1caff82, type: 3}
   m_Name: SceneFusionConfig
-  m_EditorClassIdentifier: KSSceneFusion-Editor.Unity2018_1:KS.SceneFusion.Client.Editor:SceneFusionConfig
+  m_EditorClassIdentifier: 
   Debug: 1
   ShowGettingStartedScreen: 1
-  LastVersion: 1.8.0
+  LastVersion: 0.0.0
   Offsets:
     OnlineStatusOffset: {x: 0, y: 0}
     HierarchyIconOffset: 0

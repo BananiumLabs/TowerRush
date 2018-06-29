@@ -1,0 +1,43 @@
+2018-06-29 11:50:20.6938 [DEBUG] Validating model...
+2018-06-29 11:50:20.7286 [DEBUG] Model updated
+2018-06-29 11:50:20.7291 [DEBUG] Authenticating with server...
+2018-06-29 11:50:20.9352 [DEBUG] Connected to room. (76309:SceneFusion:SceneFusion)
+2018-06-29 11:50:20.9377 [INFO] Connected to server.
+2018-06-29 11:50:20.9377 [DEBUG] OS : Microsoft Windows NT 10.0.16299.0
+2018-06-29 11:50:20.9377 [DEBUG] Unity Version : 2018.1.6f1
+2018-06-29 11:50:20.9382 [DEBUG] Pro License : False
+2018-06-29 11:50:20.9382 [DEBUG] Platform : WindowsEditor
+2018-06-29 11:50:20.9382 [DEBUG] Build Target : StandaloneWindows64
+2018-06-29 11:50:20.9382 [DEBUG] Scene Fusion version : 1.8.0
+2018-06-29 11:50:21.1737 [DEBUG] Scene Fusion client build : 0
+2018-06-29 11:50:21.1737 [DEBUG] User : vikram@bananiumlabs.com
+2018-06-29 11:50:21.1737 [DEBUG] Waiting for server response
+2018-06-29 11:50:21.2138 [DEBUG] Tier: Scene Fusion Free, Permissions: 00001400
+2018-06-29 11:50:21.2138 [DEBUG] User Permissions: FFFFFFFF
+2018-06-29 11:50:21.4356 [DEBUG] No stand-in for UnityEngine.Video.VideoClip
+2018-06-29 11:50:21.4356 [DEBUG] No stand-in for UnityEngine.ProceduralMaterial
+2018-06-29 11:50:21.4356 [DEBUG] No stand-in for UnityEngine.ProceduralTexture
+2018-06-29 11:50:21.4356 [DEBUG] No stand-in for UnityEngine.CustomRenderTexture
+2018-06-29 11:50:21.4356 [DEBUG] No stand-in for UnityEngine.U2D.SpriteAtlas
+2018-06-29 11:50:21.4356 [DEBUG] No stand-in for UnityEngine.Experimental.Rendering.RenderPassAttachment
+2018-06-29 11:50:21.4361 [DEBUG] No stand-in for UnityEngine.AvatarMask
+2018-06-29 11:50:21.4361 [DEBUG] No stand-in for UnityEngine.AI.NavMeshData
+2018-06-29 11:50:21.6255 [DEBUG] Uploading scene 'Menu'
+2018-06-29 11:50:21.6549 [ERROR] MissingMethodException: Method not found: 'UnityEditor.PrefabUtility.GetCorrespondingObjectFromSource'.
+KS.SceneFusion.Client.Editor.GameObjectUtils.GetPrefabInfo (UnityEngine.GameObject gameObject, System.String& prefabPath, System.UInt32[]& prefabChildIndexes)
+KS.SceneFusion.Client.Editor.SpawnInfo.RecordState ()
+KS.SceneFusion.Client.Editor.ObjectManager.EncodeObject (System.IO.BinaryWriter writer, KS.SceneFusion.Client.Editor.SpawnInfo spawnInfo)
+KS.SceneFusion.Client.Editor.ObjectManager+<SpawnCoroutine>d__90.MoveNext ()
+KS.Reactor.ksCoroutine.Step ()
+KS.Reactor.ksCoroutine.Step ()
+KS.Reactor.ksCoroutineManager+<>c.<UpdateCoroutines>b__5_0 (KS.Reactor.ksCoroutine coroutine)
+KS.Reactor.ksCoroutineManager.ForEach (KS.Reactor.CoroutineCallback coroutineCallback)
+KS.Reactor.ksCoroutineManager.UpdateCoroutines ()
+KS.SceneFusion.Client.Editor.ObjectManager.Update ()
+KS.SceneFusion.Client.Editor.CoEditService.Update ()
+UnityEditor.EditorApplication.Internal_CallUpdateFunctions () (at C:/buildslave/unity/build/Editor/Mono/EditorApplication.cs:183)
+
+2018-06-29 11:51:30.7356 [DEBUG] Cancelled connection
+2018-06-29 11:51:30.7367 [DEBUG] Disconnecting from room (76309:SceneFusion:SceneFusion)
+2018-06-29 11:51:30.7392 [INFO] Disconnected from server.
+2018-06-29 11:51:30.7392 [DEBUG] Disconnect. (Duration: 69)

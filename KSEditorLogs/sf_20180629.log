@@ -2,3 +2,22 @@
 2018-06-29 11:24:03.7805 [INFO] Setting define symbol SCENE_FUSION
 2018-06-29 11:24:12.7726 [DEBUG] Scene Fusion version 1.8.0-0
 2018-06-29 11:33:14.3712 [DEBUG] Scene Fusion version 1.8.0-0
+2018-06-29 11:33:22.5522 [DEBUG] Scene Fusion version 1.8.0-0
+2018-06-29 11:49:52.1585 [DEBUG] Invalid token sent as part of a web request token. Token = fKgq8T4B1Knzrm01i8Y2DkAnZE0bTtpmpUxRsSAJcmGbctlrMxh7a9atIXoliMTCKnsGrzoXwuB1cC8drckAsg5nkUwCcKB2WjhFn2ujkgLAQzHOYXo1udPow1hqI9QP3DxR4K9r4HRC17ByLdeH4FXZohhC2YNClw3MxHnqWRuedq50nNF8UcGm5pYbmykKsfdwplfYkkADgyDPAoYpknakYpRjoK7X8dunZi4gi1NKT7ZngcOcruzpCXaYhA6
+2018-06-29 11:49:56.0868 [DEBUG] Web request login error: Invalid credentials
+2018-06-29 11:49:59.3240 [DEBUG] Web request login error: Invalid credentials
+2018-06-29 11:50:20.1022 [INFO] Launching Scene: Menu
+2018-06-29 11:50:20.5855 [DEBUG] Connecting
+2018-06-29 11:50:20.6077 [DEBUG] Connecting to room (76309:SceneFusion:SceneFusion) via TCP at ec2-52-25-68-40.us-west-2.compute.amazonaws.com:1025
+2018-06-29 11:51:30.7585 [DEBUG] Sent D:/UnityProjects/TowerRush/KSEditorLogs/SessionLogs/session.76309-636658698206379852.log
+2018-06-29 11:51:35.1925 [DEBUG] Connecting
+2018-06-29 11:51:35.2031 [DEBUG] Connecting to room (76309:SceneFusion:SceneFusion) via TCP at ec2-52-25-68-40.us-west-2.compute.amazonaws.com:1025
+2018-06-29 11:52:07.5125 [DEBUG] Sent D:/UnityProjects/TowerRush/KSEditorLogs/SessionLogs/session.76309-636658698952052109.log
+2018-06-29 11:53:02.3115 [INFO] Launching Scene: Menu
+2018-06-29 11:53:02.9196 [DEBUG] Connecting
+2018-06-29 11:53:03.3211 [DEBUG] Connecting to room (76310:SceneFusion:SceneFusion) via TCP at ec2-52-25-68-40.us-west-2.compute.amazonaws.com:1025
+2018-06-29 11:53:09.5324 [DEBUG] Sent D:/UnityProjects/TowerRush/KSEditorLogs/SessionLogs/session.76310-636658699833252159.log
+2018-06-29 11:56:13.0156 [DEBUG] Scene Fusion version 1.8.0-0
+2018-06-29 11:56:27.2512 [INFO] Launching Scene: Menu
+2018-06-29 11:56:27.7609 [DEBUG] Connecting
+2018-06-29 11:56:27.7813 [DEBUG] Connecting to room (76311:SceneFusion:SceneFusion) via TCP at ec2-52-25-68-40.us-west-2.compute.amazonaws.com:1025
