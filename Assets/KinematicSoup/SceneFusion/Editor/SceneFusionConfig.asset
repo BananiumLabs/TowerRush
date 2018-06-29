@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: KSSceneFusion-Editor.Unity2018_1:KS.SceneFusion.Client.Editor:SceneFusionConfig
   Debug: 1
   ShowGettingStartedScreen: 1
-  LastVersion: 0.0.0
+  LastVersion: 1.8.0
   Offsets:
     OnlineStatusOffset: {x: 0, y: 0}
     HierarchyIconOffset: 0

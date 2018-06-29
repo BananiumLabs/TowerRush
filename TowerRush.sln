@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TowerRush", "Assembly-CShar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TowerRush", "Assembly-CSharp.csproj", "{61E0D2A8-F41F-6A12-FE29-DBBD20B7C496}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TowerRush", "Assembly-CSharp-firstpass.csproj", "{5634AAFB-7FC6-D2C3-26DF-548CD721EFD9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{61E0D2A8-F41F-6A12-FE29-DBBD20B7C496}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61E0D2A8-F41F-6A12-FE29-DBBD20B7C496}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61E0D2A8-F41F-6A12-FE29-DBBD20B7C496}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5634AAFB-7FC6-D2C3-26DF-548CD721EFD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5634AAFB-7FC6-D2C3-26DF-548CD721EFD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5634AAFB-7FC6-D2C3-26DF-548CD721EFD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5634AAFB-7FC6-D2C3-26DF-548CD721EFD9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
